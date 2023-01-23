@@ -1,0 +1,9 @@
+.history/
+.vscode/
+
+build/
+data/
+
+include/
+
+.DS_Store
