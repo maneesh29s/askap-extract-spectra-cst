@@ -1,0 +1,4 @@
+fileignoreconfig:
+- filename: src/json_test.cc
+  checksum: 96841de9b563affa95e169a8ea72e6d36bdb06f24f54ef5e145775dbb90a01e4
+version: "1.0"

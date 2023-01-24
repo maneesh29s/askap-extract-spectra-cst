@@ -16,14 +16,11 @@ cat ${inputFile}-truncated.log | awk '
     slicerEnd = $23 $24 $25 $26;                   
     stride = $29 $30 $31 substr($32, 1, length($32)-1);                       
     len = $34 $35 $36 $37;                       
-    printf(" {  \"sourceID\": \"%s\", \n    \
-                \"slicerBegin\": %s, \n   \
-                \"slicerEnd\": %s, \n   \
-                \"stride\": %s, \n   \
-                \"length\": %s \n },  \n", sourceID, slicerBegin, slicerEnd, stride, len);  
+    printf("{ \"sourceID\": %s, \"slicerBegin\": %s, \"slicerEnd\": %s, \"stride\": %s, \"length\": %s },\n", sourceID, slicerBegin, slicerEnd, stride, len);  
   }                                                 
 ' >> ${outputFile}
 
-gsed -i '$ s/,//' ${outputFile}
+# to remove the last ',' in last line
+gsed -i '$ s/\(.*\),/\1/' ${outputFile}
 
 echo "]" >> ${outputFile}

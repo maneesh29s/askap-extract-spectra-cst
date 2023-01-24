@@ -4,22 +4,17 @@
 
 int main(int argc, char const *argv[])
 {
-    // FILE *fp;
-    // fp = fopen( "data/test_array_data_fopen.dat" , "w" );
     std::ofstream writer;
-    writer.open( "data/test_array_data.dat");
+    writer.open("data/test_array_data.dat");
 
     int naxes = 4;
     size_t naxis[4] = {12427, 12424, 1, 1};
-    // size_t naxis[4] = {4000, 3000, 1, 1};
 
     size_t totpix = 1;
     for (int i = 0; i < naxes; i++)
     {
         totpix *= naxis[i];
     }
-
-    // std::vector<float> arr(totpix);
 
     time_t seed = time(0);
     std::cerr << "Seed: " << seed << std::endl;
@@ -34,13 +29,11 @@ int main(int argc, char const *argv[])
     {
         temp = offset + range * (rand() / (float)RAND_MAX);
 
-        // fwrite(&temp , sizeof(float) , 1 , fp );
         writer.write((char*)&temp , sizeof(float));
     }
 
     std::cerr << "Array creation done" << std::endl;
 
-    // fclose(fp);
     writer.close();
 
     return 0;

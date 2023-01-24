@@ -4,6 +4,6 @@
 build/
 data/
 
-include/
+reference/
 
 .DS_Store
