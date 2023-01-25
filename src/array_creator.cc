@@ -8,7 +8,7 @@ int main(int argc, char const *argv[])
     writer.open("data/test_array_data.dat");
 
     int naxes = 4;
-    size_t naxis[4] = {12427, 12424, 1, 1};
+    size_t naxis[4] = {14000, 14000, 1, 1};
 
     size_t totpix = 1;
     for (int i = 0; i < naxes; i++)

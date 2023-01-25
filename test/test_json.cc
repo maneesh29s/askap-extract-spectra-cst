@@ -12,12 +12,14 @@ int main()
     Json::Reader reader;             // for reading the data
     Json::StyledWriter writer; // for writing in json files
 
+    size_t naxes = 4;
+
     // opening file using fstream
     ifstream file;
-    file.open("data/selavy-process-24-processed.json");
+    file.open("test/test_log.json");
 
     ofstream newFile;
-    newFile.open("temp.json");
+    newFile.open("test/new_json_log.json");
 
     // check if there is any error is getting data from the json file
     if (!reader.parse(file, root, false))
@@ -26,10 +28,12 @@ int main()
         exit(1);
     }
 
-    for (Json::Value::ArrayIndex i = 0; i != 5; i++)
+    for (Json::Value::ArrayIndex i = 0; i != root.size(); i++)
     {
-        cout << root[i]["sourceID"].asInt() << endl;
-        cout << root[i]["slicerBegin"][1] << endl;
+        cout << "sourceID : " << root[i]["sourceID"].asInt() << endl;
+        for (Json::Value::ArrayIndex j = 0; j != naxes; j++)
+            cout << root[i]["slicerBegin"][j].asInt64() << " ";
+        cout << endl;
     }
 
     // Updating the json data

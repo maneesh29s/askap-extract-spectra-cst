@@ -1,0 +1,16 @@
+[
+  {
+    "sourceID": 0,
+    "slicerBegin": [2, 3, 0, 0],
+    "slicerEnd": [6, 7, 0, 0],
+    "stride": [1, 1, 1, 1],
+    "length": [5, 5, 1, 1]
+  },
+  {
+    "sourceID": 1,
+    "slicerBegin": [4, 4, 0, 0],
+    "slicerEnd": [7, 7, 0, 0],
+    "stride": [1, 1, 1, 1],
+    "length": [4, 4, 1, 1]
+  }
+]

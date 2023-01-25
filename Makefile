@@ -1,4 +1,4 @@
-CXXFLAGS=-std=c++14 -O3
+CXXFLAGS=-std=c++14
 
 LIB=-ljsoncpp -Iinclude/ -lcasa_casa -lcasa_meas -lcasa_measures
 
@@ -7,13 +7,19 @@ DEBUGFLAGS=-fsanitize=address -g
 CXX=g++
 
 SRC = array_creator.out \
-	  json_test.out \
-      main.out 
-	  
-all: $(SRC)
+	main.out 
+
+TEST = test_json.out \
+	test_array_slicer.out
+
+
+all: $(SRC) $(TEST)
 
 %.out: src/%.cc dir
-	$(CXX) $(CXXFLAGS) $(LIB) -o build/$@ $< $(OPT)
+	$(CXX) -O3 $(CXXFLAGS) $(LIB) $(OPT) -o build/$@ $<
+
+%.out: test/%.cc dir
+	$(CXX) $(CXXFLAGS) $(LIB) $(DEBUGFLAGS) $(OPT) -o build/$@ $< 
 
 dir: 
 	mkdir -p build
