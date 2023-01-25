@@ -1,4 +1,4 @@
 outs:
-- md5: dc8ef7e25e98c4c62be42f8c4085520b
-  size: 784000000
+- md5: b14aee234000e66807434f253308d783
+  size: 784000040
   path: test_array_data.dat

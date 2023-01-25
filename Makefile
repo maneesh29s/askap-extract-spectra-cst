@@ -16,7 +16,7 @@ TEST = test_json.out \
 all: $(SRC) $(TEST)
 
 %.out: src/%.cc dir
-	$(CXX) -O3 $(CXXFLAGS) $(LIB) $(OPT) -o build/$@ $<
+	$(CXX) $(CXXFLAGS) -O3 $(LIB) $(OPT) -o build/$@ $<
 
 %.out: test/%.cc dir
 	$(CXX) $(CXXFLAGS) $(LIB) $(DEBUGFLAGS) $(OPT) -o build/$@ $< 

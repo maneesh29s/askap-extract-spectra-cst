@@ -14,7 +14,7 @@ fileignoreconfig:
 - filename: data/selavy_cont_image.i.NGC5044_3B_band2.SB40905.cont.taylor.0.restored.conv.fits_Full_14342405.log.dvc
   checksum: e230f97bd919f50d802dd6e45c134937ec1958ee8169d7f6bc8a4a476d66e490
 - filename: data/test_array_data.dat.dvc
-  checksum: 5a9f3701603929b0a6c72f25cce311807c62cc4423e981fc4784751298efa1e0
+  checksum: 57cf6efa6daad82eb61c8ed4ad2fd3e2bc1965d0c59e878c2d02da0e78861479
 - filename: src/json_test.cc
   checksum: 96841de9b563affa95e169a8ea72e6d36bdb06f24f54ef5e145775dbb90a01e4
 version: "1.0"

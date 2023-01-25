@@ -7,8 +7,23 @@ int main(int argc, char const *argv[])
     std::ofstream writer;
     writer.open("data/test_array_data.dat");
 
-    int naxes = 4;
-    size_t naxis[4] = {14000, 14000, 1, 1};
+    if (argc < 2)
+    {
+        std::cerr << "Must provide dimensions as input. \n Usage: ./build/array_creator naxis1 naxis2 ...";
+        exit(1);
+    }
+
+    size_t naxes = argc-1;
+    std::cout << "naxes: " << naxes << std::endl;
+    writer.write((char *)&naxes, sizeof(size_t));
+
+    std::vector<size_t> naxis(naxes);
+    for (size_t i = 0; i < naxes; i++)
+    {
+        naxis[i] = static_cast<size_t>(atoi(argv[i+1]));
+        std::cout << "naxis" << i << ": " << naxis[i] << std::endl;
+        writer.write((char *)&naxis[i], sizeof(size_t));
+    }
 
     size_t totpix = 1;
     for (int i = 0; i < naxes; i++)
@@ -17,10 +32,10 @@ int main(int argc, char const *argv[])
     }
 
     time_t seed = time(0);
-    std::cerr << "Seed: " << seed << std::endl;
+    std::cout << "Seed: " << seed << std::endl;
     srand(seed);
 
-    std::cerr << "Array dim : " << totpix << std::endl;
+    std::cout << "Array dim : " << totpix << std::endl;
 
     float offset = -5.0f;
     float range = 5.0f;
@@ -29,10 +44,10 @@ int main(int argc, char const *argv[])
     {
         temp = offset + range * (rand() / (float)RAND_MAX);
 
-        writer.write((char*)&temp , sizeof(float));
+        writer.write((char *)&temp, sizeof(float));
     }
 
-    std::cerr << "Array creation done" << std::endl;
+    std::cout << "Array creation done" << std::endl;
 
     writer.close();
 

@@ -1,6 +1,22 @@
-# INFO analysis.cubeletextractor (24, nid00305) [2022-06-19 17:25:53,991] - Extracting cubelet from meanMap.image.i.NGC5044_3B_band2.SB40905.cont.taylor.0.restored.conv.fits surrounding source ID 24 with slicer [3321, 10408, 0, 0] to [3360, 10433, 0, 0] with stride [1, 1, 1, 1], length [40, 26, 1, 1]
+if [ $# -ne 1 ]
+then
+    >&2 echo "Usage: ./scripts/extract_slices.sh <path to log file>";
+    exit 1;
+fi
 
-inputFile=data/selavy_cont_image.i.NGC5044_3B_band2.SB40905.cont.taylor.0.restored.conv.fits_Full_14342405
+fullfile=$1
+
+filename=$(basename -- "$fullfile")
+extension="${filename##*.}"
+
+if [ ${extension} != "log" ]
+then
+    >&2 echo "input must be a log file";
+    >&2 echo "Usage: ./scripts/extract_slices.sh <path to log file>";
+    exit 1;
+fi
+
+inputFile="${fullfile%.*}"
 
 sed "/^INFO.*Extracting cubelet from meanMap\.image\.i\.NGC5044_3B_band2\.SB40905\.cont\.taylor\.0\.restored\.conv\.fits.*$/!d" ${inputFile}.log > ${inputFile}-truncated.log
  
