@@ -20,7 +20,13 @@ cat ${inputFile}-truncated.log | awk '
   }                                                 
 ' >> ${outputFile}
 
+command=sed
+if [ `uname` = "Darwin" ]
+then
+  command=gsed
+fi
+
 # to remove the last ',' in last line
-gsed -i '$ s/\(.*\),/\1/' ${outputFile}
+${command} -i '$ s/\(.*\),/\1/' ${outputFile}
 
 echo "]" >> ${outputFile}

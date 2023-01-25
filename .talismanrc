@@ -1,4 +1,20 @@
 fileignoreconfig:
+- filename: data/selavy-process-0.log.dvc
+  checksum: a4d24f9a3292e20d67149dbe45d94955c5ef3b9aad5e40fc8dbef1a1c3e03f58
+- filename: data/selavy-process-24-processed.json.dvc
+  checksum: ab37b6324b035c8d4bb819c59976f1b6a1547cd78f2e7fb235d752bc82cca388
+- filename: data/selavy-process-24-truncated.log.dvc
+  checksum: 7d06943bfa29f391fc013e41b68f6c7a64f6c806bf8952ae9c7ae452b61e2fbd
+- filename: data/selavy-process-24.log.dvc
+  checksum: c14cc642e46d318e640f911dac4f96eab14d8ae72d79401a4ca94e07475949bc
+- filename: data/selavy_cont_image.i.NGC5044_3B_band2.SB40905.cont.taylor.0.restored.conv.fits_Full_14342405-processed.json.dvc
+  checksum: 0f4b050c15639fe56dbd1d283957da3c39792098c8b658f41d7ddb6f759a0de0
+- filename: data/selavy_cont_image.i.NGC5044_3B_band2.SB40905.cont.taylor.0.restored.conv.fits_Full_14342405-truncated.log.dvc
+  checksum: df2525377612d449d9dde9a9195c6b8664d90daafebdc272b20989c151aba565
+- filename: data/selavy_cont_image.i.NGC5044_3B_band2.SB40905.cont.taylor.0.restored.conv.fits_Full_14342405.log.dvc
+  checksum: e230f97bd919f50d802dd6e45c134937ec1958ee8169d7f6bc8a4a476d66e490
+- filename: data/test_array_data.dat.dvc
+  checksum: 5a9f3701603929b0a6c72f25cce311807c62cc4423e981fc4784751298efa1e0
 - filename: src/json_test.cc
   checksum: 96841de9b563affa95e169a8ea72e6d36bdb06f24f54ef5e145775dbb90a01e4
 version: "1.0"

@@ -1,9 +1,6 @@
 .history/
 .vscode/
+.DS_Store
 
 build/
-data/
-
 reference/
-
-.DS_Store

@@ -15,7 +15,7 @@ int main(int argc, char const *argv[])
     std::ifstream dataFile;
     dataFile.open("data/test_array_data.dat");
     std::ifstream jsonFile;
-    jsonFile.open("data/selavy-process-24-processed.json");
+    jsonFile.open("data/selavy_cont_image.i.NGC5044_3B_band2.SB40905.cont.taylor.0.restored.conv.fits_Full_14342405-processed.json");
 
     // check if there is any error is getting data from the json jsonFile
     if (!jsonReader.parse(jsonFile, root, false))
