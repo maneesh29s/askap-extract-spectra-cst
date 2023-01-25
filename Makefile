@@ -1,6 +1,8 @@
 CXXFLAGS=-std=c++14 -O3
 
-LIB=-ljsoncpp
+LIB=-ljsoncpp -Iinclude/ -lcasa_casa -lcasa_meas -lcasa_measures
+
+DEBUGFLAGS=-fsanitize=address -g
 
 CXX=g++
 
