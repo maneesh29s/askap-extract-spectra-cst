@@ -15,6 +15,12 @@ fileignoreconfig:
   checksum: e230f97bd919f50d802dd6e45c134937ec1958ee8169d7f6bc8a4a476d66e490
 - filename: data/test_array_data.dat.dvc
   checksum: 57cf6efa6daad82eb61c8ed4ad2fd3e2bc1965d0c59e878c2d02da0e78861479
+- filename: include/CasaImageAccess.h
+  checksum: fafcdf918d141e24354a11848812882b7f936171053258d10b27d8ccc6ff9cb3
+- filename: include/CasaImageAccess.tcc
+  checksum: 2c6231738797cd4993393c0dec26d9ed41d35e5c6d1916615f1e550e037a7004
+- filename: include/IImageAccess.h
+  checksum: f3e20bd00716502e23d3e6daf9f52eabf3798b13de0d5245f89c80a81265d422
 - filename: src/json_test.cc
   checksum: 96841de9b563affa95e169a8ea72e6d36bdb06f24f54ef5e145775dbb90a01e4
 version: "1.0"

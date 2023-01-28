@@ -1,6 +1,6 @@
 CXXFLAGS=-std=c++14
 
-LIB=-ljsoncpp -Iinclude/ -lcasa_casa -lcasa_meas -lcasa_measures
+LIB=-ljsoncpp -Iinclude/ -lcasa_casa -lcasa_lattices -lcasa_images -lcasa_tables -lcasa_coordinates -lcasa_scimath -lCommon -lcasa_coordinates
 
 DEBUGFLAGS=-fsanitize=address -g
 
@@ -25,3 +25,6 @@ dir:
 	mkdir -p build
 
 .PHONY: dir
+
+clean:
+	rm -rf build/*

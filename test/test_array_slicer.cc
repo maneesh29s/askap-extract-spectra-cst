@@ -4,12 +4,15 @@
 #include <json/json.h>
 
 #include <casacore/casa/Arrays.h>
+#include <casacore/coordinates/Coordinates/CoordinateUtil.h>
+#include <casacore/coordinates/Coordinates/CoordinateSystem.h>
 
-int main(int argc, char const *argv[])
-{
-    // --------------------------- Creating array data file -----------------------
-    std::ofstream writer;
-    writer.open("test/test_array_data.dat");
+#include "CasaImageAccess.h"
+
+static void writeData(){
+    // ----------------- Creating array data file -----------------------
+    // std::ofstream writer;
+    // writer.open("test/test_array_data.dat");
 
     int naxes = 4;
     std::vector<size_t> naxis{10, 10, 1, 1};
@@ -29,26 +32,61 @@ int main(int argc, char const *argv[])
     float offset = -5.0f;
     float range = 5.0f;
     float temp;
-    for (size_t i = 0; i < totpix; i++)
-    {
-        temp = i + 100;
 
-        writer.write((char *)&temp, sizeof(float));
+    casacore::IPosition arrSize(naxes, naxis[0], naxis[1], naxis[2], naxis[3]);
+    casacore::Array<casacore::Float> arr(arrSize);
+
+    // for (size_t i = 0; i < totpix; i++)
+    // {
+    //     temp = i + 100;
+    //     // writer.write((char *)&temp, sizeof(float));
+    // }
+
+    for (size_t row = 0; row < naxis[0]; row++)
+    {
+        for (size_t col = 0; col < naxis[1]; col++)
+        {
+            casacore::IPosition currentPos(naxes, row, col, 0, 0);
+            arr(currentPos) = row * naxis[1] + col;
+        }
     }
+
+    askap::accessors::CasaImageAccess<casacore::Float> accessor;
+
+    casacore::CoordinateSystem newcoo = casacore::CoordinateUtil::defaultCoords4D();
+
+    // create casa fits file
+    accessor.create("test/casa_test_image.FITS", arr.shape(), newcoo);
+
+    // write the array
+    accessor.write("test/casa_test_image.FITS", arr);
 
     std::cerr << "Array creation done" << std::endl;
 
-    writer.close();
+    // writer.close();
+}
 
-    // ---------------------- Reading the data file and a slice -----------------------
+static void readData(){
+    // -------------- Reading the data file and a slice -------------------
+
+    int naxes = 4;
+    std::vector<size_t> naxis{10, 10, 1, 1};
 
     Json::Reader jsonReader; // for reading the data
     Json::Value root;        // for modifying and storing new values
 
-    std::ifstream dataFile;
-    dataFile.open("test/test_array_data.dat");
+    // std::ifstream dataFile;
+    // dataFile.open("test/test_array_data.dat");
     std::ifstream jsonFile;
     jsonFile.open("test/test_log.json");
+
+    // reading whole data
+    casacore::IPosition arrSize(4, naxis[0], naxis[1], naxis[2], naxis[3]);
+    casacore::Array<casacore::Float> arr(arrSize);
+
+    askap::accessors::CasaImageAccess<casacore::Float> accessor;
+
+    arr = accessor.read("test/casa_test_image.FITS");
 
     // check if there is any error is getting data from the json jsonFile
     if (!jsonReader.parse(jsonFile, root, false))
@@ -57,10 +95,6 @@ int main(int argc, char const *argv[])
         exit(1);
     }
 
-    // reading whole data
-    casacore::IPosition arrSize(4, naxis[0], naxis[1], naxis[2], naxis[3]);
-    casacore::Array<casacore::Float> arr(arrSize);
-
     std::cout << "Original Array" << std::endl;
     float value;
     for (size_t row = 0; row < naxis[0]; row++)
@@ -68,9 +102,11 @@ int main(int argc, char const *argv[])
         for (size_t col = 0; col < naxis[1]; col++)
         {
             casacore::IPosition currentPos(4, row, col, 0, 0);
-            dataFile.read((char *)&value, sizeof(float));
-            std::cout << value << " ";
-            arr(currentPos) = value;
+            // dataFile.read((char *)&value, sizeof(float));
+            // std::cout << value << " ";
+            // arr(currentPos) = value;
+
+             std::cout << arr(currentPos) << " ";
         }
         std::cout << std::endl;
     }
@@ -118,8 +154,15 @@ int main(int argc, char const *argv[])
         std::cout << std::endl;
     }
 
-    dataFile.close();
+    // dataFile.close();
     jsonFile.close();
+}
+
+int main(int argc, char const *argv[])
+{
+    writeData();
+
+    readData();
 
     return 0;
 }
