@@ -8,7 +8,6 @@
 #include <casacore/coordinates/Coordinates/CoordinateSystem.h>
 
 #include "CasaImageAccess.h"
-#include "helper.h"
 
 static void generateSequentialData(const std::vector<size_t> &naxis, std::vector<float> &arr, float start)
 {
@@ -209,6 +208,11 @@ static void readDataCasa()
 
     arr = accessor.read("test/casa_test_image.FITS");
     const int naxes = arr.ndim();
+    if (naxes != 4)
+  {
+    std::cerr << "This application requires a 4D array. Please recreate array using array_creator.";
+    exit(1);
+  }
     const casacore::IPosition naxis = arr.shape();
 
     // check if there is any error is getting data from the json jsonFile
@@ -347,36 +351,24 @@ int main(int argc, char const *argv[])
 {
     // size_t naxes = 4;
     std::vector<size_t> naxis{10, 10, 1, 1};
-    Timer timer;
 
     size_t totpix = 1;
-    for (size_t i = 0; i < naxis.size(); i++) totpix *= naxis[i];
+    for (size_t i = 0; i < naxis.size(); i++)
+        totpix *= naxis[i];
 
     std::vector<float> arr(totpix);
 
     generateSequentialData(naxis, arr, 100.0f);
     // generateRandomData(naxis, arr, 10.0f , -5.0f);
 
-    writeDataBinary(naxis , arr);
+    writeDataBinary(naxis, arr);
     readDataBinary();
 
-    timer.start_timer();
-    writeDataCasa(naxis , arr);
-    timer.stop_timer();
+    writeDataCasa(naxis, arr);
 
-    std::cerr << "Time taken for writing to CASA image: " << timer.time_elapsed() << " us" << std::endl;
-
-    timer.start_timer();
     readDataCasa();
-    timer.stop_timer();
 
-    std::cerr << "Time taken for reading whole data from CASA image: " << timer.time_elapsed() << " us" << std::endl;
-
-    timer.start_timer();
     readDataSlicedCasa();
-    timer.stop_timer();
-
-    std::cerr << "Time taken for reading slice by slice from CASA image: " << timer.time_elapsed() << " us" << std::endl;
 
     return 0;
 }

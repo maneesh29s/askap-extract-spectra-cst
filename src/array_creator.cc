@@ -1,11 +1,16 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <string>
+
+#include "helper.hpp"
 
 int main(int argc, char const *argv[])
 {
-    std::ofstream writer;
-    writer.open("data/test_array_data.dat");
+    std::string dataFileName = "data/test_casa_data.FITS";
+    float offset = -5.0f;
+    float range = 10.0f;
+
 
     if (argc < 2)
     {
@@ -15,41 +20,21 @@ int main(int argc, char const *argv[])
 
     size_t naxes = argc-1;
     std::cout << "naxes: " << naxes << std::endl;
-    writer.write((char *)&naxes, sizeof(size_t));
 
     std::vector<size_t> naxis(naxes);
     for (size_t i = 0; i < naxes; i++)
     {
         naxis[i] = static_cast<size_t>(atoi(argv[i+1]));
-        std::cout << "naxis" << i << ": " << naxis[i] << std::endl;
-        writer.write((char *)&naxis[i], sizeof(size_t));
+        std::cout << "naxis" << i << ": " << naxis[i] << " ";
     }
+    std::cout << std::endl;
 
-    size_t totpix = 1;
-    for (int i = 0; i < naxes; i++)
-    {
-        totpix *= naxis[i];
-    }
+    std::vector<float> arr = generateRandomData(naxis, range, offset);
+    std::cout << "Array generation done" << std::endl;
 
-    time_t seed = time(0);
-    std::cout << "Seed: " << seed << std::endl;
-    srand(seed);
 
-    std::cout << "Array dim : " << totpix << std::endl;
-
-    float offset = -5.0f;
-    float range = 5.0f;
-    float temp;
-    for (size_t i = 0; i < totpix; i++)
-    {
-        temp = offset + range * (rand() / (float)RAND_MAX);
-
-        writer.write((char *)&temp, sizeof(float));
-    }
-
-    std::cout << "Array creation done" << std::endl;
-
-    writer.close();
+    writeDataCasa(naxis, arr, dataFileName);
+    std::cout << "Array writen to " << dataFileName << std::endl;
 
     return 0;
 }
