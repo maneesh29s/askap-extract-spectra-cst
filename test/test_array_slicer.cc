@@ -10,70 +10,78 @@
 #include "CasaImageAccess.h"
 #include "helper.h"
 
-static void writeDataBinary(const std::vector<size_t> &naxis){
+static void generateSequentialData(const std::vector<size_t> &naxis, std::vector<float> &arr, float start)
+{
+    for (size_t i = 0; i < arr.size(); i++)
+    {
+        // logic
+        arr[i] = start + (float)i;
+    }
+}
+
+static void generateRandomData(const std::vector<size_t> &naxis, std::vector<float> &arr, float range, float offset)
+{
+    time_t seed = time(0);
+    srand(seed);
+
+    for (size_t i = 0; i < arr.size(); i++)
+    {
+        arr[i] = offset + range * (rand() / (float)RAND_MAX);
+    }
+}
+
+static void writeDataBinary(const std::vector<size_t> &naxis, const std::vector<float> &arr)
+{
     std::ofstream writer;
     writer.open("test/test_array_data.dat");
-    
-    size_t naxes = naxis.size();
 
-    // std::cout << "naxes: " << naxes << std::endl;
+    size_t naxes = naxis.size();
     writer.write((char *)&naxes, sizeof(size_t));
 
     for (size_t i = 0; i < naxes; i++)
     {
-        // std::cout << "naxis" << i << ": " << naxis[i] << std::endl;
         writer.write((char *)&naxis[i], sizeof(size_t));
     }
 
-    size_t totpix = 1;
-    for (size_t i = 0; i < naxes; i++)
+    for (size_t i = 0; i < arr.size(); i++)
     {
-        totpix *= naxis[i];
+        writer.write((char *)&arr[i], sizeof(float));
     }
-
-    time_t seed = time(0);
-    // std::cout << "Seed: " << seed << std::endl;
-    srand(seed);
-
-    // std::cout << "Array dim : " << totpix << std::endl;
-
-    float temp;
-    for (size_t i = 0; i < totpix; i++)
-    {
-        temp = i + 100;
-        writer.write((char *)&temp, sizeof(float));
-    }
-
-    std::cout << "Array creation done" << std::endl;
 
     writer.close();
 }
 
-static void writeData(const std::vector<size_t> &naxis)
+static void writeDataCasa(const std::vector<size_t> &naxis, const std::vector<float> &inputArr)
 {
     size_t naxes = naxis.size();
-    
-    size_t totpix = 1;
-    for (int i = 0; i < naxes; i++)
+
+    if (naxes != 4)
     {
-        totpix *= naxis[i];
+        std::cerr << "This application requires a 4D array.";
+        exit(1);
     }
 
-    time_t seed = time(0);
-    // std::cout << "Seed: " << seed << std::endl;
-    srand(seed);
+    casacore::IPosition arrSize(naxes);
+    for (size_t i = 0; i < naxes; i++)
+    {
+        arrSize(i) = naxis[i];
+    }
 
-    // std::cout << "Array dim : " << totpix << std::endl;
-
-    casacore::IPosition arrSize(naxes, naxis[0], naxis[1], naxis[2], naxis[3]);
     casacore::Array<casacore::Float> arr(arrSize);
+
+    // this writes data in column-major format. Not as expected
+    // for (size_t i = 0; i < inputArr.size(); i++)
+    // {
+    //     casacore::IPosition currentPos = casacore::toIPositionInArray(i,arr.shape());
+    //     arr(currentPos) = inputArr[i];
+    // }
 
     for (size_t row = 0; row < naxis[0]; row++)
     {
         for (size_t col = 0; col < naxis[1]; col++)
         {
             casacore::IPosition currentPos(naxes, row, col, 0, 0);
-            arr(currentPos) = row * naxis[1] + col + 100;
+            arr(currentPos) = inputArr[row * naxis[1] + col];
         }
     }
 
@@ -84,11 +92,10 @@ static void writeData(const std::vector<size_t> &naxis)
 
     // write the array
     accessor.write("test/casa_test_image.FITS", arr);
-
-    std::cout << "Array creation done" << std::endl;
 }
 
-static void readDataBinary(){
+static void readDataBinary()
+{
     Json::Reader jsonReader; // for reading the data
     Json::Value root;        // for modifying and storing new values
 
@@ -186,7 +193,7 @@ static void readDataBinary(){
     jsonFile.close();
 }
 
-static void readData()
+static void readDataCasa()
 {
 
     Json::Reader jsonReader; // for reading the data
@@ -270,7 +277,7 @@ static void readData()
     jsonFile.close();
 }
 
-static void readDataSliced()
+static void readDataSlicedCasa()
 {
     Json::Reader jsonReader; // for reading the data
     Json::Value root;        // for modifying and storing new values
@@ -311,7 +318,7 @@ static void readDataSliced()
         casacore::IPosition blc(slicerBegin);
         casacore::IPosition trc(slicerEnd);
 
-        casacore::Array<casacore::Float> output = accessor.read("test/casa_test_image.FITS",blc,trc);
+        casacore::Array<casacore::Float> output = accessor.read("test/casa_test_image.FITS", blc, trc);
 
         std::cout << "Sliced array dimensions :" << std::endl;
         std::cout << "numelements : " << output.size() << std::endl;
@@ -340,30 +347,36 @@ int main(int argc, char const *argv[])
 {
     // size_t naxes = 4;
     std::vector<size_t> naxis{10, 10, 1, 1};
-
     Timer timer;
 
-    writeDataBinary(naxis);
+    size_t totpix = 1;
+    for (size_t i = 0; i < naxis.size(); i++) totpix *= naxis[i];
+
+    std::vector<float> arr(totpix);
+
+    generateSequentialData(naxis, arr, 100.0f);
+    // generateRandomData(naxis, arr, 10.0f , -5.0f);
+
+    writeDataBinary(naxis , arr);
     readDataBinary();
 
-
     timer.start_timer();
-    writeData(naxis);
+    writeDataCasa(naxis , arr);
     timer.stop_timer();
 
-    std::cerr << "Time taken for writing: " << timer.time_elapsed() << " us" << std::endl;
+    std::cerr << "Time taken for writing to CASA image: " << timer.time_elapsed() << " us" << std::endl;
 
     timer.start_timer();
-    readData();
+    readDataCasa();
     timer.stop_timer();
 
-    std::cerr << "Time taken for reading whole data: " << timer.time_elapsed() << " us" << std::endl;
+    std::cerr << "Time taken for reading whole data from CASA image: " << timer.time_elapsed() << " us" << std::endl;
 
     timer.start_timer();
-    readDataSliced();
+    readDataSlicedCasa();
     timer.stop_timer();
 
-    std::cerr << "Time taken for reading slice by slice: " << timer.time_elapsed() << " us" << std::endl;
+    std::cerr << "Time taken for reading slice by slice from CASA image: " << timer.time_elapsed() << " us" << std::endl;
 
     return 0;
 }
