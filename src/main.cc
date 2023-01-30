@@ -31,13 +31,13 @@ int main(int argc, char const *argv[])
     std::string jsonFilePath = argv[1];
     
     timer.start_timer();
-    readDataCasa(casaFilePath, jsonFilePath, outputDirPathForSingleRead);
+    extractSourcesWithSingleRead(casaFilePath, jsonFilePath, outputDirPathForSingleRead);
     timer.stop_timer();
 
     std::cout << "Time elapsed for whole CASA read at once " << timer.time_elapsed() << " us" << std::endl;
 
     timer.start_timer();
-    readDataSlicedCasa(casaFilePath, jsonFilePath, outputDirPathForSlicedRead);
+    extractSourcesWithSlicedReads(casaFilePath, jsonFilePath, outputDirPathForSlicedRead);
     timer.stop_timer();
 
     std::cout << "Time elapsed for slice by slice CASA read " << timer.time_elapsed() << " us" << std::endl;

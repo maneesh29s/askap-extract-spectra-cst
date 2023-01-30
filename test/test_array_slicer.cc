@@ -165,7 +165,7 @@ static void readDataBinary()
     jsonFile.close();
 }
 
-static void readDataCasa()
+static void extractSourcesWithSingleRead()
 {
     Json::Reader jsonReader; // for reading the data
     Json::Value root;        // for modifying and storing new values
@@ -193,7 +193,7 @@ static void readDataCasa()
     const casacore::IPosition naxis = arr.shape();
 
     std::cout << "------------------------------------------" << std::endl;
-    std::cout << "readDataCasa() " << std::endl
+    std::cout << "extractSourcesWithSingleRead() " << std::endl
               << std::endl;
 
     std::cout << "Original CASA Array" << std::endl;
@@ -264,7 +264,7 @@ static void readDataCasa()
     jsonFile.close();
 }
 
-static void readDataSlicedCasa()
+static void extractSourcesWithSlicedReads()
 {
     Json::Reader jsonReader; // for reading the data
     Json::Value root;        // for modifying and storing new values
@@ -349,8 +349,8 @@ int main(int argc, char const *argv[])
     readDataBinary();
 
     writeDataCasa(naxis, arr);
-    readDataCasa();
-    readDataSlicedCasa();
+    extractSourcesWithSingleRead();
+    extractSourcesWithSlicedReads();
 
     return 0;
 }

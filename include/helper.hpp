@@ -176,7 +176,7 @@ void readDataBinary(const std::string &binaryDataFilePath, const std::string &js
   jsonFile.close();
 }
 
-void readDataCasa(const std::string &casaFilePath, const std::string &jsonFilePath, std::string &outputDirPath)
+void extractSourcesWithSingleRead(const std::string &casaFilePath, const std::string &jsonFilePath, std::string &outputDirPath)
 {
   Json::Reader jsonReader; // for reading the data
   Json::Value root;        // for modifying and storing new values
@@ -241,7 +241,7 @@ void readDataCasa(const std::string &casaFilePath, const std::string &jsonFilePa
   jsonFile.close();
 }
 
-void readDataSlicedCasa(const std::string &casaFilePath, const std::string &jsonFilePath, std::string &outputDirPath)
+void extractSourcesWithSlicedReads(const std::string &casaFilePath, const std::string &jsonFilePath, std::string &outputDirPath)
 {
   Json::Reader jsonReader; // for reading the data
   Json::Value root;        // for modifying and storing new values
