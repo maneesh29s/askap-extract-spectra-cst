@@ -9,25 +9,7 @@
 
 #include "CasaImageAccess.h"
 
-static void generateSequentialData(const std::vector<size_t> &naxis, std::vector<float> &arr, float start)
-{
-    for (size_t i = 0; i < arr.size(); i++)
-    {
-        // logic
-        arr[i] = start + (float)i;
-    }
-}
-
-static void generateRandomData(const std::vector<size_t> &naxis, std::vector<float> &arr, float range, float offset)
-{
-    time_t seed = time(0);
-    srand(seed);
-
-    for (size_t i = 0; i < arr.size(); i++)
-    {
-        arr[i] = offset + range * (rand() / (float)RAND_MAX);
-    }
-}
+#include "helper.hpp"
 
 static void writeDataBinary(const std::vector<size_t> &naxis, const std::vector<float> &arr)
 {
@@ -68,20 +50,10 @@ static void writeDataCasa(const std::vector<size_t> &naxis, const std::vector<fl
 
     casacore::Array<casacore::Float> arr(arrSize);
 
-    // this writes data in column-major format. Not as expected
-    // for (size_t i = 0; i < inputArr.size(); i++)
-    // {
-    //     casacore::IPosition currentPos = casacore::toIPositionInArray(i,arr.shape());
-    //     arr(currentPos) = inputArr[i];
-    // }
-
-    for (size_t row = 0; row < naxis[0]; row++)
+    for (size_t i = 0; i < inputArr.size(); i++)
     {
-        for (size_t col = 0; col < naxis[1]; col++)
-        {
-            casacore::IPosition currentPos(naxes, row, col, 0, 0);
-            arr(currentPos) = inputArr[row * naxis[1] + col];
-        }
+        casacore::IPosition currentPos = casacore::toIPositionInArray(i, arr.shape());
+        arr(currentPos) = inputArr[i];
     }
 
     askap::accessors::CasaImageAccess<casacore::Float> accessor;
@@ -110,13 +82,15 @@ static void readDataBinary()
         exit(1);
     }
 
+    std::cout << "readDataBinary()" << std::endl << std::endl;
+
     size_t naxes;
     dataFile.read((char *)&naxes, sizeof(size_t));
 
     // for current application, naxes must be 4
     if (naxes != 4)
     {
-        std::cerr << "This application requires a 4D array. Please recreate array using array_creator.";
+        std::cerr << "This application requires a 4D array";
         exit(1);
     }
 
@@ -133,16 +107,16 @@ static void readDataBinary()
 
     std::cout << "Original Array" << std::endl;
     float value;
-    for (size_t row = 0; row < naxis[0]; row++)
+    for (size_t i = 0; i < arr.size(); i++)
     {
-        for (size_t col = 0; col < naxis[1]; col++)
+        casacore::IPosition currentPos = casacore::toIPositionInArray(i, arr.shape());
+        dataFile.read((char *)&value, sizeof(float));
+        std::cout << value << " ";
+        arr(currentPos) = value;
+        if ((i + 1) % naxis[1] == 0)
         {
-            casacore::IPosition currentPos(naxes, row, col, 0, 0);
-            dataFile.read((char *)&value, sizeof(float));
-            std::cout << value << " ";
-            arr(currentPos) = value;
+            std::cout << std::endl;
         }
-        std::cout << std::endl;
     }
     std::cout << std::endl;
 
@@ -169,21 +143,20 @@ static void readDataBinary()
         casacore::Slicer slicer = casacore::Slicer(blc, trc, casacore::Slicer::endIsLast);
         casacore::Array<casacore::Float> output = arr(slicer);
 
-        std::cout << "Sliced array dimensions :" << std::endl;
+        std::cout << "Sliced array " << i << " dimensions :" << std::endl;
         std::cout << "numelements : " << output.size() << std::endl;
         std::cout << "numdimensions : " << output.ndim() << std::endl;
         std::cout << "sourceID : " << sourceID << std::endl;
-        std::cout << std::endl;
 
-        std::cout << "Sliced Array" << std::endl;
-        for (size_t row = 0; row < output.shape()(0); row++)
+        std::cout << "Sliced Array " << i << std::endl;
+        for (size_t j = 0; j < output.size(); j++)
         {
-            for (size_t col = 0; col < output.shape()(1); col++)
+            casacore::IPosition currentPos = casacore::toIPositionInArray(j, output.shape());
+            std::cout << output(currentPos) << " ";
+            if ((j + 1) % output.shape()[1] == 0)
             {
-                casacore::IPosition currentPos(naxes, row, col, 0, 0);
-                std::cout << output(currentPos) << " ";
+                std::cout << std::endl;
             }
-            std::cout << std::endl;
         }
         std::cout << std::endl;
     }
@@ -194,7 +167,6 @@ static void readDataBinary()
 
 static void readDataCasa()
 {
-
     Json::Reader jsonReader; // for reading the data
     Json::Value root;        // for modifying and storing new values
 
@@ -205,14 +177,14 @@ static void readDataCasa()
     casacore::Array<casacore::Float> arr;
 
     askap::accessors::CasaImageAccess<casacore::Float> accessor;
-
     arr = accessor.read("test/casa_test_image.FITS");
+
     const int naxes = arr.ndim();
     if (naxes != 4)
-  {
-    std::cerr << "This application requires a 4D array. Please recreate array using array_creator.";
-    exit(1);
-  }
+    {
+        std::cerr << "This application requires a 4D array";
+        exit(1);
+    }
     const casacore::IPosition naxis = arr.shape();
 
     // check if there is any error is getting data from the json jsonFile
@@ -222,17 +194,20 @@ static void readDataCasa()
         exit(1);
     }
 
+    std::cout << "------------------------------------------" << std::endl;
+    std::cout << "readDataCasa() " << std::endl
+              << std::endl;
+
     std::cout << "Original Array" << std::endl;
     float value;
-    for (size_t row = 0; row < naxis(0); row++)
+    for (size_t i = 0; i < arr.size(); i++)
     {
-        for (size_t col = 0; col < naxis(1); col++)
+        casacore::IPosition currentPos = casacore::toIPositionInArray(i, arr.shape());
+        std::cout << arr(currentPos) << " ";
+        if ((i + 1) % naxis[1] == 0)
         {
-            casacore::IPosition currentPos(4, row, col, 0, 0);
-
-            std::cout << arr(currentPos) << " ";
+            std::cout << std::endl;
         }
-        std::cout << std::endl;
     }
     std::cout << std::endl;
 
@@ -259,25 +234,23 @@ static void readDataCasa()
         casacore::Slicer slicer = casacore::Slicer(blc, trc, casacore::Slicer::endIsLast);
         casacore::Array<casacore::Float> output = arr(slicer);
 
-        std::cout << "Sliced array dimensions :" << std::endl;
+        std::cout << "Sliced array " << i << " dimensions :" << std::endl;
         std::cout << "numelements : " << output.size() << std::endl;
         std::cout << "numdimensions : " << output.ndim() << std::endl;
         std::cout << "sourceID : " << sourceID << std::endl;
-        std::cout << std::endl;
 
-        std::cout << "Sliced Array" << std::endl;
-        for (size_t row = 0; row < output.shape()(0); row++)
+        std::cout << "Sliced Array " << i << std::endl;
+        for (size_t j = 0; j < output.size(); j++)
         {
-            for (size_t col = 0; col < output.shape()(1); col++)
+            casacore::IPosition currentPos = casacore::toIPositionInArray(j, output.shape());
+            std::cout << output(currentPos) << " ";
+            if ((j + 1) % output.shape()[1] == 0)
             {
-                casacore::IPosition currentPos(4, row, col, 0, 0);
-                std::cout << output(currentPos) << " ";
+                std::cout << std::endl;
             }
-            std::cout << std::endl;
         }
         std::cout << std::endl;
     }
-
     jsonFile.close();
 }
 
@@ -300,7 +273,16 @@ static void readDataSlicedCasa()
 
     casacore::PagedImage<casacore::Float> img("test/casa_test_image.FITS");
     const int naxes = img.ndim();
+    if (naxes != 4)
+    {
+        std::cerr << "This application requires a 4D array";
+        exit(1);
+    }
     const casacore::IPosition naxis = img.shape();
+
+    std::cout << "------------------------------------------" << std::endl;
+    std::cout << "ReadDataSlicedCasa() " << std::endl
+              << std::endl;
 
     for (Json::Value::ArrayIndex i = 0; i != root.size(); i++)
     {
@@ -324,50 +306,40 @@ static void readDataSlicedCasa()
 
         casacore::Array<casacore::Float> output = accessor.read("test/casa_test_image.FITS", blc, trc);
 
-        std::cout << "Sliced array dimensions :" << std::endl;
+        std::cout << "Sliced array " << i << " dimensions :" << std::endl;
         std::cout << "numelements : " << output.size() << std::endl;
         std::cout << "numdimensions : " << output.ndim() << std::endl;
         std::cout << "sourceID : " << sourceID << std::endl;
-        std::cout << std::endl;
 
-        std::cout << "Sliced Array" << std::endl;
-        for (size_t row = 0; row < output.shape()(0); row++)
+        std::cout << "Sliced Array " << i << std::endl;
+        for (size_t j = 0; j < output.size(); j++)
         {
-            for (size_t col = 0; col < output.shape()(1); col++)
+            casacore::IPosition currentPos = casacore::toIPositionInArray(j, output.shape());
+            std::cout << output(currentPos) << " ";
+            if ((j + 1) % output.shape()[1] == 0)
             {
-                casacore::IPosition currentPos(4, row, col, 0, 0);
-                std::cout << output(currentPos) << " ";
+                std::cout << std::endl;
             }
-            std::cout << std::endl;
         }
         std::cout << std::endl;
     }
 
-    // dataFile.close();
     jsonFile.close();
 }
 
 int main(int argc, char const *argv[])
 {
     // size_t naxes = 4;
-    std::vector<size_t> naxis{10, 10, 1, 1};
+    std::vector<size_t> naxis{12, 12, 1, 1};
 
-    size_t totpix = 1;
-    for (size_t i = 0; i < naxis.size(); i++)
-        totpix *= naxis[i];
-
-    std::vector<float> arr(totpix);
-
-    generateSequentialData(naxis, arr, 100.0f);
-    // generateRandomData(naxis, arr, 10.0f , -5.0f);
+    std::vector<float> arr = generateSequentialData(naxis, 100.0f);
+    // std::vector<float> arr = generateRandomData(naxis, 10.0f , -5.0f);
 
     writeDataBinary(naxis, arr);
     readDataBinary();
 
     writeDataCasa(naxis, arr);
-
     readDataCasa();
-
     readDataSlicedCasa();
 
     return 0;

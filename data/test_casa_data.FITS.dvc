@@ -1,5 +1,5 @@
 outs:
-- md5: 344ff928b0ff2800c28808755d28e532.dir
+- md5: f2eccb675b79fb794b4716f5185a8640.dir
   size: 784042127
   nfiles: 9
   path: test_casa_data.FITS

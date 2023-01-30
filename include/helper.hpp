@@ -87,13 +87,10 @@ void writeDataCasa(const std::vector<size_t> &naxis, const std::vector<float> &i
 
   casacore::Array<casacore::Float> arr(arrSize);
 
-  for (size_t row = 0; row < naxis[0]; row++)
+  for (size_t i = 0; i < inputArr.size(); i++)
   {
-    for (size_t col = 0; col < naxis[1]; col++)
-    {
-      casacore::IPosition currentPos(naxes, row, col, 0, 0);
-      arr(currentPos) = inputArr[row * naxis[1] + col];
-    }
+    casacore::IPosition currentPos = casacore::toIPositionInArray(i, arr.shape());
+    arr(currentPos) = inputArr[i];
   }
 
   askap::accessors::CasaImageAccess<casacore::Float> accessor;
@@ -144,14 +141,11 @@ void readDataBinary(const std::string &dataFileName, const std::string &jsonFile
   casacore::Array<casacore::Float> arr(arrSize);
 
   float value;
-  for (size_t row = 0; row < naxis[0]; row++)
+  for (size_t i = 0; i < arr.size(); i++)
   {
-    for (size_t col = 0; col < naxis[1]; col++)
-    {
-      casacore::IPosition currentPos(naxes, row, col, 0, 0);
-      dataFile.read((char *)&value, sizeof(float));
-      arr(currentPos) = value;
-    }
+    casacore::IPosition currentPos = casacore::toIPositionInArray(i, arr.shape());
+    dataFile.read((char *)&value, sizeof(float));
+    arr(currentPos) = value;
   }
 
   for (Json::Value::ArrayIndex i = 0; i != root.size(); i++)
@@ -176,14 +170,6 @@ void readDataBinary(const std::string &dataFileName, const std::string &jsonFile
 
     casacore::Slicer slicer = casacore::Slicer(blc, trc, casacore::Slicer::endIsLast);
     casacore::Array<casacore::Float> output = arr(slicer);
-
-    for (size_t row = 0; row < output.shape()(0); row++)
-    {
-      for (size_t col = 0; col < output.shape()(1); col++)
-      {
-        casacore::IPosition currentPos(naxes, row, col, 0, 0);
-      }
-    }
   }
 
   dataFile.close();
@@ -192,28 +178,11 @@ void readDataBinary(const std::string &dataFileName, const std::string &jsonFile
 
 void readDataCasa(const std::string &casaFileName, const std::string &jsonFileName)
 {
-
   Json::Reader jsonReader; // for reading the data
   Json::Value root;        // for modifying and storing new values
 
   std::ifstream jsonFile;
   jsonFile.open(jsonFileName);
-
-  // reading whole data
-  casacore::Array<casacore::Float> arr;
-
-  askap::accessors::CasaImageAccess<casacore::Float> accessor;
-  arr = accessor.read(casaFileName);
-
-  const int naxes = arr.ndim();
-  if (naxes != 4)
-  {
-    std::cerr << "This application requires a 4D array. Please recreate array using array_creator.";
-    exit(1);
-  }
-
-  const casacore::IPosition naxis = arr.shape();
-
   // check if there is any error is getting data from the json jsonFile
   if (!jsonReader.parse(jsonFile, root, false))
   {
@@ -221,14 +190,17 @@ void readDataCasa(const std::string &casaFileName, const std::string &jsonFileNa
     exit(1);
   }
 
-  float value;
-  for (size_t row = 0; row < naxis(0); row++)
+  // reading whole data
+  casacore::Array<casacore::Float> arr;
+  askap::accessors::CasaImageAccess<casacore::Float> accessor;
+  arr = accessor.read(casaFileName);
+  const int naxes = arr.ndim();
+  if (naxes != 4)
   {
-    for (size_t col = 0; col < naxis(1); col++)
-    {
-      casacore::IPosition currentPos(4, row, col, 0, 0);
-    }
+    std::cerr << "This application requires a 4D array. Please recreate array using array_creator.";
+    exit(1);
   }
+  const casacore::IPosition naxis = arr.shape();
 
   for (Json::Value::ArrayIndex i = 0; i != root.size(); i++)
   {
@@ -252,16 +224,7 @@ void readDataCasa(const std::string &casaFileName, const std::string &jsonFileNa
 
     casacore::Slicer slicer = casacore::Slicer(blc, trc, casacore::Slicer::endIsLast);
     casacore::Array<casacore::Float> output = arr(slicer);
-
-    for (size_t row = 0; row < output.shape()(0); row++)
-    {
-      for (size_t col = 0; col < output.shape()(1); col++)
-      {
-        casacore::IPosition currentPos(4, row, col, 0, 0);
-      }
-    }
   }
-
   jsonFile.close();
 }
 
@@ -272,7 +235,6 @@ void readDataSlicedCasa(const std::string &casaFileName, const std::string &json
 
   std::ifstream jsonFile;
   jsonFile.open(jsonFileName);
-
   // check if there is any error is getting data from the json jsonFile
   if (!jsonReader.parse(jsonFile, root, false))
   {
@@ -281,7 +243,7 @@ void readDataSlicedCasa(const std::string &casaFileName, const std::string &json
   }
 
   askap::accessors::CasaImageAccess<casacore::Float> accessor;
-
+  // getting image dimensions using PagedImage
   casacore::PagedImage<casacore::Float> img(casaFileName);
   const int naxes = img.ndim();
   if (naxes != 4)
@@ -289,7 +251,6 @@ void readDataSlicedCasa(const std::string &casaFileName, const std::string &json
     std::cerr << "This application requires a 4D array. Please recreate array using array_creator.";
     exit(1);
   }
-
   const casacore::IPosition naxis = img.shape();
 
   for (Json::Value::ArrayIndex i = 0; i != root.size(); i++)
@@ -313,17 +274,8 @@ void readDataSlicedCasa(const std::string &casaFileName, const std::string &json
     casacore::IPosition trc(slicerEnd);
 
     casacore::Array<casacore::Float> output = accessor.read(casaFileName, blc, trc);
-
-    for (size_t row = 0; row < output.shape()(0); row++)
-    {
-      for (size_t col = 0; col < output.shape()(1); col++)
-      {
-        casacore::IPosition currentPos(4, row, col, 0, 0);
-      }
-    }
   }
 
-  // dataFile.close();
   jsonFile.close();
 }
 

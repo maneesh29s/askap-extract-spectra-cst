@@ -16,7 +16,7 @@ fileignoreconfig:
 - filename: data/test_array_data.dat.dvc
   checksum: 57cf6efa6daad82eb61c8ed4ad2fd3e2bc1965d0c59e878c2d02da0e78861479
 - filename: data/test_casa_data.FITS.dvc
-  checksum: 5461b0f9d4375df5c56091c2955b566ac1831d25410439cbfb4ebde5d2116b70
+  checksum: c737eeaeddd92ba7b6ab43ef52182a5a3bc7b9cbac2e93194d87de103d04608a
 - filename: include/CasaImageAccess.h
   checksum: fafcdf918d141e24354a11848812882b7f936171053258d10b27d8ccc6ff9cb3
 - filename: include/CasaImageAccess.tcc
