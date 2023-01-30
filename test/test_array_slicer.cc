@@ -59,10 +59,10 @@ static void writeDataCasa(const std::vector<size_t> &naxis, const std::vector<fl
     askap::accessors::CasaImageAccess<casacore::Float> accessor;
 
     // create casa fits file
-    accessor.create("test/casa_test_image.FITS", arr.shape(), casacore::CoordinateUtil::defaultCoords4D());
+    accessor.create("test/test_casa_array", arr.shape(), casacore::CoordinateUtil::defaultCoords4D());
 
     // write the array
-    accessor.write("test/casa_test_image.FITS", arr);
+    accessor.write("test/test_casa_array", arr);
 }
 
 static void readDataBinary()
@@ -172,12 +172,17 @@ static void readDataCasa()
 
     std::ifstream jsonFile;
     jsonFile.open("test/test_log.json");
+    // check if there is any error is getting data from the json jsonFile
+    if (!jsonReader.parse(jsonFile, root, false))
+    {
+        std::cerr << jsonReader.getFormattedErrorMessages();
+        exit(1);
+    }
 
     // reading whole data
     casacore::Array<casacore::Float> arr;
-
     askap::accessors::CasaImageAccess<casacore::Float> accessor;
-    arr = accessor.read("test/casa_test_image.FITS");
+    arr = accessor.read("test/test_casa_array");
 
     const int naxes = arr.ndim();
     if (naxes != 4)
@@ -187,23 +192,28 @@ static void readDataCasa()
     }
     const casacore::IPosition naxis = arr.shape();
 
-    // check if there is any error is getting data from the json jsonFile
-    if (!jsonReader.parse(jsonFile, root, false))
-    {
-        std::cerr << jsonReader.getFormattedErrorMessages();
-        exit(1);
-    }
-
     std::cout << "------------------------------------------" << std::endl;
     std::cout << "readDataCasa() " << std::endl
               << std::endl;
 
-    std::cout << "Original Array" << std::endl;
-    float value;
+    std::cout << "Original CASA Array" << std::endl;
     for (size_t i = 0; i < arr.size(); i++)
     {
         casacore::IPosition currentPos = casacore::toIPositionInArray(i, arr.shape());
         std::cout << arr(currentPos) << " ";
+        if ((i + 1) % naxis[1] == 0)
+        {
+            std::cout << std::endl;
+        }
+    }
+    std::cout << std::endl;
+
+    std::vector<float> vec;
+    arr.tovector(vec);
+    std::cout << "Vectorised Array" << std::endl;
+    for (size_t i = 0; i < vec.size(); i++)
+    {
+        std::cout << vec[i] << " ";
         if ((i + 1) % naxis[1] == 0)
         {
             std::cout << std::endl;
@@ -271,7 +281,7 @@ static void readDataSlicedCasa()
 
     askap::accessors::CasaImageAccess<casacore::Float> accessor;
 
-    casacore::PagedImage<casacore::Float> img("test/casa_test_image.FITS");
+    casacore::PagedImage<casacore::Float> img("test/test_casa_array");
     const int naxes = img.ndim();
     if (naxes != 4)
     {
@@ -304,7 +314,7 @@ static void readDataSlicedCasa()
         casacore::IPosition blc(slicerBegin);
         casacore::IPosition trc(slicerEnd);
 
-        casacore::Array<casacore::Float> output = accessor.read("test/casa_test_image.FITS", blc, trc);
+        casacore::Array<casacore::Float> output = accessor.read("test/test_casa_array", blc, trc);
 
         std::cout << "Sliced array " << i << " dimensions :" << std::endl;
         std::cout << "numelements : " << output.size() << std::endl;
@@ -330,7 +340,7 @@ static void readDataSlicedCasa()
 int main(int argc, char const *argv[])
 {
     // size_t naxes = 4;
-    std::vector<size_t> naxis{12, 12, 1, 1};
+    std::vector<size_t> naxis{9, 12, 1, 1};
 
     std::vector<float> arr = generateSequentialData(naxis, 100.0f);
     // std::vector<float> arr = generateRandomData(naxis, 10.0f , -5.0f);

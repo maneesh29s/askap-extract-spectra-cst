@@ -3,14 +3,17 @@
 #include <fstream>
 #include <string>
 
+#include <sys/stat.h>
+
 #include "helper.hpp"
 
 int main(int argc, char const *argv[])
 {
-    std::string dataFileName = "data/test_casa_data.FITS";
     float offset = -5.0f;
     float range = 10.0f;
 
+    std::string dataFileName = "test_data/dummy_casa_image";
+    int status = mkdir("test_data", 0700);
 
     if (argc < 2)
     {

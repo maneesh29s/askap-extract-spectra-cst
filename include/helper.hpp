@@ -95,22 +95,22 @@ void writeDataCasa(const std::vector<size_t> &naxis, const std::vector<float> &i
 
   askap::accessors::CasaImageAccess<casacore::Float> accessor;
 
-  // create casa fits file
+  // create casa file
   accessor.create(filename, arr.shape(), casacore::CoordinateUtil::defaultCoords4D());
 
   // write the array
   accessor.write(filename, arr);
 }
 
-void readDataBinary(const std::string &dataFileName, const std::string &jsonFileName)
+void readDataBinary(const std::string &binaryDataFilePath, const std::string &jsonFilePath)
 {
   Json::Reader jsonReader; // for reading the data
   Json::Value root;        // for modifying and storing new values
 
   std::ifstream dataFile;
-  dataFile.open(dataFileName);
+  dataFile.open(binaryDataFilePath);
   std::ifstream jsonFile;
-  jsonFile.open(jsonFileName);
+  jsonFile.open(jsonFilePath);
 
   // check if there is any error is getting data from the json jsonFile
   if (!jsonReader.parse(jsonFile, root, false))
@@ -176,13 +176,13 @@ void readDataBinary(const std::string &dataFileName, const std::string &jsonFile
   jsonFile.close();
 }
 
-void readDataCasa(const std::string &casaFileName, const std::string &jsonFileName)
+void readDataCasa(const std::string &casaFilePath, const std::string &jsonFilePath, std::string &outputDirPath)
 {
   Json::Reader jsonReader; // for reading the data
   Json::Value root;        // for modifying and storing new values
 
   std::ifstream jsonFile;
-  jsonFile.open(jsonFileName);
+  jsonFile.open(jsonFilePath);
   // check if there is any error is getting data from the json jsonFile
   if (!jsonReader.parse(jsonFile, root, false))
   {
@@ -190,10 +190,16 @@ void readDataCasa(const std::string &casaFileName, const std::string &jsonFileNa
     exit(1);
   }
 
+  // checking outputDirPath
+  if (outputDirPath.back() != '/')
+  {
+    outputDirPath.append("/");
+  }
+
   // reading whole data
   casacore::Array<casacore::Float> arr;
   askap::accessors::CasaImageAccess<casacore::Float> accessor;
-  arr = accessor.read(casaFileName);
+  arr = accessor.read(casaFilePath);
   const int naxes = arr.ndim();
   if (naxes != 4)
   {
@@ -224,17 +230,24 @@ void readDataCasa(const std::string &casaFileName, const std::string &jsonFileNa
 
     casacore::Slicer slicer = casacore::Slicer(blc, trc, casacore::Slicer::endIsLast);
     casacore::Array<casacore::Float> output = arr(slicer);
+
+    std::string outFileName = outputDirPath + "Image_" + std::to_string(sourceID);
+    // create casa file
+    accessor.create(outFileName, output.shape(), casacore::CoordinateUtil::defaultCoords4D());
+
+    // write the array
+    accessor.write(outFileName, output);
   }
   jsonFile.close();
 }
 
-void readDataSlicedCasa(const std::string &casaFileName, const std::string &jsonFileName)
+void readDataSlicedCasa(const std::string &casaFilePath, const std::string &jsonFilePath, std::string &outputDirPath)
 {
   Json::Reader jsonReader; // for reading the data
   Json::Value root;        // for modifying and storing new values
 
   std::ifstream jsonFile;
-  jsonFile.open(jsonFileName);
+  jsonFile.open(jsonFilePath);
   // check if there is any error is getting data from the json jsonFile
   if (!jsonReader.parse(jsonFile, root, false))
   {
@@ -242,9 +255,15 @@ void readDataSlicedCasa(const std::string &casaFileName, const std::string &json
     exit(1);
   }
 
+  // checking outputDirPath
+  if (outputDirPath.back() != '/')
+  {
+    outputDirPath.append("/");
+  }
+
   askap::accessors::CasaImageAccess<casacore::Float> accessor;
   // getting image dimensions using PagedImage
-  casacore::PagedImage<casacore::Float> img(casaFileName);
+  casacore::PagedImage<casacore::Float> img(casaFilePath);
   const int naxes = img.ndim();
   if (naxes != 4)
   {
@@ -273,7 +292,14 @@ void readDataSlicedCasa(const std::string &casaFileName, const std::string &json
     casacore::IPosition blc(slicerBegin);
     casacore::IPosition trc(slicerEnd);
 
-    casacore::Array<casacore::Float> output = accessor.read(casaFileName, blc, trc);
+    casacore::Array<casacore::Float> output = accessor.read(casaFilePath, blc, trc);
+
+    std::string outFileName = outputDirPath + "Image_" + std::to_string(sourceID);
+    // create casa file
+    accessor.create(outFileName, output.shape(), casacore::CoordinateUtil::defaultCoords4D());
+
+    // write the array
+    accessor.write(outFileName, output);
   }
 
   jsonFile.close();
