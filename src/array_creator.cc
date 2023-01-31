@@ -2,9 +2,10 @@
 #include <vector>
 #include <fstream>
 #include <string>
-
 #include <sys/stat.h>
 
+#include "CasaImageAccess.h"
+#include "FitsImageAccess.h"
 #include "helper.hpp"
 
 int main(int argc, char const *argv[])
@@ -12,7 +13,13 @@ int main(int argc, char const *argv[])
     float offset = -5.0f;
     float range = 10.0f;
 
-    std::string dataFileName = "test_data/dummy_casa_image";
+    // std::string image="fits";
+    // askap::accessors::FitsImageAccess accessor;
+
+    std::string image="casa";
+    askap::accessors::CasaImageAccess<casacore::Float> accessor;
+
+    std::string imageFilePath = "test_data/" + image + "_dummy_image";
     int status = mkdir("test_data", 0700);
 
     if (argc < 2)
@@ -35,9 +42,8 @@ int main(int argc, char const *argv[])
     std::vector<float> arr = generateRandomData(naxis, range, offset);
     std::cout << "Array generation done" << std::endl;
 
-
-    writeDataCasa(naxis, arr, dataFileName);
-    std::cout << "Array writen to " << dataFileName << std::endl;
+    writeData(naxis, arr, imageFilePath, accessor);
+    std::cout << "Array writen to " << imageFilePath << std::endl;
 
     return 0;
 }

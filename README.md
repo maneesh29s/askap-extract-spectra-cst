@@ -9,6 +9,8 @@ Testing Extraction logic in ASKAP pipeline
 1. gsed (mac's built-in sed function does not work properly).
 Can be installed using `brew install gnu-sed`
 
+1. LOFAR common [repo](https://bitbucket.csiro.au/projects/askapsdp/repos/lofar-common/browse)
+
 1. dvc: Data Version Control. To install: `brew install dvc`
 
 

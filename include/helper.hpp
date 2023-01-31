@@ -69,7 +69,7 @@ void writeDataBinary(const std::vector<size_t> &naxis, const std::vector<float> 
   writer.close();
 }
 
-void writeDataCasa(const std::vector<size_t> &naxis, const std::vector<float> &inputArr, const std::string &filename)
+void writeData(const std::vector<size_t> &naxis, const std::vector<float> &inputArr, const std::string &filename, askap::accessors::IImageAccess<casacore::Float> &accessor)
 {
   size_t naxes = naxis.size();
 
@@ -92,8 +92,6 @@ void writeDataCasa(const std::vector<size_t> &naxis, const std::vector<float> &i
     casacore::IPosition currentPos = casacore::toIPositionInArray(i, arr.shape());
     arr(currentPos) = inputArr[i];
   }
-
-  askap::accessors::CasaImageAccess<casacore::Float> accessor;
 
   // create casa file
   accessor.create(filename, arr.shape(), casacore::CoordinateUtil::defaultCoords4D());
@@ -176,7 +174,7 @@ void readDataBinary(const std::string &binaryDataFilePath, const std::string &js
   jsonFile.close();
 }
 
-void extractSourcesWithSingleRead(const std::string &casaFilePath, const std::string &jsonFilePath, std::string &outputDirPath)
+void extractSourcesWithSingleRead(const std::string &casaFilePath, const std::string &jsonFilePath, std::string &outputDirPath, askap::accessors::IImageAccess<casacore::Float> &accessor)
 {
   Json::Reader jsonReader; // for reading the data
   Json::Value root;        // for modifying and storing new values
@@ -198,7 +196,6 @@ void extractSourcesWithSingleRead(const std::string &casaFilePath, const std::st
 
   // reading whole data
   casacore::Array<casacore::Float> arr;
-  askap::accessors::CasaImageAccess<casacore::Float> accessor;
   arr = accessor.read(casaFilePath);
   const int naxes = arr.ndim();
   if (naxes != 4)
@@ -241,7 +238,7 @@ void extractSourcesWithSingleRead(const std::string &casaFilePath, const std::st
   jsonFile.close();
 }
 
-void extractSourcesWithSlicedReads(const std::string &casaFilePath, const std::string &jsonFilePath, std::string &outputDirPath)
+void extractSourcesWithSlicedReads(const std::string &casaFilePath, const std::string &jsonFilePath, std::string &outputDirPath, askap::accessors::IImageAccess<casacore::Float> &accessor)
 {
   Json::Reader jsonReader; // for reading the data
   Json::Value root;        // for modifying and storing new values
@@ -260,8 +257,7 @@ void extractSourcesWithSlicedReads(const std::string &casaFilePath, const std::s
   {
     outputDirPath.append("/");
   }
-
-  askap::accessors::CasaImageAccess<casacore::Float> accessor;
+  
   // getting image dimensions using PagedImage
   casacore::PagedImage<casacore::Float> img(casaFilePath);
   const int naxes = img.ndim();
@@ -319,8 +315,9 @@ public:
 
   auto time_elapsed()
   {
-    return chrono::duration_cast<chrono::microseconds>(this->end - this->start)
-        .count();
+    auto time_taken = chrono::duration_cast<chrono::milliseconds>(this->end - this->start).count();
+
+    return std::to_string(time_taken) + " ms";
   }
 };
 

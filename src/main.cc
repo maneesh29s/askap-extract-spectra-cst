@@ -1,22 +1,28 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include <json/json.h>
 #include <string>
-
 #include <sys/stat.h>
 
-#include <casacore/casa/Arrays.h>
+#include <json/json.h>
 
+#include "CasaImageAccess.h"
+#include "FitsImageAccess.h"
 #include "helper.hpp"
 
 int main(int argc, char const *argv[])
 {
     Timer timer;
 
-    std::string casaFilePath = "test_data/dummy_casa_image";
-    std::string outputDirPathForSingleRead = "test_data/single_read_output_sources";
-    std::string outputDirPathForSlicedRead = "test_data/multi_read_output_sources";
+    // std::string image="fits";
+    // askap::accessors::FitsImageAccess accessor;
+
+    std::string image="casa";
+    askap::accessors::CasaImageAccess<casacore::Float> accessor;
+
+    std::string imageFilePath = "test_data/" + image + "_dummy_image";
+    std::string outputDirPathForSingleRead = "test_data/" + image + "_single_read_output_sources";
+    std::string outputDirPathForSlicedRead = "test_data/" + image + "_multi_read_output_sources";
 
     int status ;
     status = mkdir(outputDirPathForSingleRead.c_str(), 0700);
@@ -31,16 +37,16 @@ int main(int argc, char const *argv[])
     std::string jsonFilePath = argv[1];
     
     timer.start_timer();
-    extractSourcesWithSingleRead(casaFilePath, jsonFilePath, outputDirPathForSingleRead);
+    extractSourcesWithSingleRead(imageFilePath, jsonFilePath, outputDirPathForSingleRead, accessor);
     timer.stop_timer();
 
-    std::cout << "Time elapsed for whole CASA read at once " << timer.time_elapsed() << " us" << std::endl;
+    std::cout << "Time elapsed for whole " << image << " image read at once " << timer.time_elapsed() << std::endl;
 
     timer.start_timer();
-    extractSourcesWithSlicedReads(casaFilePath, jsonFilePath, outputDirPathForSlicedRead);
+    extractSourcesWithSlicedReads(imageFilePath, jsonFilePath, outputDirPathForSlicedRead, accessor);
     timer.stop_timer();
 
-    std::cout << "Time elapsed for slice by slice CASA read " << timer.time_elapsed() << " us" << std::endl;
+    std::cout << "Time elapsed for slice by slice " << image << " image read " << timer.time_elapsed() << std::endl;
 
     return 0;
 }

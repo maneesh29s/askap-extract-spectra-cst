@@ -340,7 +340,7 @@ static void extractSourcesWithSlicedReads()
 int main(int argc, char const *argv[])
 {
     // size_t naxes = 4;
-    std::vector<size_t> naxis{9, 12, 1, 1};
+    std::vector<size_t> naxis{10, 10, 1, 1};
 
     std::vector<float> arr = generateSequentialData(naxis, 100.0f);
     // std::vector<float> arr = generateRandomData(naxis, 10.0f , -5.0f);

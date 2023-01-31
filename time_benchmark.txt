@@ -1,0 +1,18 @@
+➜  askap-extract-spectra-cst git:(master) ✗ ./build/main.out data/selavy_cont_image.i.NGC5044_3B_band2.SB40905.cont.taylor.0.restored.conv.fits_Full_14342405-processed.json
+Debug: registered context Global=0
+
+On m1, 15000 sources
+    Time elapsed for whole CASA read at once 66,201,727 us
+    Time elapsed for slice by slice CASA read 79,899,805 us
+
+On m1, 422 sources
+    Time elapsed for whole CASA read at once 2,642,589 us
+    Time elapsed for slice by slice CASA read 2,456,793 us
+
+On Ryzen, 15000 sources
+    Run with perf record:
+        Time elapsed for whole CASA read at once 533,301,241 us
+        Time elapsed for slice by slice CASA read 606,733,861 us
+    2nd run:    
+        Time elapsed for whole CASA read at once 544,237,847 us
+        Time elapsed for slice by slice CASA read 624,053,206 us

@@ -1,25 +1,35 @@
-CXXFLAGS=-std=c++14
+CXXFLAGS=-std=c++14 -Iinclude/
 
-LIB=-ljsoncpp -Iinclude/ -lcasa_casa -lcasa_lattices -lcasa_images -lcasa_tables -lcasa_coordinates -lcasa_scimath -lCommon -lcasa_coordinates
+LIB=-ljsoncpp -lcasa_casa -lcasa_lattices -lcasa_images -lcasa_tables -lcasa_coordinates -lcasa_scimath -lCommon -lcasa_coordinates -lcasa_fits -lcfitsio
 
 DEBUGFLAGS=-fsanitize=address -g
 
 CXX=g++
 
-SRC = array_creator.out \
-	main.out 
+SRC = build/array_creator.out \
+	build/main.out \
 
 TEST = test_json.out \
 	test_array_slicer.out
 
+OBJECT_FILES = build/FITSImageRW.o \
+			   build/FitsImageAccess.o 
 
-all: $(SRC) $(TEST)
+all:  $(OBJECT_FILES) $(SRC) $(TEST)
 
-%.out: src/%.cc dir
-	$(CXX) $(CXXFLAGS) -O3 $(LIB) $(OPT) -o build/$@ $<
+# src
+build/%.out: src/%.cc dir build/FITSImageRW.o build/FitsImageAccess.o 
+	$(CXX) $(CXXFLAGS) -O3 $(LIB) -o $@ $< build/FitsImageAccess.o build/FITSImageRW.o $(OPT) 
 
+# test
 %.out: test/%.cc dir
-	$(CXX) $(CXXFLAGS) $(LIB) $(DEBUGFLAGS) $(OPT) -o build/$@ $< 
+	$(CXX) $(CXXFLAGS) $(LIB) $(DEBUGFLAGS) -o build/$@ $< $(OPT) 
+
+build/FITSImageRW.o: include/FITSImageRW.cc
+	$(CXX) $(CXXFLAGS) -c -O3 -o $@ $< $(OPT) 
+
+build/FitsImageAccess.o: include/FitsImageAccess.cc build/FITSImageRW.o
+	$(CXX) $(CXXFLAGS) -c -O3 -o $@ $< build/FITSImageRW.o $(OPT) 
 
 dir: 
 	mkdir -p build
