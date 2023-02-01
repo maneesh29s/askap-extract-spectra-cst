@@ -57,6 +57,10 @@ Running casa
 Time elapsed for whole casa image read at once 530047 ms
 Time elapsed for slice by slice casa image read 616294 ms
 
+Running casa 
+Time elapsed for whole casa image read at once 536078 ms 
+Time elapsed for slice by slice casa image read 633624 ms
+
 Running fits
 Time elapsed for whole fits image read at once 9329 ms
 Time elapsed for slice by slice fits image read 34325 ms
