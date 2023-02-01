@@ -1,18 +1,49 @@
-➜  askap-extract-spectra-cst git:(master) ✗ ./build/main.out data/selavy_cont_image.i.NGC5044_3B_band2.SB40905.cont.taylor.0.restored.conv.fits_Full_14342405-processed.json
-Debug: registered context Global=0
+-------------------------------------------------------------------------
 
-On m1, 15000 sources
-    Time elapsed for whole CASA read at once 66,201,727 us
-    Time elapsed for slice by slice CASA read 79,899,805 us
+Test 1:
+Without "PagedImage" and "FITSImage" logic 
 
-On m1, 422 sources
-    Time elapsed for whole CASA read at once 2,642,589 us
-    Time elapsed for slice by slice CASA read 2,456,793 us
+Running casa
+Time elapsed for whole casa image read at once 72764 ms
+Time elapsed for slice by slice casa image read 81808 ms
 
-On Ryzen, 15000 sources
-    Run with perf record:
-        Time elapsed for whole CASA read at once 533,301,241 us
-        Time elapsed for slice by slice CASA read 606,733,861 us
-    2nd run:    
-        Time elapsed for whole CASA read at once 544,237,847 us
-        Time elapsed for slice by slice CASA read 624,053,206 us
+Running casa
+Time elapsed for whole casa image read at once 83304 ms
+Time elapsed for slice by slice casa image read 121317 ms
+
+Running casa
+Time elapsed for whole casa image read at once 101133 ms
+Time elapsed for slice by slice casa image read 116390 ms
+
+
+
+Running fits
+Time elapsed for whole fits image read at once 10328 ms
+Time elapsed for slice by slice fits image read 24665 ms
+
+Running fits
+Time elapsed for whole fits image read at once 9952 ms
+Time elapsed for slice by slice fits image read 25258 ms
+
+Running fits
+Time elapsed for whole fits image read at once 9702 ms
+Time elapsed for slice by slice fits image read 25060 ms
+
+------------------------------------------------------------------------
+Test 2:
+With "PagedImage" and "FITSImage" logic 
+
+Running casa
+Time elapsed for whole casa image read at once 100980 ms
+Time elapsed for slice by slice casa image read 116169 ms
+Running casa
+Time elapsed for whole casa image read at once 98191 ms
+Time elapsed for slice by slice casa image read 126264 ms
+
+
+Running fits
+Time elapsed for whole fits image read at once 13004 ms
+Time elapsed for slice by slice fits image read 28617 ms
+Running fits
+Time elapsed for whole fits image read at once 10390 ms
+Time elapsed for slice by slice fits image read 26561 ms

@@ -12,6 +12,13 @@
 #include <casacore/coordinates/Coordinates/CoordinateSystem.h>
 
 #include "CasaImageAccess.h"
+#include "FitsImageAccess.h"
+
+template <typename Base, typename T>
+inline bool instanceof (const T *ptr)
+{
+  return dynamic_cast<const Base *>(ptr) != nullptr;
+}
 
 std::vector<float> generateSequentialData(const std::vector<size_t> &naxis, float start)
 {
@@ -195,15 +202,13 @@ void extractSourcesWithSingleRead(const std::string &casaFilePath, const std::st
   }
 
   // reading whole data
-  casacore::Array<casacore::Float> arr;
-  arr = accessor.read(casaFilePath);
+  casacore::Array<casacore::Float> arr = accessor.read(casaFilePath);
   const int naxes = arr.ndim();
   if (naxes != 4)
   {
     std::cerr << "This application requires a 4D array. Please recreate array using array_creator.";
     exit(1);
   }
-  const casacore::IPosition naxis = arr.shape();
 
   for (Json::Value::ArrayIndex i = 0; i != root.size(); i++)
   {
@@ -227,7 +232,7 @@ void extractSourcesWithSingleRead(const std::string &casaFilePath, const std::st
 
     casacore::Slicer slicer = casacore::Slicer(blc, trc, casacore::Slicer::endIsLast);
     casacore::Array<casacore::Float> output = arr(slicer);
-
+    
     std::string outFileName = outputDirPath + "Image_" + std::to_string(sourceID);
     // create casa file
     accessor.create(outFileName, output.shape(), casacore::CoordinateUtil::defaultCoords4D());
@@ -257,16 +262,26 @@ void extractSourcesWithSlicedReads(const std::string &casaFilePath, const std::s
   {
     outputDirPath.append("/");
   }
-  
-  // getting image dimensions using PagedImage
-  casacore::PagedImage<casacore::Float> img(casaFilePath);
-  const int naxes = img.ndim();
-  if (naxes != 4)
-  {
-    std::cerr << "This application requires a 4D array. Please recreate array using array_creator.";
-    exit(1);
-  }
-  const casacore::IPosition naxis = img.shape();
+
+  // getting image dimensions
+  // int naxes;
+  // if (instanceof <askap::accessors::CasaImageAccess<casacore::Float>>(&accessor))
+  // {
+  //   casacore::PagedImage<casacore::Float> img(casaFilePath);
+  //   naxes = img.ndim();
+  // }
+  // else{
+  //   casacore::FITSImage img(casaFilePath + ".fits");
+  //   naxes  = img.ndim();
+  // }
+
+  // if (naxes != 4)
+  // {
+  //   std::cerr << "This application requires a 4D array. Please recreate array using array_creator.";
+  //   exit(1);
+  // }
+
+  int naxes = 4;
 
   for (Json::Value::ArrayIndex i = 0; i != root.size(); i++)
   {

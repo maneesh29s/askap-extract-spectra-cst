@@ -92,12 +92,18 @@ casacore::Array<float> FitsImageAccess::read(const std::string &name, const casa
         const casacore::IPosition &trc) const
 {
     std::string fullname = name + ".fits";
-    // // // ASKAPLOG_INFO_STR(logger, "Reading a slice of the FITS image " << name << " from " << blc << " to " << trc);
+    // ASKAPLOG_INFO_STR(logger, "Reading a slice of the FITS image " << name << " from " << blc << " to " << trc);
 
     casacore::FITSImage img(fullname);
+
     casacore::Array<float> buffer;
     casacore::Slicer slc(blc, trc, casacore::Slicer::endIsLast);
-    // // ASKAPLOG_INFO_STR(logger, "Reading a slice of the FITS image " << name << " slice " << slc);
+    // ASKAPLOG_INFO_STR(logger, "Reading a slice of the FITS image " << name << " slice " << slc);
+
+    if(! (img.doGetSlice(buffer, slc) == casacore::False)){
+        std::cerr << " FitsImageAccess:103 : Can not read FITS image.";
+        exit(1);
+    }
     // ASKAPCHECK(img.doGetSlice(buffer, slc) == casacore::False, "Cannot read image");
     return buffer;
 }
@@ -258,7 +264,7 @@ std::pair<std::string, std::string> FitsImageAccess::getMetadataKeyword(const st
 /// @param[in] name image name
 void FitsImageAccess::connect(const std::string &name) const
 {
-    //std::string fullname = name + ".fits";
+    // std::string fullname = name + ".fits";
     itsFITSImage.reset(new FITSImageRW(name));
 }
 
