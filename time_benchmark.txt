@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------
 
-Test 1:
+On m1 mac:
 Without "PagedImage" and "FITSImage" logic 
 
 Running casa
@@ -47,3 +47,20 @@ Time elapsed for slice by slice fits image read 28617 ms
 Running fits
 Time elapsed for whole fits image read at once 10390 ms
 Time elapsed for slice by slice fits image read 26561 ms
+
+---------------------------------------------------------------------------
+
+On Workstation :
+Without "Paged Image" and "FitsImage" Logic
+
+Running casa
+Time elapsed for whole casa image read at once 530047 ms
+Time elapsed for slice by slice casa image read 616294 ms
+
+Running fits
+Time elapsed for whole fits image read at once 9329 ms
+Time elapsed for slice by slice fits image read 34325 ms
+
+Running fits
+Time elapsed for whole fits image read at once 9696 ms
+Time elapsed for slice by slice fits image read 35263 ms
