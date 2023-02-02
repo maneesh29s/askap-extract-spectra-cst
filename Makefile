@@ -23,8 +23,8 @@ build/%.out: src/%.cc dir build/FITSImageRW.o build/FitsImageAccess.o
 	$(CXX) $(CXXFLAGS) $(OPTIMISATION) $(LIB) -o $@ $< build/FitsImageAccess.o build/FITSImageRW.o $(OPT) 
 
 # test
-%.out: test/%.cc dir
-	$(CXX) $(CXXFLAGS) $(LIB) $(OPTIMISATION) -o build/$@ $< $(OPT) 
+%.out: test/%.cc dir build/FITSImageRW.o build/FitsImageAccess.o 
+	$(CXX) $(CXXFLAGS) $(LIB) $(OPTIMISATION) -o build/$@ $< build/FitsImageAccess.o build/FITSImageRW.o $(OPT) 
 
 build/FITSImageRW.o: include/FITSImageRW.cc
 	$(CXX) $(CXXFLAGS) -c $(OPTIMISATION) -o $@ $< $(OPT) 
