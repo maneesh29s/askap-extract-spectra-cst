@@ -1,9 +1,10 @@
+#include <algorithm>
 #include <cstdlib>
-#include <string>
 #include <fstream>
 #include <iostream>
-#include <json/json.h>
+#include <string>
 
+#include <json/json.h>
 
 class ImageSource
 {
@@ -14,18 +15,20 @@ public:
     std::vector<int64_t> stride;
     std::vector<int64_t> length;
 
-    ImageSource() {};
+    ImageSource(){};
 
     ImageSource(int64_t sid, std::vector<int64_t> sb, std::vector<int64_t> se, std::vector<int64_t> st, std::vector<int64_t> len) : sourceID(sid), slicerBegin(sb), slicerEnd(se), stride(st), length(len){};
 
-    bool operator < (const ImageSource& str) const
+    bool operator<(const ImageSource &str) const
     {
-        for (size_t i = 0; i < slicerBegin.size() ; i++)
+        for (size_t i = 0; i < slicerBegin.size(); i++)
         {
-            if(slicerBegin[i] < str.slicerBegin[i]){
+            if (slicerBegin[i] < str.slicerBegin[i])
+            {
                 return true;
             }
-            if(slicerBegin[i] == str.slicerBegin[i]){
+            if (slicerBegin[i] == str.slicerBegin[i])
+            {
                 continue;
             }
             return false;
@@ -37,13 +40,15 @@ public:
 // testing of jsoncpp library to read and write to json
 int main(int argc, char const *argv[])
 {
-    if(argc != 2){
+    if (argc != 2)
+    {
         std::cerr << "Usage: ./build/json_sourter.out <input_json_file>";
         exit(1);
     }
 
     std::string inputFilePath = argv[1];
-    std::string outputFilePath = inputFilePath.substr(0 , inputFilePath.size() - 5) + "-sorted.json";
+    std::string outputFilePath = inputFilePath.substr(0, inputFilePath.size() - 5) + "-sorted.json";
+
 
     Json::Value root;          // for modifying and storing new values
     Json::Reader reader;       // for reading the data
