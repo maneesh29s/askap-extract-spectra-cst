@@ -77,3 +77,18 @@ Also, I have sorted the json file according to sliceBegin indices
 
 ----------------------------------------------------------------------------
 
+On M1:
+
+
+Running fits
+Time elapsed for whole fits image read at once 10469 ms
+Time elapsed for slice by slice fits image read 26086 ms
+Running fits
+Time elapsed for whole fits image read at once 9957 ms
+Time elapsed for slice by slice fits image read 25668 ms
+Running casa
+Time elapsed for whole casa image read at once 90799 ms
+Time elapsed for slice by slice casa image read 106292 ms
+Running casa
+Time elapsed for whole casa image read at once 82875 ms
+Time elapsed for slice by slice casa image read 96471 ms
