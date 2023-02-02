@@ -11,6 +11,7 @@ SRC = build/array_creator.out \
 	build/main.out \
 
 TEST = test_json.out \
+	json_sorter.out \
 	test_array_slicer.out
 
 OBJECT_FILES = build/FITSImageRW.o \

@@ -68,3 +68,12 @@ Time elapsed for slice by slice fits image read 34325 ms
 Running fits
 Time elapsed for whole fits image read at once 9696 ms
 Time elapsed for slice by slice fits image read 35263 ms
+
+-----------------------------------------------------------------------------
+
+From now on, I have removed "PagedImage" and "FITSImage" logic from slicedRead method 
+
+Also, I have sorted the json file according to sliceBegin indices
+
+----------------------------------------------------------------------------
+

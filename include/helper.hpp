@@ -263,24 +263,7 @@ void extractSourcesWithSlicedReads(const std::string &casaFilePath, const std::s
     outputDirPath.append("/");
   }
 
-  // getting image dimensions
-  // int naxes;
-  // if (instanceof <askap::accessors::CasaImageAccess<casacore::Float>>(&accessor))
-  // {
-  //   casacore::PagedImage<casacore::Float> img(casaFilePath);
-  //   naxes = img.ndim();
-  // }
-  // else{
-  //   casacore::FITSImage img(casaFilePath + ".fits");
-  //   naxes  = img.ndim();
-  // }
-
-  // if (naxes != 4)
-  // {
-  //   std::cerr << "This application requires a 4D array. Please recreate array using array_creator.";
-  //   exit(1);
-  // }
-
+  // fixed
   int naxes = 4;
 
   for (Json::Value::ArrayIndex i = 0; i != root.size(); i++)
