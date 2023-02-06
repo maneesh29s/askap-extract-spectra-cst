@@ -49,7 +49,6 @@ int main(int argc, char const *argv[])
     std::string inputFilePath = argv[1];
     std::string outputFilePath = inputFilePath.substr(0, inputFilePath.size() - 5) + "-sorted.json";
 
-
     Json::Value root;          // for modifying and storing new values
     Json::Reader reader;       // for reading the data
     Json::StyledWriter writer; // for writing in json files

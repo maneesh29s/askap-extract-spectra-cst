@@ -14,10 +14,49 @@
 #include "CasaImageAccess.h"
 #include "FitsImageAccess.h"
 
-template <typename Base, typename T>
-inline bool instanceof (const T *ptr)
+class Parameters
 {
-  return dynamic_cast<const Base *>(ptr) != nullptr;
+public:
+  std::string inputImageType;
+  std::string imageFilePath;
+  std::string jsonFilePath;
+  std::string outputImageType;
+  std::string outputDirPath;
+
+  Parameters() {}
+
+  Parameters(std::string inputImageType, std::string &imageFilePath, std::string &jsonFilePath, std::string outputImageType, std::string &odp) : inputImageType(inputImageType), imageFilePath(imageFilePath), jsonFilePath(jsonFilePath), outputImageType(outputImageType), outputDirPath(odp)
+  {
+    if (outputDirPath.back() != '/')
+    {
+      outputDirPath.append("/");
+    }
+  }
+
+};
+
+boost::shared_ptr<askap::accessors::IImageAccess<casacore::Float>> generateAccessorFromImageType(const std::string &imageType)
+{
+  boost::shared_ptr<IImageAccess<>> result;
+  if (imageType == "casa")
+  {
+    boost::shared_ptr<CasaImageAccess<casacore::Float>> iaCASA(new CasaImageAccess<casacore::Float>());
+    // optional parameter setting may come here
+    result = iaCASA;
+  }
+  else if (imageType == "fits")
+  {
+    boost::shared_ptr<FitsImageAccess> iaFITS(new FitsImageAccess());
+    const bool fast = true;
+    iaFITS->useFastAlloc(fast);
+    result = iaFITS;
+  }
+  else
+  {
+    std::cerr << "include/helper.hpp:generateAccessorFromImageType(): Unsupported image type : " + imageType + " has been requested";
+    exit(1);
+  }
+  return result;
 }
 
 std::vector<float> generateSequentialData(const std::vector<size_t> &naxis, float start)
@@ -181,8 +220,15 @@ void readDataBinary(const std::string &binaryDataFilePath, const std::string &js
   jsonFile.close();
 }
 
-void extractSourcesWithSingleRead(const std::string &casaFilePath, const std::string &jsonFilePath, std::string &outputDirPath, askap::accessors::IImageAccess<casacore::Float> &accessor)
+void extractSourcesWithSingleRead(Parameters &parameters)
 {
+  std::string imageFilePath = parameters.imageFilePath;
+  std::string jsonFilePath = parameters.jsonFilePath;
+  std::string outputDirPath = parameters.outputDirPath;
+
+  boost::shared_ptr<askap::accessors::IImageAccess<casacore::Float>> inputAccessor = generateAccessorFromImageType(parameters.inputImageType);
+  boost::shared_ptr<askap::accessors::IImageAccess<casacore::Float>> outputAccessor = generateAccessorFromImageType(parameters.outputImageType);
+
   Json::Reader jsonReader; // for reading the data
   Json::Value root;        // for modifying and storing new values
 
@@ -195,14 +241,8 @@ void extractSourcesWithSingleRead(const std::string &casaFilePath, const std::st
     exit(1);
   }
 
-  // checking outputDirPath
-  if (outputDirPath.back() != '/')
-  {
-    outputDirPath.append("/");
-  }
-
   // reading whole data
-  casacore::Array<casacore::Float> arr = accessor.read(casaFilePath);
+  casacore::Array<casacore::Float> arr = inputAccessor->read(imageFilePath);
   const int naxes = arr.ndim();
   if (naxes != 4)
   {
@@ -232,19 +272,26 @@ void extractSourcesWithSingleRead(const std::string &casaFilePath, const std::st
 
     casacore::Slicer slicer = casacore::Slicer(blc, trc, casacore::Slicer::endIsLast);
     casacore::Array<casacore::Float> output = arr(slicer);
-    
+
     std::string outFileName = outputDirPath + "Image_" + std::to_string(sourceID);
     // create casa file
-    accessor.create(outFileName, output.shape(), casacore::CoordinateUtil::defaultCoords4D());
+    outputAccessor->create(outFileName, output.shape(), casacore::CoordinateUtil::defaultCoords4D());
 
     // write the array
-    accessor.write(outFileName, output);
+    outputAccessor->write(outFileName, output);
   }
   jsonFile.close();
 }
 
-void extractSourcesWithSlicedReads(const std::string &casaFilePath, const std::string &jsonFilePath, std::string &outputDirPath, askap::accessors::IImageAccess<casacore::Float> &accessor)
+void extractSourcesWithSlicedReads(Parameters &parameters)
 {
+  std::string imageFilePath = parameters.imageFilePath;
+  std::string jsonFilePath = parameters.jsonFilePath;
+  std::string outputDirPath = parameters.outputDirPath;
+
+  boost::shared_ptr<askap::accessors::IImageAccess<casacore::Float>> inputAccessor = generateAccessorFromImageType(parameters.inputImageType);
+  boost::shared_ptr<askap::accessors::IImageAccess<casacore::Float>> outputAccessor = generateAccessorFromImageType(parameters.outputImageType);
+
   Json::Reader jsonReader; // for reading the data
   Json::Value root;        // for modifying and storing new values
 
@@ -255,12 +302,6 @@ void extractSourcesWithSlicedReads(const std::string &casaFilePath, const std::s
   {
     std::cerr << jsonReader.getFormattedErrorMessages();
     exit(1);
-  }
-
-  // checking outputDirPath
-  if (outputDirPath.back() != '/')
-  {
-    outputDirPath.append("/");
   }
 
   // fixed
@@ -286,14 +327,14 @@ void extractSourcesWithSlicedReads(const std::string &casaFilePath, const std::s
     casacore::IPosition blc(slicerBegin);
     casacore::IPosition trc(slicerEnd);
 
-    casacore::Array<casacore::Float> output = accessor.read(casaFilePath, blc, trc);
+    casacore::Array<casacore::Float> output = inputAccessor->read(imageFilePath, blc, trc);
 
     std::string outFileName = outputDirPath + "Image_" + std::to_string(sourceID);
     // create casa file
-    accessor.create(outFileName, output.shape(), casacore::CoordinateUtil::defaultCoords4D());
+    outputAccessor->create(outFileName, output.shape(), casacore::CoordinateUtil::defaultCoords4D());
 
     // write the array
-    accessor.write(outFileName, output);
+    outputAccessor->write(outFileName, output);
   }
 
   jsonFile.close();

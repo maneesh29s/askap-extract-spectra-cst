@@ -102,3 +102,17 @@ Time elapsed for slice by slice casa image read 667085 ms
 Running fits
 Time elapsed for whole fits image read at once 10203 ms
 Time elapsed for slice by slice fits image read 35264 ms
+
+---------------------------------------------------------
+
+On M1: 
+after custom input-output image type modification
+with sorted logs
+
+Running fits to fits
+Time elapsed : fits to fits : for whole image read at once 12204 ms
+Time elapsed : fits to fits : for slice by slice image read 33298 ms
+
+Running casa to casa
+Time elapsed : casa to casa : for whole image read at once 85987 ms
+Time elapsed : casa to casa : for slice by slice image read 109821 ms

@@ -10,49 +10,47 @@
 #include "FitsImageAccess.h"
 #include "helper.hpp"
 
-void run_benchmark(std::string image, std::string imageFilePath, std::string jsonFilePath, std::string outputDirPathForSingleRead, std::string outputDirPathForSlicedRead, askap::accessors::IImageAccess<casacore::Float>& accessor){
-    Timer timer;
-
-    timer.start_timer();
-    extractSourcesWithSingleRead(imageFilePath, jsonFilePath, outputDirPathForSingleRead, accessor);
-    timer.stop_timer();
-
-    std::cout << "Time elapsed for whole " << image << " image read at once " << timer.time_elapsed() << std::endl;
-
-    timer.start_timer();
-    extractSourcesWithSlicedReads(imageFilePath, jsonFilePath, outputDirPathForSlicedRead, accessor);
-    timer.stop_timer();
-
-    std::cout << "Time elapsed for slice by slice " << image << " image read " << timer.time_elapsed() << std::endl;
-}
-
 int main(int argc, char const *argv[])
 {
-    if (argc != 3)
+    if (argc != 4)
     {
-        std::cerr << "Usage: ./build/main.out <casa>/<fits> <path to processed.json file>";
+        std::cerr << "Usage: ./build/main.out <casa>/<fits> <casa>/<fits> <path to processed.json file>";
         exit(1);
     }
-    std::string image = argv[1];
-    std::string jsonFilePath = argv[2];
+    std::string inputImageType = argv[1];
+    std::string outputImageType = argv[2];
+    std::string jsonFilePath = argv[3];
 
-    std::cout << "Running " << image << std::endl;
+    assert(inputImageType == "casa" | inputImageType == "fits");
+    assert(outputImageType == "casa" | outputImageType == "fits");
 
-    std::string imageFilePath = "test_data/" + image + "_dummy_image";
-    std::string outputDirPathForSingleRead = "test_data/" + image + "_single_read_output_sources";
-    std::string outputDirPathForSlicedRead = "test_data/" + image + "_multi_read_output_sources";
+    std::cout << "Running " << inputImageType << " to " << outputImageType << std::endl;
+
+    std::string imageFilePath = "test_data/" + inputImageType + "_dummy_image";
+    std::string outputDirPathForSingleRead = "test_data/" + inputImageType + "-to-" + outputImageType + "_single_read_output_sources";
+    std::string outputDirPathForSlicedRead = "test_data/" + inputImageType + "-to-" + outputImageType + "_multi_read_output_sources";
 
     int status;
     status = mkdir(outputDirPathForSingleRead.c_str(), 0700);
     status = mkdir(outputDirPathForSlicedRead.c_str(), 0700);
 
-    if (image == "fits")
-        {askap::accessors::FitsImageAccess accessor;
-        run_benchmark(image, imageFilePath, jsonFilePath, outputDirPathForSingleRead, outputDirPathForSlicedRead, accessor);}
-    else
-        {askap::accessors::CasaImageAccess<casacore::Float> accessor;
-        run_benchmark(image, imageFilePath, jsonFilePath, outputDirPathForSingleRead, outputDirPathForSlicedRead, accessor);
-        }
+    Timer timer;
+
+    Parameters singleRead(inputImageType, imageFilePath, jsonFilePath, outputImageType, outputDirPathForSingleRead);
+
+    timer.start_timer();
+    extractSourcesWithSingleRead(singleRead);
+    timer.stop_timer();
+
+    std::cout << "Time elapsed : " << inputImageType  << " to " << outputImageType << " : for whole image read at once " << timer.time_elapsed() << std::endl;
+
+    Parameters slicedRead(inputImageType, imageFilePath, jsonFilePath, outputImageType, outputDirPathForSlicedRead);
+
+    timer.start_timer();
+    extractSourcesWithSlicedReads(slicedRead);
+    timer.stop_timer();
+
+    std::cout << "Time elapsed : " << inputImageType  << " to " << outputImageType << " : for slice by slice image read " << timer.time_elapsed() << std::endl;
 
     return 0;
 }
