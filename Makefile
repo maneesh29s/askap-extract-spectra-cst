@@ -3,7 +3,7 @@ CXXFLAGS=-std=c++14 -Iinclude/
 OPTIMISATION=-O3
 # OPTIMISATION=-fsanitize=address -g
 
-LIB=-ljsoncpp -lcasa_casa -lcasa_lattices -lcasa_images -lcasa_tables -lcasa_coordinates -lcasa_scimath -lCommon -lcasa_coordinates -lcasa_fits -lcfitsio
+LIB=-ljsoncpp -lcasa_casa -lcasa_lattices -lcasa_images -lcasa_tables -lcasa_coordinates -lcasa_scimath -lCommon -lcasa_coordinates -lcasa_fits -lcfitsio `adios2-config --cxx-flags --cxx-libs`
 
 CXX=g++
 

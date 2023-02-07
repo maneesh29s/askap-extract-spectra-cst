@@ -78,6 +78,7 @@ Also, I have sorted the json file according to sliceBegin indices
 ----------------------------------------------------------------------------
 
 On M1:
+with sorted logs 
 
 Running fits
 Time elapsed for whole fits image read at once 10469 ms
@@ -94,6 +95,7 @@ Time elapsed for slice by slice casa image read 96471 ms
 
 
 On Ryzen WS:
+with sorted logs 
 
 Running casa
 Time elapsed for whole casa image read at once 566280 ms
@@ -116,3 +118,17 @@ Time elapsed : fits to fits : for slice by slice image read 33298 ms
 Running casa to casa
 Time elapsed : casa to casa : for whole image read at once 85987 ms
 Time elapsed : casa to casa : for slice by slice image read 109821 ms
+
+
+------------------------------------------------------------
+
+On M1:
+sorted logs
+
+Running fits to bp
+Time elapsed : fits to bp : for whole image read at once 658 ms
+Time elapsed : fits to bp : for slice by slice image read 19376 ms
+
+Running fits to bp
+Time elapsed : fits to bp : for whole image read at once 465 ms
+Time elapsed : fits to bp : for slice by slice image read 19238 ms
