@@ -140,3 +140,16 @@ Time elapsed : casa to bp : for slice by slice image read 17282 ms
 Running casa to bp
 Time elapsed : casa to bp : for whole image read at once 532 ms
 Time elapsed : casa to bp : for slice by slice image read 17578 ms
+
+------------------------------------------------------------
+
+On Ryzen
+sorted logs
+
+Running fits to bp
+Time elapsed : fits to bp : for whole image read at once 1172 ms
+Time elapsed : fits to bp : for slice by slice image read 26411 ms
+
+Running casa to bp
+Time elapsed : casa to bp : for whole image read at once 1122 ms
+Time elapsed : casa to bp : for slice by slice image read 19122 ms
