@@ -132,3 +132,11 @@ Time elapsed : fits to bp : for slice by slice image read 19376 ms
 Running fits to bp
 Time elapsed : fits to bp : for whole image read at once 465 ms
 Time elapsed : fits to bp : for slice by slice image read 19238 ms
+
+Running casa to bp
+Time elapsed : casa to bp : for whole image read at once 704 ms
+Time elapsed : casa to bp : for slice by slice image read 17282 ms
+
+Running casa to bp
+Time elapsed : casa to bp : for whole image read at once 532 ms
+Time elapsed : casa to bp : for slice by slice image read 17578 ms

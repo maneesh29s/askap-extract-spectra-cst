@@ -461,8 +461,11 @@ void extractSourcesWithSlicedReads(Parameters &parameters)
     }
   }
 
-  writer.Close();
   jsonFile.close();
+  if (parameters.outputImageType == "bp")
+  {
+    writer.Close();
+  }
 }
 
 namespace chrono = std::chrono;
