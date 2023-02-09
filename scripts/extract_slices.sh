@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [ $# -ne 1 ]
 then
     >&2 echo "Usage: ./scripts/extract_slices.sh <path to log file>";

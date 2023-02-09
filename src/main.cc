@@ -36,8 +36,8 @@ int main(int argc, char const *argv[]) {
                                            "_multi_read_output_sources";
 
   int status;
-  status = mkdir(outputDirPathForSingleRead.c_str(), 0700);
   if (outputImageType != "bp")
+    status = mkdir(outputDirPathForSingleRead.c_str(), 0700);
     status = mkdir(outputDirPathForSlicedRead.c_str(), 0700);
 
   Timer timer;

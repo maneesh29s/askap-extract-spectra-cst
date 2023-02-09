@@ -13,13 +13,6 @@ int main(int argc, char const *argv[])
     float offset = -5.0f;
     float range = 10.0f;
 
-    // std::string image="fits";
-    // askap::accessors::FitsImageAccess accessor;
-
-    std::string image="casa";
-    askap::accessors::CasaImageAccess<casacore::Float> accessor;
-
-    std::string imageFilePath = "test_data/" + image + "_dummy_image";
     int status = mkdir("test_data", 0700);
 
     if (argc < 2)
@@ -41,8 +34,20 @@ int main(int argc, char const *argv[])
 
     std::vector<float> arr = generateRandomData(naxis, range, offset);
     std::cout << "Array generation done" << std::endl;
+    
+    std::string image;
+    std::string imageFilePath;
 
-    writeData(naxis, arr, imageFilePath, accessor);
+    image="fits";
+    imageFilePath = "test_data/" + image + "_dummy_image";
+    askap::accessors::FitsImageAccess fitsAcceessor;
+    writeData(naxis, arr, imageFilePath, fitsAcceessor);
+    std::cout << "Array writen to " << imageFilePath << ".fits" << std::endl;
+
+    image="casa";
+    imageFilePath = "test_data/" + image + "_dummy_image";
+    askap::accessors::CasaImageAccess<casacore::Float> casaAcceessor;
+    writeData(naxis, arr, imageFilePath, casaAcceessor);
     std::cout << "Array writen to " << imageFilePath << std::endl;
 
     return 0;
