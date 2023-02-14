@@ -1,4 +1,6 @@
 fileignoreconfig:
+- filename: compareBpAndFITS.py
+  checksum: 6129813a68173f9a22f53088e1570eb792882aa7cce80944f6ecf7bb095e07f7
 - filename: data/selavy-process-0.log.dvc
   checksum: a4d24f9a3292e20d67149dbe45d94955c5ef3b9aad5e40fc8dbef1a1c3e03f58
 - filename: data/selavy-process-24-processed-sorted.json.dvc

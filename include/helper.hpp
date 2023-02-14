@@ -314,19 +314,19 @@ void extractSourcesWithSingleRead(Parameters &parameters)
     {
 
       // global shape -> this is the physical dimension across MPI processes
-      const adios2::Dims shape = {static_cast<std::size_t>(output.shape()(0)),
+      const adios2::Dims shape = {static_cast<std::size_t>(1),
+                                  static_cast<std::size_t>(1),
                                   static_cast<std::size_t>(output.shape()(1)),
-                                  static_cast<std::size_t>(output.shape()(2)),
-                                  static_cast<std::size_t>(output.shape()(3))};
+                                  static_cast<std::size_t>(output.shape()(0))};
 
       const adios2::Dims start = {
           static_cast<std::size_t>(0), static_cast<std::size_t>(0),
           static_cast<std::size_t>(0), static_cast<std::size_t>(0)};
 
-      const adios2::Dims count = {static_cast<std::size_t>(output.shape()(0)),
-                                  static_cast<std::size_t>(output.shape()(1)),
+      const adios2::Dims count = {static_cast<std::size_t>(1),
                                   static_cast<std::size_t>(1),
-                                  static_cast<std::size_t>(1)};
+                                  static_cast<std::size_t>(output.shape()(1)),
+                                  static_cast<std::size_t>(output.shape()(0))};
 
       // adios2::Dims is an alias to std::vector<std::size_t>
       adios2::Variable<float> varGlobalArray =
