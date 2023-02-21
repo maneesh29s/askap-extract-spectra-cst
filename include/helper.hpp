@@ -15,8 +15,38 @@
 #include "CasaImageAccess.h"
 #include "FitsImageAccess.h"
 
-class Parameters
-{
+void writeToBp(int sourceID, casacore::Array<casacore::Float> output,
+               adios2::IO io, adios2::Engine writer) {
+  const adios2::Dims shape = {static_cast<std::size_t>(output.shape()(0)),
+                              static_cast<std::size_t>(output.shape()(1)),
+                              static_cast<std::size_t>(output.shape()(2)),
+                              static_cast<std::size_t>(output.shape()(3))};
+  const adios2::Dims start = {
+      static_cast<std::size_t>(0), static_cast<std::size_t>(0),
+      static_cast<std::size_t>(0), static_cast<std::size_t>(0)};
+
+  const adios2::Dims count = {static_cast<std::size_t>(output.shape()(0)),
+                              static_cast<std::size_t>(output.shape()(1)),
+                              static_cast<std::size_t>(1),
+                              static_cast<std::size_t>(1)};
+
+  adios2::Variable<float> varGlobalArray =
+      io.DefineVariable<float>("Image_" + std::to_string(sourceID), shape,
+                               start, count, adios2::ConstantDims);
+
+  std::vector<float> temp(output.shape()(0) * output.shape()(1));
+  // writer.BeginStep();
+  for (size_t r = 0; r < output.shape()(1); r++) {
+    for (size_t c = 0; c < output.shape()(0); c++) {
+      casacore::IPosition currentPos(4, c, r, 0, 0);
+      temp[r * output.shape()(0) + c] = output(currentPos);
+    }
+
+    writer.Put(varGlobalArray, temp.data(), adios2::Mode::Sync);
+  }
+}
+
+class Parameters {
 public:
   std::string inputImageType;
   std::string imageFilePath;
@@ -31,34 +61,26 @@ public:
              std::string &odp)
       : inputImageType(inputImageType), imageFilePath(imageFilePath),
         jsonFilePath(jsonFilePath), outputImageType(outputImageType),
-        outputDirPath(odp)
-  {
-    if (outputDirPath.back() != '/')
-    {
+        outputDirPath(odp) {
+    if (outputDirPath.back() != '/') {
       outputDirPath.append("/");
     }
   }
 };
 
 boost::shared_ptr<askap::accessors::IImageAccess<casacore::Float>>
-generateAccessorFromImageType(const std::string &imageType)
-{
+generateAccessorFromImageType(const std::string &imageType) {
   boost::shared_ptr<IImageAccess<>> result;
-  if (imageType == "casa")
-  {
+  if (imageType == "casa") {
     boost::shared_ptr<CasaImageAccess<casacore::Float>> iaCASA(
         new CasaImageAccess<casacore::Float>());
     result = iaCASA;
-  }
-  else if (imageType == "fits")
-  {
+  } else if (imageType == "fits") {
     boost::shared_ptr<FitsImageAccess> iaFITS(new FitsImageAccess());
     const bool fast = true;
     iaFITS->useFastAlloc(fast);
     result = iaFITS;
-  }
-  else
-  {
+  } else {
     std::cerr << "include/helper.hpp:generateAccessorFromImageType(): "
                  "Unsupported image type : " +
                      imageType + " has been requested";
@@ -68,16 +90,14 @@ generateAccessorFromImageType(const std::string &imageType)
 }
 
 std::vector<float> generateSequentialData(const std::vector<size_t> &naxis,
-                                          float start)
-{
+                                          float start) {
   size_t totpix = 1;
   for (size_t i = 0; i < naxis.size(); i++)
     totpix *= naxis[i];
 
   std::vector<float> arr(totpix);
 
-  for (size_t i = 0; i < arr.size(); i++)
-  {
+  for (size_t i = 0; i < arr.size(); i++) {
     // logic
     arr[i] = start + (float)i;
   }
@@ -85,8 +105,7 @@ std::vector<float> generateSequentialData(const std::vector<size_t> &naxis,
 }
 
 std::vector<float> generateRandomData(const std::vector<size_t> &naxis,
-                                      float range, float offset)
-{
+                                      float range, float offset) {
   size_t totpix = 1;
   for (size_t i = 0; i < naxis.size(); i++)
     totpix *= naxis[i];
@@ -96,8 +115,7 @@ std::vector<float> generateRandomData(const std::vector<size_t> &naxis,
   time_t seed = time(0);
   srand(seed);
 
-  for (size_t i = 0; i < arr.size(); i++)
-  {
+  for (size_t i = 0; i < arr.size(); i++) {
     arr[i] = offset + range * (rand() / (float)RAND_MAX);
   }
 
@@ -106,21 +124,18 @@ std::vector<float> generateRandomData(const std::vector<size_t> &naxis,
 
 void writeDataBinary(const std::vector<size_t> &naxis,
                      const std::vector<float> &arr,
-                     const std::string &filename)
-{
+                     const std::string &filename) {
   std::ofstream writer;
   writer.open(filename);
 
   size_t naxes = naxis.size();
   writer.write((char *)&naxes, sizeof(size_t));
 
-  for (size_t i = 0; i < naxes; i++)
-  {
+  for (size_t i = 0; i < naxes; i++) {
     writer.write((char *)&naxis[i], sizeof(size_t));
   }
 
-  for (size_t i = 0; i < arr.size(); i++)
-  {
+  for (size_t i = 0; i < arr.size(); i++) {
     writer.write((char *)&arr[i], sizeof(float));
   }
 
@@ -129,26 +144,22 @@ void writeDataBinary(const std::vector<size_t> &naxis,
 
 void writeData(const std::vector<size_t> &naxis,
                const std::vector<float> &inputArr, const std::string &filename,
-               askap::accessors::IImageAccess<casacore::Float> &accessor)
-{
+               askap::accessors::IImageAccess<casacore::Float> &accessor) {
   size_t naxes = naxis.size();
 
-  if (naxes != 4)
-  {
+  if (naxes != 4) {
     std::cerr << "This application requires a 4D array.";
     exit(1);
   }
 
   casacore::IPosition arrSize(naxes);
-  for (size_t i = 0; i < naxes; i++)
-  {
+  for (size_t i = 0; i < naxes; i++) {
     arrSize(i) = naxis[i];
   }
 
   casacore::Array<casacore::Float> arr(arrSize);
 
-  for (size_t i = 0; i < inputArr.size(); i++)
-  {
+  for (size_t i = 0; i < inputArr.size(); i++) {
     casacore::IPosition currentPos =
         casacore::toIPositionInArray(i, arr.shape());
     arr(currentPos) = inputArr[i];
@@ -163,8 +174,7 @@ void writeData(const std::vector<size_t> &naxis,
 }
 
 void readDataBinary(const std::string &binaryDataFilePath,
-                    const std::string &jsonFilePath)
-{
+                    const std::string &jsonFilePath) {
   Json::Reader jsonReader; // for reading the data
   Json::Value root;        // for modifying and storing new values
 
@@ -173,8 +183,7 @@ void readDataBinary(const std::string &binaryDataFilePath,
   std::ifstream jsonFile;
   jsonFile.open(jsonFilePath);
 
-  if (!jsonReader.parse(jsonFile, root, false))
-  {
+  if (!jsonReader.parse(jsonFile, root, false)) {
     std::cerr << jsonReader.getFormattedErrorMessages();
     exit(1);
   }
@@ -183,8 +192,7 @@ void readDataBinary(const std::string &binaryDataFilePath,
   dataFile.read((char *)&naxes, sizeof(size_t));
 
   // for current application, naxes must be 4
-  if (naxes != 4)
-  {
+  if (naxes != 4) {
     std::cerr << "This application requires a 4D array. Please recreate array "
                  "using array_creator.";
     exit(1);
@@ -192,8 +200,7 @@ void readDataBinary(const std::string &binaryDataFilePath,
 
   std::vector<size_t> naxis(naxes);
 
-  for (size_t i = 0; i < naxes; i++)
-  {
+  for (size_t i = 0; i < naxes; i++) {
     dataFile.read((char *)&naxis[i], sizeof(size_t));
   }
 
@@ -202,16 +209,14 @@ void readDataBinary(const std::string &binaryDataFilePath,
   casacore::Array<casacore::Float> arr(arrSize);
 
   float value;
-  for (size_t i = 0; i < arr.size(); i++)
-  {
+  for (size_t i = 0; i < arr.size(); i++) {
     casacore::IPosition currentPos =
         casacore::toIPositionInArray(i, arr.shape());
     dataFile.read((char *)&value, sizeof(float));
     arr(currentPos) = value;
   }
 
-  for (Json::Value::ArrayIndex i = 0; i != root.size(); i++)
-  {
+  for (Json::Value::ArrayIndex i = 0; i != root.size(); i++) {
     int sourceID = root[i]["sourceID"].asInt();
 
     casacore::Vector<casacore::Int64> slicerBegin(naxes);
@@ -219,8 +224,7 @@ void readDataBinary(const std::string &binaryDataFilePath,
     casacore::Vector<casacore::Int64> stride(naxes);
     casacore::Vector<casacore::Int64> length(naxes);
 
-    for (Json::Value::ArrayIndex j = 0; j < naxes; j++)
-    {
+    for (Json::Value::ArrayIndex j = 0; j < naxes; j++) {
       slicerBegin(j) = root[i]["slicerBegin"][j].asInt64();
       slicerEnd(j) = root[i]["slicerEnd"][j].asInt64();
       stride(j) = root[i]["stride"][j].asInt64();
@@ -239,8 +243,7 @@ void readDataBinary(const std::string &binaryDataFilePath,
   jsonFile.close();
 }
 
-void extractSourcesWithSingleRead(Parameters &parameters)
-{
+void extractSourcesWithSingleRead(Parameters &parameters) {
   adios2::ADIOS adios;
   adios2::IO io;
   adios2::Engine writer;
@@ -257,21 +260,17 @@ void extractSourcesWithSingleRead(Parameters &parameters)
 
   inputAccessor = generateAccessorFromImageType(parameters.inputImageType);
 
-  if (parameters.outputImageType == "bp")
-  {
+  if (parameters.outputImageType == "bp") {
     io = adios.DeclareIO("imstat_adios_reader");
     writer = io.Open(outputDirPath.substr(0, outputDirPath.size() - 1) + ".bp",
                      adios2::Mode::Write);
-  }
-  else
-  {
+  } else {
     outputAccessor = generateAccessorFromImageType(parameters.outputImageType);
   }
 
   std::ifstream jsonFile;
   jsonFile.open(jsonFilePath);
-  if (!jsonReader.parse(jsonFile, root, false))
-  {
+  if (!jsonReader.parse(jsonFile, root, false)) {
     std::cerr << jsonReader.getFormattedErrorMessages();
     exit(1);
   }
@@ -279,15 +278,13 @@ void extractSourcesWithSingleRead(Parameters &parameters)
   // reading whole data
   casacore::Array<casacore::Float> arr = inputAccessor->read(imageFilePath);
   const int naxes = arr.ndim();
-  if (naxes != 4)
-  {
+  if (naxes != 4) {
     std::cerr << "This application requires a 4D array. Please recreate array "
                  "using array_creator.";
     exit(1);
   }
 
-  for (Json::Value::ArrayIndex i = 0; i != root.size(); i++)
-  {
+  for (Json::Value::ArrayIndex i = 0; i != root.size(); i++) {
     int sourceID = root[i]["sourceID"].asInt();
 
     casacore::Vector<casacore::Int64> slicerBegin(naxes);
@@ -295,8 +292,7 @@ void extractSourcesWithSingleRead(Parameters &parameters)
     casacore::Vector<casacore::Int64> stride(naxes);
     casacore::Vector<casacore::Int64> length(naxes);
 
-    for (Json::Value::ArrayIndex j = 0; j < naxes; j++)
-    {
+    for (Json::Value::ArrayIndex j = 0; j < naxes; j++) {
       slicerBegin(j) = root[i]["slicerBegin"][j].asInt64();
       slicerEnd(j) = root[i]["slicerEnd"][j].asInt64();
       stride(j) = root[i]["stride"][j].asInt64();
@@ -310,37 +306,9 @@ void extractSourcesWithSingleRead(Parameters &parameters)
         casacore::Slicer(blc, trc, casacore::Slicer::endIsLast);
     casacore::Array<casacore::Float> output = arr(slicer);
 
-    if (parameters.outputImageType == "bp")
-    {
-
-      // global shape -> this is the physical dimension across MPI processes
-      const adios2::Dims shape = {static_cast<std::size_t>(1),
-                                  static_cast<std::size_t>(1),
-                                  static_cast<std::size_t>(output.shape()(1)),
-                                  static_cast<std::size_t>(output.shape()(0))};
-
-      const adios2::Dims start = {
-          static_cast<std::size_t>(0), static_cast<std::size_t>(0),
-          static_cast<std::size_t>(0), static_cast<std::size_t>(0)};
-
-      const adios2::Dims count = {static_cast<std::size_t>(1),
-                                  static_cast<std::size_t>(1),
-                                  static_cast<std::size_t>(output.shape()(1)),
-                                  static_cast<std::size_t>(output.shape()(0))};
-
-      // adios2::Dims is an alias to std::vector<std::size_t>
-      adios2::Variable<float> varGlobalArray =
-          io.DefineVariable<float>("Image_" + std::to_string(sourceID), shape,
-                                   start, count, adios2::ConstantDims);
-
-      // writer.BeginStep();
-
-      writer.Put(varGlobalArray, output.data(), adios2::Mode::Sync);
-
-      // writer.EndStep();
-    }
-    else
-    {
+    if (parameters.outputImageType == "bp") {
+      writeToBp(sourceID, output, io, writer);
+    } else {
       std::string outFileName =
           outputDirPath + "Image_" + std::to_string(sourceID);
       // create file
@@ -352,14 +320,12 @@ void extractSourcesWithSingleRead(Parameters &parameters)
   }
 
   jsonFile.close();
-  if (parameters.outputImageType == "bp")
-  {
+  if (parameters.outputImageType == "bp") {
     writer.Close();
   }
 }
 
-void extractSourcesWithSlicedReads(Parameters &parameters)
-{
+void extractSourcesWithSlicedReads(Parameters &parameters) {
   // constant
   const int NAXES = 4;
 
@@ -379,27 +345,22 @@ void extractSourcesWithSlicedReads(Parameters &parameters)
 
   inputAccessor = generateAccessorFromImageType(parameters.inputImageType);
 
-  if (parameters.outputImageType == "bp")
-  {
+  if (parameters.outputImageType == "bp") {
     io = adios.DeclareIO("imstat_adios_reader");
     writer = io.Open(outputDirPath.substr(0, outputDirPath.size() - 1) + ".bp",
                      adios2::Mode::Write);
-  }
-  else
-  {
+  } else {
     outputAccessor = generateAccessorFromImageType(parameters.outputImageType);
   }
 
   std::ifstream jsonFile;
   jsonFile.open(jsonFilePath);
-  if (!jsonReader.parse(jsonFile, root, false))
-  {
+  if (!jsonReader.parse(jsonFile, root, false)) {
     std::cerr << jsonReader.getFormattedErrorMessages();
     exit(1);
   }
 
-  for (Json::Value::ArrayIndex i = 0; i != root.size(); i++)
-  {
+  for (Json::Value::ArrayIndex i = 0; i != root.size(); i++) {
     int sourceID = root[i]["sourceID"].asInt();
 
     casacore::Vector<casacore::Int64> slicerBegin(NAXES);
@@ -407,8 +368,7 @@ void extractSourcesWithSlicedReads(Parameters &parameters)
     casacore::Vector<casacore::Int64> stride(NAXES);
     casacore::Vector<casacore::Int64> length(NAXES);
 
-    for (Json::Value::ArrayIndex j = 0; j < NAXES; j++)
-    {
+    for (Json::Value::ArrayIndex j = 0; j < NAXES; j++) {
       slicerBegin(j) = root[i]["slicerBegin"][j].asInt64();
       slicerEnd(j) = root[i]["slicerEnd"][j].asInt64();
       stride(j) = root[i]["stride"][j].asInt64();
@@ -421,36 +381,9 @@ void extractSourcesWithSlicedReads(Parameters &parameters)
     casacore::Array<casacore::Float> output =
         inputAccessor->read(imageFilePath, blc, trc);
 
-    if (parameters.outputImageType == "bp")
-    {
-      // global shape -> this is the physical dimension across MPI processes
-      const adios2::Dims shape = {static_cast<std::size_t>(output.shape()(0)),
-                                  static_cast<std::size_t>(output.shape()(1)),
-                                  static_cast<std::size_t>(output.shape()(2)),
-                                  static_cast<std::size_t>(output.shape()(3))};
-
-      const adios2::Dims start = {
-          static_cast<std::size_t>(0), static_cast<std::size_t>(0),
-          static_cast<std::size_t>(0), static_cast<std::size_t>(0)};
-
-      const adios2::Dims count = {static_cast<std::size_t>(output.shape()(0)),
-                                  static_cast<std::size_t>(output.shape()(1)),
-                                  static_cast<std::size_t>(1),
-                                  static_cast<std::size_t>(1)};
-
-      // adios2::Dims is an alias to std::vector<std::size_t>
-      adios2::Variable<float> varGlobalArray =
-          io.DefineVariable<float>("Image_" + std::to_string(sourceID), shape,
-                                   start, count, adios2::ConstantDims);
-
-      // writer.BeginStep();
-
-      writer.Put(varGlobalArray, output.data(), adios2::Mode::Sync);
-
-      // writer.EndStep();
-    }
-    else
-    {
+    if (parameters.outputImageType == "bp") {
+      writeToBp(sourceID, output, io, writer);
+    } else {
       std::string outFileName =
           outputDirPath + "Image_" + std::to_string(sourceID);
       // create file
@@ -462,16 +395,14 @@ void extractSourcesWithSlicedReads(Parameters &parameters)
   }
 
   jsonFile.close();
-  if (parameters.outputImageType == "bp")
-  {
+  if (parameters.outputImageType == "bp") {
     writer.Close();
   }
 }
 
 namespace chrono = std::chrono;
 
-class Timer
-{
+class Timer {
 private:
   chrono::time_point<chrono::high_resolution_clock> start;
   chrono::time_point<chrono::high_resolution_clock> end;
@@ -480,8 +411,7 @@ public:
   void start_timer() { this->start = chrono::high_resolution_clock::now(); }
   void stop_timer() { this->end = chrono::high_resolution_clock::now(); }
 
-  std::string time_elapsed()
-  {
+  std::string time_elapsed() {
     auto time_taken =
         chrono::duration_cast<chrono::milliseconds>(this->end - this->start)
             .count();
