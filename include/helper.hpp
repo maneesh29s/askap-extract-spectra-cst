@@ -41,9 +41,9 @@ void writeToBp(int sourceID, casacore::Array<casacore::Float> output,
       casacore::IPosition currentPos(4, c, r, 0, 0);
       temp[r * output.shape()(0) + c] = output(currentPos);
     }
-
-    writer.Put(varGlobalArray, temp.data(), adios2::Mode::Sync);
   }
+  writer.Put(varGlobalArray, temp.data(), adios2::Mode::Sync);
+
 }
 
 class Parameters {
