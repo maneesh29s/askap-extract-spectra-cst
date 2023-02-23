@@ -2,7 +2,7 @@
 
 if [ $# -ne 1 ]
 then
-    >&2 echo "Usage: ./scripts/extract_slices.sh <path to log file>";
+    >&2 echo "Usage: ./scripts/extract_slices_2d.sh <path to log file>";
     exit 1;
 fi
 
@@ -20,14 +20,14 @@ fi
 
 inputFile="${fullfile%.*}"
 
-sed "/^INFO.*Extracting cubelet from meanMap\.image\.i\.NGC5044_3B_band2\.SB40905\.cont\.taylor\.0\.restored\.conv\.fits.*$/!d" ${inputFile}.log > ${inputFile}-truncated.log
+sed "/^INFO.*Extracting cubelet from meanMap\.image\.i\.NGC5044_3B_band2\.SB40905\.cont\.taylor\.0\.restored\.conv\.fits.*$/!d" ${inputFile}.log > ${inputFile}-truncated-cubelet.log
  
 
-outputFile=${inputFile}-processed.json
+outputFile=${inputFile}-processed-cubelet.json
 
 echo "[" > ${outputFile}
 
-cat ${inputFile}-truncated.log | awk '       
+cat ${inputFile}-truncated-cubelet.log | awk '       
   {                                                 
     sourceID = $15;                                 
     slicerBegin = $18 $19 $20 $21;                 

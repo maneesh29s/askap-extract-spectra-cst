@@ -1,0 +1,2956 @@
+[
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 2276, 3234, 0, 0 ],
+      "slicerEnd" : [ 2289, 3246, 0, 0 ],
+      "sourceID" : 7764,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 2296, 3147, 0, 0 ],
+      "slicerEnd" : [ 2309, 3159, 0, 0 ],
+      "sourceID" : 6864,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 19, 1, 1 ],
+      "slicerBegin" : [ 2318, 4587, 0, 0 ],
+      "slicerEnd" : [ 2335, 4605, 0, 0 ],
+      "sourceID" : 1680,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 2379, 8446, 0, 0 ],
+      "slicerEnd" : [ 2395, 8461, 0, 0 ],
+      "sourceID" : 3408,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 2443, 8548, 0, 0 ],
+      "slicerEnd" : [ 2456, 8560, 0, 0 ],
+      "sourceID" : 8952,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 2474, 4782, 0, 0 ],
+      "slicerEnd" : [ 2487, 4795, 0, 0 ],
+      "sourceID" : 10392,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 15, 1, 1 ],
+      "slicerBegin" : [ 2490, 9131, 0, 0 ],
+      "slicerEnd" : [ 2506, 9145, 0, 0 ],
+      "sourceID" : 8232,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 2552, 4053, 0, 0 ],
+      "slicerEnd" : [ 2567, 4066, 0, 0 ],
+      "sourceID" : 6360,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 2593, 2951, 0, 0 ],
+      "slicerEnd" : [ 2607, 2965, 0, 0 ],
+      "sourceID" : 5280,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 2625, 12235, 0, 0 ],
+      "slicerEnd" : [ 2640, 12249, 0, 0 ],
+      "sourceID" : 3084,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 17, 1, 1 ],
+      "slicerBegin" : [ 2694, 8183, 0, 0 ],
+      "slicerEnd" : [ 2711, 8199, 0, 0 ],
+      "sourceID" : 9672,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 2732, 6997, 0, 0 ],
+      "slicerEnd" : [ 2747, 7010, 0, 0 ],
+      "sourceID" : 7008,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 17, 1, 1 ],
+      "slicerBegin" : [ 2765, 9467, 0, 0 ],
+      "slicerEnd" : [ 2781, 9483, 0, 0 ],
+      "sourceID" : 3300,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 2769, 5489, 0, 0 ],
+      "slicerEnd" : [ 2784, 5504, 0, 0 ],
+      "sourceID" : 8196,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 15, 1, 1 ],
+      "slicerBegin" : [ 2770, 4536, 0, 0 ],
+      "slicerEnd" : [ 2783, 4550, 0, 0 ],
+      "sourceID" : 9852,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 2806, 6351, 0, 0 ],
+      "slicerEnd" : [ 2819, 6364, 0, 0 ],
+      "sourceID" : 8844,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 2812, 6552, 0, 0 ],
+      "slicerEnd" : [ 2826, 6566, 0, 0 ],
+      "sourceID" : 8556,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 2841, 7766, 0, 0 ],
+      "slicerEnd" : [ 2856, 7781, 0, 0 ],
+      "sourceID" : 11436,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 2883, 10541, 0, 0 ],
+      "slicerEnd" : [ 2897, 10554, 0, 0 ],
+      "sourceID" : 9024,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 14, 1, 1 ],
+      "slicerBegin" : [ 2889, 11924, 0, 0 ],
+      "slicerEnd" : [ 2905, 11937, 0, 0 ],
+      "sourceID" : 8412,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 20, 1, 1 ],
+      "slicerBegin" : [ 2903, 12380, 0, 0 ],
+      "slicerEnd" : [ 2921, 12399, 0, 0 ],
+      "sourceID" : 2724,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 2931, 5958, 0, 0 ],
+      "slicerEnd" : [ 2946, 5973, 0, 0 ],
+      "sourceID" : 4776,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 18, 1, 1 ],
+      "slicerBegin" : [ 2973, 4868, 0, 0 ],
+      "slicerEnd" : [ 2992, 4885, 0, 0 ],
+      "sourceID" : 1644,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 2974, 2269, 0, 0 ],
+      "slicerEnd" : [ 2987, 2281, 0, 0 ],
+      "sourceID" : 7440,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 2993, 2857, 0, 0 ],
+      "slicerEnd" : [ 3006, 2870, 0, 0 ],
+      "sourceID" : 11148,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 3043, 7249, 0, 0 ],
+      "slicerEnd" : [ 3056, 7261, 0, 0 ],
+      "sourceID" : 12768,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 3153, 10194, 0, 0 ],
+      "slicerEnd" : [ 3167, 10208, 0, 0 ],
+      "sourceID" : 7980,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 15, 1, 1 ],
+      "slicerBegin" : [ 3162, 9709, 0, 0 ],
+      "slicerEnd" : [ 3179, 9723, 0, 0 ],
+      "sourceID" : 4488,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 17, 1, 1 ],
+      "slicerBegin" : [ 3164, 11719, 0, 0 ],
+      "slicerEnd" : [ 3179, 11735, 0, 0 ],
+      "sourceID" : 4056,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 3182, 11961, 0, 0 ],
+      "slicerEnd" : [ 3195, 11974, 0, 0 ],
+      "sourceID" : 10896,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 3189, 8466, 0, 0 ],
+      "slicerEnd" : [ 3202, 8478, 0, 0 ],
+      "sourceID" : 13812,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 40, 26, 1, 1 ],
+      "slicerBegin" : [ 3321, 10408, 0, 0 ],
+      "slicerEnd" : [ 3360, 10433, 0, 0 ],
+      "sourceID" : 24,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 16, 1, 1 ],
+      "slicerBegin" : [ 3327, 11889, 0, 0 ],
+      "slicerEnd" : [ 3344, 11904, 0, 0 ],
+      "sourceID" : 2472,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 18, 1, 1 ],
+      "slicerBegin" : [ 3342, 9296, 0, 0 ],
+      "slicerEnd" : [ 3358, 9313, 0, 0 ],
+      "sourceID" : 3336,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 3379, 5339, 0, 0 ],
+      "slicerEnd" : [ 3393, 5353, 0, 0 ],
+      "sourceID" : 8880,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 13, 1, 1 ],
+      "slicerBegin" : [ 3433, 4761, 0, 0 ],
+      "slicerEnd" : [ 3447, 4773, 0, 0 ],
+      "sourceID" : 13740,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 28, 44, 1, 1 ],
+      "slicerBegin" : [ 3443, 6631, 0, 0 ],
+      "slicerEnd" : [ 3470, 6674, 0, 0 ],
+      "sourceID" : 60,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 18, 1, 1 ],
+      "slicerBegin" : [ 3447, 4090, 0, 0 ],
+      "slicerEnd" : [ 3465, 4107, 0, 0 ],
+      "sourceID" : 1860,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 14, 1, 1 ],
+      "slicerBegin" : [ 3449, 10939, 0, 0 ],
+      "slicerEnd" : [ 3461, 10952, 0, 0 ],
+      "sourceID" : 11940,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 3457, 6627, 0, 0 ],
+      "slicerEnd" : [ 3471, 6640, 0, 0 ],
+      "sourceID" : 8340,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 17, 1, 1 ],
+      "slicerBegin" : [ 3462, 2867, 0, 0 ],
+      "slicerEnd" : [ 3476, 2883, 0, 0 ],
+      "sourceID" : 8484,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 18, 1, 1 ],
+      "slicerBegin" : [ 3518, 3676, 0, 0 ],
+      "slicerEnd" : [ 3536, 3693, 0, 0 ],
+      "sourceID" : 2364,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 3520, 4255, 0, 0 ],
+      "slicerEnd" : [ 3534, 4268, 0, 0 ],
+      "sourceID" : 11688,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 19, 1, 1 ],
+      "slicerBegin" : [ 3528, 4358, 0, 0 ],
+      "slicerEnd" : [ 3547, 4376, 0, 0 ],
+      "sourceID" : 1068,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 3545, 8539, 0, 0 ],
+      "slicerEnd" : [ 3559, 8552, 0, 0 ],
+      "sourceID" : 12084,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 16, 1, 1 ],
+      "slicerBegin" : [ 3554, 5289, 0, 0 ],
+      "slicerEnd" : [ 3568, 5304, 0, 0 ],
+      "sourceID" : 12012,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 21, 23, 1, 1 ],
+      "slicerBegin" : [ 3554, 8043, 0, 0 ],
+      "slicerEnd" : [ 3574, 8065, 0, 0 ],
+      "sourceID" : 5316,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 3565, 8202, 0, 0 ],
+      "slicerEnd" : [ 3580, 8216, 0, 0 ],
+      "sourceID" : 8592,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 3572, 7485, 0, 0 ],
+      "slicerEnd" : [ 3585, 7497, 0, 0 ],
+      "sourceID" : 13164,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 15, 1, 1 ],
+      "slicerBegin" : [ 3591, 4807, 0, 0 ],
+      "slicerEnd" : [ 3604, 4821, 0, 0 ],
+      "sourceID" : 11652,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 14, 1, 1 ],
+      "slicerBegin" : [ 3704, 5479, 0, 0 ],
+      "slicerEnd" : [ 3716, 5492, 0, 0 ],
+      "sourceID" : 12372,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 3731, 8116, 0, 0 ],
+      "slicerEnd" : [ 3745, 8130, 0, 0 ],
+      "sourceID" : 13128,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 3754, 8446, 0, 0 ],
+      "slicerEnd" : [ 3768, 8459, 0, 0 ],
+      "sourceID" : 14532,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 3754, 10815, 0, 0 ],
+      "slicerEnd" : [ 3770, 10830, 0, 0 ],
+      "sourceID" : 3552,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 16, 1, 1 ],
+      "slicerBegin" : [ 3787, 2465, 0, 0 ],
+      "slicerEnd" : [ 3801, 2480, 0, 0 ],
+      "sourceID" : 5208,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 13, 1, 1 ],
+      "slicerBegin" : [ 3793, 8569, 0, 0 ],
+      "slicerEnd" : [ 3805, 8581, 0, 0 ],
+      "sourceID" : 13344,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 3800, 4967, 0, 0 ],
+      "slicerEnd" : [ 3814, 4980, 0, 0 ],
+      "sourceID" : 13560,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 3806, 8754, 0, 0 ],
+      "slicerEnd" : [ 3821, 8769, 0, 0 ],
+      "sourceID" : 8088,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 3807, 3624, 0, 0 ],
+      "slicerEnd" : [ 3823, 3639, 0, 0 ],
+      "sourceID" : 4200,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 17, 1, 1 ],
+      "slicerBegin" : [ 3867, 5470, 0, 0 ],
+      "slicerEnd" : [ 3884, 5486, 0, 0 ],
+      "sourceID" : 2940,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 3885, 3941, 0, 0 ],
+      "slicerEnd" : [ 3900, 3955, 0, 0 ],
+      "sourceID" : 6540,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 13, 1, 1 ],
+      "slicerBegin" : [ 3894, 7672, 0, 0 ],
+      "slicerEnd" : [ 3906, 7684, 0, 0 ],
+      "sourceID" : 12948,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 3912, 9733, 0, 0 ],
+      "slicerEnd" : [ 3926, 9746, 0, 0 ],
+      "sourceID" : 9240,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 3915, 10977, 0, 0 ],
+      "slicerEnd" : [ 3931, 10992, 0, 0 ],
+      "sourceID" : 4416,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 18, 1, 1 ],
+      "slicerBegin" : [ 3935, 10112, 0, 0 ],
+      "slicerEnd" : [ 3952, 10129, 0, 0 ],
+      "sourceID" : 3768,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 27, 26, 1, 1 ],
+      "slicerBegin" : [ 3937, 7588, 0, 0 ],
+      "slicerEnd" : [ 3963, 7613, 0, 0 ],
+      "sourceID" : 96,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 3969, 7999, 0, 0 ],
+      "slicerEnd" : [ 3982, 8012, 0, 0 ],
+      "sourceID" : 11760,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 4086, 8658, 0, 0 ],
+      "slicerEnd" : [ 4099, 8670, 0, 0 ],
+      "sourceID" : 12624,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 4118, 5432, 0, 0 ],
+      "slicerEnd" : [ 4133, 5447, 0, 0 ],
+      "sourceID" : 4884,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 15, 1, 1 ],
+      "slicerBegin" : [ 4191, 9650, 0, 0 ],
+      "slicerEnd" : [ 4204, 9664, 0, 0 ],
+      "sourceID" : 14172,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 27, 20, 1, 1 ],
+      "slicerBegin" : [ 4298, 9332, 0, 0 ],
+      "slicerEnd" : [ 4324, 9351, 0, 0 ],
+      "sourceID" : 1464,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 17, 1, 1 ],
+      "slicerBegin" : [ 4301, 2650, 0, 0 ],
+      "slicerEnd" : [ 4317, 2666, 0, 0 ],
+      "sourceID" : 3840,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 4321, 6350, 0, 0 ],
+      "slicerEnd" : [ 4336, 6363, 0, 0 ],
+      "sourceID" : 9888,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 4322, 3935, 0, 0 ],
+      "slicerEnd" : [ 4337, 3950, 0, 0 ],
+      "sourceID" : 7188,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 18, 1, 1 ],
+      "slicerBegin" : [ 4344, 7900, 0, 0 ],
+      "slicerEnd" : [ 4361, 7917, 0, 0 ],
+      "sourceID" : 11004,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 4386, 9194, 0, 0 ],
+      "slicerEnd" : [ 4401, 9208, 0, 0 ],
+      "sourceID" : 7260,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 4401, 11218, 0, 0 ],
+      "slicerEnd" : [ 4417, 11233, 0, 0 ],
+      "sourceID" : 4632,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 4434, 10477, 0, 0 ],
+      "slicerEnd" : [ 4449, 10490, 0, 0 ],
+      "sourceID" : 10464,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 17, 1, 1 ],
+      "slicerBegin" : [ 4470, 4575, 0, 0 ],
+      "slicerEnd" : [ 4486, 4591, 0, 0 ],
+      "sourceID" : 3696,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 13, 1, 1 ],
+      "slicerBegin" : [ 4473, 8029, 0, 0 ],
+      "slicerEnd" : [ 4485, 8041, 0, 0 ],
+      "sourceID" : 12984,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 4487, 8221, 0, 0 ],
+      "slicerEnd" : [ 4502, 8234, 0, 0 ],
+      "sourceID" : 8664,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 21, 28, 1, 1 ],
+      "slicerBegin" : [ 4490, 3489, 0, 0 ],
+      "slicerEnd" : [ 4510, 3516, 0, 0 ],
+      "sourceID" : 5028,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 4507, 6725, 0, 0 ],
+      "slicerEnd" : [ 4521, 6738, 0, 0 ],
+      "sourceID" : 14280,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 4532, 6581, 0, 0 ],
+      "slicerEnd" : [ 4547, 6595, 0, 0 ],
+      "sourceID" : 6396,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 4532, 8138, 0, 0 ],
+      "slicerEnd" : [ 4546, 8151, 0, 0 ],
+      "sourceID" : 12336,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 4539, 4834, 0, 0 ],
+      "slicerEnd" : [ 4553, 4848, 0, 0 ],
+      "sourceID" : 8700,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 15, 1, 1 ],
+      "slicerBegin" : [ 4566, 4041, 0, 0 ],
+      "slicerEnd" : [ 4579, 4055, 0, 0 ],
+      "sourceID" : 10212,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 4623, 3910, 0, 0 ],
+      "slicerEnd" : [ 4636, 3923, 0, 0 ],
+      "sourceID" : 14208,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 19, 1, 1 ],
+      "slicerBegin" : [ 4648, 5752, 0, 0 ],
+      "slicerEnd" : [ 4665, 5770, 0, 0 ],
+      "sourceID" : 3984,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 4675, 3464, 0, 0 ],
+      "slicerEnd" : [ 4691, 3479, 0, 0 ],
+      "sourceID" : 8448,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 4675, 12263, 0, 0 ],
+      "slicerEnd" : [ 4689, 12276, 0, 0 ],
+      "sourceID" : 6756,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 24, 1, 1 ],
+      "slicerBegin" : [ 4711, 11823, 0, 0 ],
+      "slicerEnd" : [ 4730, 11846, 0, 0 ],
+      "sourceID" : 1248,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 4773, 5427, 0, 0 ],
+      "slicerEnd" : [ 4789, 5442, 0, 0 ],
+      "sourceID" : 4308,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 4783, 6286, 0, 0 ],
+      "slicerEnd" : [ 4798, 6300, 0, 0 ],
+      "sourceID" : 6684,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 13, 1, 1 ],
+      "slicerBegin" : [ 4842, 6124, 0, 0 ],
+      "slicerEnd" : [ 4854, 6136, 0, 0 ],
+      "sourceID" : 15036,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 17, 1, 1 ],
+      "slicerBegin" : [ 4879, 11747, 0, 0 ],
+      "slicerEnd" : [ 4895, 11763, 0, 0 ],
+      "sourceID" : 4848,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 15, 1, 1 ],
+      "slicerBegin" : [ 4898, 10424, 0, 0 ],
+      "slicerEnd" : [ 4914, 10438, 0, 0 ],
+      "sourceID" : 7080,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 4902, 3154, 0, 0 ],
+      "slicerEnd" : [ 4916, 3168, 0, 0 ],
+      "sourceID" : 10932,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 4939, 11681, 0, 0 ],
+      "slicerEnd" : [ 4953, 11694, 0, 0 ],
+      "sourceID" : 12480,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 16, 1, 1 ],
+      "slicerBegin" : [ 4942, 4695, 0, 0 ],
+      "slicerEnd" : [ 4956, 4710, 0, 0 ],
+      "sourceID" : 13308,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 4964, 6631, 0, 0 ],
+      "slicerEnd" : [ 4977, 6644, 0, 0 ],
+      "sourceID" : 6936,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 17, 1, 1 ],
+      "slicerBegin" : [ 4979, 8940, 0, 0 ],
+      "slicerEnd" : [ 4995, 8956, 0, 0 ],
+      "sourceID" : 3264,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 4995, 5638, 0, 0 ],
+      "slicerEnd" : [ 5010, 5652, 0, 0 ],
+      "sourceID" : 7944,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 18, 1, 1 ],
+      "slicerBegin" : [ 5003, 8661, 0, 0 ],
+      "slicerEnd" : [ 5021, 8678, 0, 0 ],
+      "sourceID" : 2796,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 17, 1, 1 ],
+      "slicerBegin" : [ 5011, 11115, 0, 0 ],
+      "slicerEnd" : [ 5029, 11131, 0, 0 ],
+      "sourceID" : 2832,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 5021, 7660, 0, 0 ],
+      "slicerEnd" : [ 5034, 7673, 0, 0 ],
+      "sourceID" : 12804,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 5046, 3812, 0, 0 ],
+      "slicerEnd" : [ 5059, 3824, 0, 0 ],
+      "sourceID" : 14496,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 13, 1, 1 ],
+      "slicerBegin" : [ 5058, 3354, 0, 0 ],
+      "slicerEnd" : [ 5070, 3366, 0, 0 ],
+      "sourceID" : 12696,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 16, 1, 1 ],
+      "slicerBegin" : [ 5101, 5976, 0, 0 ],
+      "slicerEnd" : [ 5118, 5991, 0, 0 ],
+      "sourceID" : 3624,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 13, 1, 1 ],
+      "slicerBegin" : [ 5140, 7935, 0, 0 ],
+      "slicerEnd" : [ 5152, 7947, 0, 0 ],
+      "sourceID" : 15108,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 17, 1, 1 ],
+      "slicerBegin" : [ 5149, 7185, 0, 0 ],
+      "slicerEnd" : [ 5167, 7201, 0, 0 ],
+      "sourceID" : 14028,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 5174, 10432, 0, 0 ],
+      "slicerEnd" : [ 5189, 10446, 0, 0 ],
+      "sourceID" : 7152,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 15, 1, 1 ],
+      "slicerBegin" : [ 5190, 5830, 0, 0 ],
+      "slicerEnd" : [ 5202, 5844, 0, 0 ],
+      "sourceID" : 13020,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 16, 1, 1 ],
+      "slicerBegin" : [ 5194, 5296, 0, 0 ],
+      "slicerEnd" : [ 5211, 5311, 0, 0 ],
+      "sourceID" : 3588,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 13, 1, 1 ],
+      "slicerBegin" : [ 5211, 9452, 0, 0 ],
+      "slicerEnd" : [ 5225, 9464, 0, 0 ],
+      "sourceID" : 15000,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 5269, 10480, 0, 0 ],
+      "slicerEnd" : [ 5283, 10493, 0, 0 ],
+      "sourceID" : 12516,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 5282, 3373, 0, 0 ],
+      "slicerEnd" : [ 5295, 3385, 0, 0 ],
+      "sourceID" : 11292,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 5282, 8761, 0, 0 ],
+      "slicerEnd" : [ 5298, 8776, 0, 0 ],
+      "sourceID" : 10572,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 18, 1, 1 ],
+      "slicerBegin" : [ 5305, 9939, 0, 0 ],
+      "slicerEnd" : [ 5323, 9956, 0, 0 ],
+      "sourceID" : 3372,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 5327, 6433, 0, 0 ],
+      "slicerEnd" : [ 5340, 6445, 0, 0 ],
+      "sourceID" : 11400,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 5337, 11747, 0, 0 ],
+      "slicerEnd" : [ 5351, 11760, 0, 0 ],
+      "sourceID" : 8772,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 5360, 9739, 0, 0 ],
+      "slicerEnd" : [ 5373, 9752, 0, 0 ],
+      "sourceID" : 14568,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 5366, 7442, 0, 0 ],
+      "slicerEnd" : [ 5379, 7455, 0, 0 ],
+      "sourceID" : 13056,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 5380, 9276, 0, 0 ],
+      "slicerEnd" : [ 5395, 9291, 0, 0 ],
+      "sourceID" : 10104,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 5380, 12019, 0, 0 ],
+      "slicerEnd" : [ 5394, 12033, 0, 0 ],
+      "sourceID" : 5532,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 5383, 4780, 0, 0 ],
+      "slicerEnd" : [ 5398, 4794, 0, 0 ],
+      "sourceID" : 5964,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 16, 1, 1 ],
+      "slicerBegin" : [ 5455, 6335, 0, 0 ],
+      "slicerEnd" : [ 5472, 6350, 0, 0 ],
+      "sourceID" : 3876,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 5515, 9397, 0, 0 ],
+      "slicerEnd" : [ 5531, 9412, 0, 0 ],
+      "sourceID" : 13452,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 17, 1, 1 ],
+      "slicerBegin" : [ 5563, 3066, 0, 0 ],
+      "slicerEnd" : [ 5580, 3082, 0, 0 ],
+      "sourceID" : 2508,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 19, 1, 1 ],
+      "slicerBegin" : [ 5584, 7744, 0, 0 ],
+      "slicerEnd" : [ 5602, 7762, 0, 0 ],
+      "sourceID" : 1788,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 15, 1, 1 ],
+      "slicerBegin" : [ 5647, 9580, 0, 0 ],
+      "slicerEnd" : [ 5660, 9594, 0, 0 ],
+      "sourceID" : 9348,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 15, 1, 1 ],
+      "slicerBegin" : [ 5676, 8584, 0, 0 ],
+      "slicerEnd" : [ 5692, 8598, 0, 0 ],
+      "sourceID" : 7512,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 5691, 10414, 0, 0 ],
+      "slicerEnd" : [ 5706, 10427, 0, 0 ],
+      "sourceID" : 10644,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 17, 1, 1 ],
+      "slicerBegin" : [ 5700, 8835, 0, 0 ],
+      "slicerEnd" : [ 5719, 8851, 0, 0 ],
+      "sourceID" : 2328,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 16, 1, 1 ],
+      "slicerBegin" : [ 5719, 7637, 0, 0 ],
+      "slicerEnd" : [ 5736, 7652, 0, 0 ],
+      "sourceID" : 4704,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 5755, 8263, 0, 0 ],
+      "slicerEnd" : [ 5768, 8275, 0, 0 ],
+      "sourceID" : 14064,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 17, 1, 1 ],
+      "slicerBegin" : [ 5768, 2975, 0, 0 ],
+      "slicerEnd" : [ 5786, 2991, 0, 0 ],
+      "sourceID" : 2688,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 21, 19, 1, 1 ],
+      "slicerBegin" : [ 5777, 9771, 0, 0 ],
+      "slicerEnd" : [ 5797, 9789, 0, 0 ],
+      "sourceID" : 1572,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 21, 19, 1, 1 ],
+      "slicerBegin" : [ 5794, 9386, 0, 0 ],
+      "slicerEnd" : [ 5814, 9404, 0, 0 ],
+      "sourceID" : 1284,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 5884, 9715, 0, 0 ],
+      "slicerEnd" : [ 5899, 9730, 0, 0 ],
+      "sourceID" : 6432,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 19, 1, 1 ],
+      "slicerBegin" : [ 5918, 9974, 0, 0 ],
+      "slicerEnd" : [ 5937, 9992, 0, 0 ],
+      "sourceID" : 1392,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 14, 1, 1 ],
+      "slicerBegin" : [ 5933, 3998, 0, 0 ],
+      "slicerEnd" : [ 5949, 4011, 0, 0 ],
+      "sourceID" : 9636,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 5940, 11084, 0, 0 ],
+      "slicerEnd" : [ 5954, 11097, 0, 0 ],
+      "sourceID" : 9456,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 5945, 3831, 0, 0 ],
+      "slicerEnd" : [ 5959, 3845, 0, 0 ],
+      "sourceID" : 12408,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 5954, 2765, 0, 0 ],
+      "slicerEnd" : [ 5968, 2778, 0, 0 ],
+      "sourceID" : 11724,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 6036, 7385, 0, 0 ],
+      "slicerEnd" : [ 6050, 7398, 0, 0 ],
+      "sourceID" : 12300,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 6038, 2249, 0, 0 ],
+      "slicerEnd" : [ 6051, 2262, 0, 0 ],
+      "sourceID" : 8124,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 6043, 5936, 0, 0 ],
+      "slicerEnd" : [ 6056, 5948, 0, 0 ],
+      "sourceID" : 11508,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 20, 1, 1 ],
+      "slicerBegin" : [ 6110, 5376, 0, 0 ],
+      "slicerEnd" : [ 6128, 5395, 0, 0 ],
+      "sourceID" : 3156,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 6112, 6977, 0, 0 ],
+      "slicerEnd" : [ 6125, 6989, 0, 0 ],
+      "sourceID" : 14136,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 18, 1, 1 ],
+      "slicerBegin" : [ 6112, 8810, 0, 0 ],
+      "slicerEnd" : [ 6131, 8827, 0, 0 ],
+      "sourceID" : 1536,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 6121, 3824, 0, 0 ],
+      "slicerEnd" : [ 6136, 3838, 0, 0 ],
+      "sourceID" : 6972,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 6153, 7707, 0, 0 ],
+      "slicerEnd" : [ 6168, 7721, 0, 0 ],
+      "sourceID" : 5352,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 6176, 6371, 0, 0 ],
+      "slicerEnd" : [ 6189, 6384, 0, 0 ],
+      "sourceID" : 13992,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 6177, 11899, 0, 0 ],
+      "slicerEnd" : [ 6190, 11912, 0, 0 ],
+      "sourceID" : 10176,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 6201, 5689, 0, 0 ],
+      "slicerEnd" : [ 6215, 5703, 0, 0 ],
+      "sourceID" : 5676,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 6226, 7949, 0, 0 ],
+      "slicerEnd" : [ 6241, 7964, 0, 0 ],
+      "sourceID" : 5820,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 6234, 8976, 0, 0 ],
+      "slicerEnd" : [ 6247, 8989, 0, 0 ],
+      "sourceID" : 11976,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 13, 1, 1 ],
+      "slicerBegin" : [ 6242, 6529, 0, 0 ],
+      "slicerEnd" : [ 6256, 6541, 0, 0 ],
+      "sourceID" : 14964,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 23, 20, 1, 1 ],
+      "slicerBegin" : [ 6266, 3558, 0, 0 ],
+      "slicerEnd" : [ 6288, 3577, 0, 0 ],
+      "sourceID" : 276,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 6287, 6535, 0, 0 ],
+      "slicerEnd" : [ 6300, 6548, 0, 0 ],
+      "sourceID" : 13956,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 17, 1, 1 ],
+      "slicerBegin" : [ 6289, 10415, 0, 0 ],
+      "slicerEnd" : [ 6305, 10431, 0, 0 ],
+      "sourceID" : 3948,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 24, 20, 1, 1 ],
+      "slicerBegin" : [ 6299, 9065, 0, 0 ],
+      "slicerEnd" : [ 6322, 9084, 0, 0 ],
+      "sourceID" : 1356,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 28, 18, 1, 1 ],
+      "slicerBegin" : [ 6306, 5052, 0, 0 ],
+      "slicerEnd" : [ 6333, 5069, 0, 0 ],
+      "sourceID" : 5064,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 22, 29, 1, 1 ],
+      "slicerBegin" : [ 6326, 11166, 0, 0 ],
+      "slicerEnd" : [ 6347, 11194, 0, 0 ],
+      "sourceID" : 2580,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 6367, 3343, 0, 0 ],
+      "slicerEnd" : [ 6382, 3357, 0, 0 ],
+      "sourceID" : 9384,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 18, 1, 1 ],
+      "slicerBegin" : [ 6371, 11497, 0, 0 ],
+      "slicerEnd" : [ 6387, 11514, 0, 0 ],
+      "sourceID" : 4128,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 23, 23, 1, 1 ],
+      "slicerBegin" : [ 6400, 8801, 0, 0 ],
+      "slicerEnd" : [ 6422, 8823, 0, 0 ],
+      "sourceID" : 3912,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 21, 1, 1 ],
+      "slicerBegin" : [ 6401, 8051, 0, 0 ],
+      "slicerEnd" : [ 6420, 8071, 0, 0 ],
+      "sourceID" : 3480,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 6403, 7842, 0, 0 ],
+      "slicerEnd" : [ 6417, 7855, 0, 0 ],
+      "sourceID" : 12120,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 18, 1, 1 ],
+      "slicerBegin" : [ 6430, 5717, 0, 0 ],
+      "slicerEnd" : [ 6447, 5734, 0, 0 ],
+      "sourceID" : 2148,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 22, 20, 1, 1 ],
+      "slicerBegin" : [ 6480, 10856, 0, 0 ],
+      "slicerEnd" : [ 6501, 10875, 0, 0 ],
+      "sourceID" : 744,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 21, 23, 1, 1 ],
+      "slicerBegin" : [ 6487, 7430, 0, 0 ],
+      "slicerEnd" : [ 6507, 7452, 0, 0 ],
+      "sourceID" : 348,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 15, 1, 1 ],
+      "slicerBegin" : [ 6514, 7448, 0, 0 ],
+      "slicerEnd" : [ 6527, 7462, 0, 0 ],
+      "sourceID" : 9996,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 18, 1, 1 ],
+      "slicerBegin" : [ 6554, 2490, 0, 0 ],
+      "slicerEnd" : [ 6569, 2507, 0, 0 ],
+      "sourceID" : 4272,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 31, 19, 1, 1 ],
+      "slicerBegin" : [ 6601, 6109, 0, 0 ],
+      "slicerEnd" : [ 6631, 6127, 0, 0 ],
+      "sourceID" : 2760,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 6602, 9159, 0, 0 ],
+      "slicerEnd" : [ 6617, 9173, 0, 0 ],
+      "sourceID" : 9276,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 6610, 5146, 0, 0 ],
+      "slicerEnd" : [ 6624, 5159, 0, 0 ],
+      "sourceID" : 14820,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 17, 1, 1 ],
+      "slicerBegin" : [ 6637, 4740, 0, 0 ],
+      "slicerEnd" : [ 6654, 4756, 0, 0 ],
+      "sourceID" : 2400,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 6669, 10988, 0, 0 ],
+      "slicerEnd" : [ 6682, 11000, 0, 0 ],
+      "sourceID" : 14352,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 18, 1, 1 ],
+      "slicerBegin" : [ 6693, 8948, 0, 0 ],
+      "slicerEnd" : [ 6710, 8965, 0, 0 ],
+      "sourceID" : 2976,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 19, 1, 1 ],
+      "slicerBegin" : [ 6727, 4631, 0, 0 ],
+      "slicerEnd" : [ 6745, 4649, 0, 0 ],
+      "sourceID" : 2436,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 6745, 11678, 0, 0 ],
+      "slicerEnd" : [ 6760, 11691, 0, 0 ],
+      "sourceID" : 9420,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 6757, 9168, 0, 0 ],
+      "slicerEnd" : [ 6771, 9181, 0, 0 ],
+      "sourceID" : 13272,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 6763, 5011, 0, 0 ],
+      "slicerEnd" : [ 6776, 5024, 0, 0 ],
+      "sourceID" : 13920,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 14, 1, 1 ],
+      "slicerBegin" : [ 6777, 3546, 0, 0 ],
+      "slicerEnd" : [ 6793, 3559, 0, 0 ],
+      "sourceID" : 11580,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 6795, 11503, 0, 0 ],
+      "slicerEnd" : [ 6808, 11516, 0, 0 ],
+      "sourceID" : 10752,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 19, 1, 1 ],
+      "slicerBegin" : [ 6803, 3962, 0, 0 ],
+      "slicerEnd" : [ 6820, 3980, 0, 0 ],
+      "sourceID" : 2292,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 16, 1, 1 ],
+      "slicerBegin" : [ 6836, 11052, 0, 0 ],
+      "slicerEnd" : [ 6850, 11067, 0, 0 ],
+      "sourceID" : 6216,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 18, 1, 1 ],
+      "slicerBegin" : [ 6852, 3684, 0, 0 ],
+      "slicerEnd" : [ 6868, 3701, 0, 0 ],
+      "sourceID" : 11472,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 18, 1, 1 ],
+      "slicerBegin" : [ 6914, 5314, 0, 0 ],
+      "slicerEnd" : [ 6932, 5331, 0, 0 ],
+      "sourceID" : 1428,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 23, 22, 1, 1 ],
+      "slicerBegin" : [ 6925, 6406, 0, 0 ],
+      "slicerEnd" : [ 6947, 6427, 0, 0 ],
+      "sourceID" : 1932,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 13, 1, 1 ],
+      "slicerBegin" : [ 6925, 8987, 0, 0 ],
+      "slicerEnd" : [ 6937, 8999, 0, 0 ],
+      "sourceID" : 14388,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 22, 19, 1, 1 ],
+      "slicerBegin" : [ 6952, 11141, 0, 0 ],
+      "slicerEnd" : [ 6973, 11159, 0, 0 ],
+      "sourceID" : 2040,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 6961, 3623, 0, 0 ],
+      "slicerEnd" : [ 6977, 3638, 0, 0 ],
+      "sourceID" : 4452,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 6962, 3529, 0, 0 ],
+      "slicerEnd" : [ 6976, 3543, 0, 0 ],
+      "sourceID" : 7224,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 6962, 6299, 0, 0 ],
+      "slicerEnd" : [ 6976, 6312, 0, 0 ],
+      "sourceID" : 15072,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 17, 1, 1 ],
+      "slicerBegin" : [ 6973, 8120, 0, 0 ],
+      "slicerEnd" : [ 6991, 8136, 0, 0 ],
+      "sourceID" : 3732,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 6977, 3019, 0, 0 ],
+      "slicerEnd" : [ 6993, 3034, 0, 0 ],
+      "sourceID" : 4092,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 6994, 4104, 0, 0 ],
+      "slicerEnd" : [ 7009, 4117, 0, 0 ],
+      "sourceID" : 11328,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 13, 1, 1 ],
+      "slicerBegin" : [ 7045, 2958, 0, 0 ],
+      "slicerEnd" : [ 7059, 2970, 0, 0 ],
+      "sourceID" : 11616,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 15, 1, 1 ],
+      "slicerBegin" : [ 7068, 4157, 0, 0 ],
+      "slicerEnd" : [ 7084, 4171, 0, 0 ],
+      "sourceID" : 7332,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 7072, 5013, 0, 0 ],
+      "slicerEnd" : [ 7087, 5026, 0, 0 ],
+      "sourceID" : 10428,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 7168, 4231, 0, 0 ],
+      "slicerEnd" : [ 7183, 4246, 0, 0 ],
+      "sourceID" : 6000,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 13, 1, 1 ],
+      "slicerBegin" : [ 7236, 4218, 0, 0 ],
+      "slicerEnd" : [ 7250, 4230, 0, 0 ],
+      "sourceID" : 13632,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 19, 1, 1 ],
+      "slicerBegin" : [ 7247, 10862, 0, 0 ],
+      "slicerEnd" : [ 7266, 10880, 0, 0 ],
+      "sourceID" : 1500,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 7251, 11456, 0, 0 ],
+      "slicerEnd" : [ 7266, 11471, 0, 0 ],
+      "sourceID" : 6108,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 7285, 9835, 0, 0 ],
+      "slicerEnd" : [ 7301, 9850, 0, 0 ],
+      "sourceID" : 5748,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 7317, 10475, 0, 0 ],
+      "slicerEnd" : [ 7330, 10488, 0, 0 ],
+      "sourceID" : 11184,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 7335, 4067, 0, 0 ],
+      "slicerEnd" : [ 7350, 4082, 0, 0 ],
+      "sourceID" : 9600,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 7347, 6344, 0, 0 ],
+      "slicerEnd" : [ 7360, 6357, 0, 0 ],
+      "sourceID" : 14676,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 15, 1, 1 ],
+      "slicerBegin" : [ 7391, 9707, 0, 0 ],
+      "slicerEnd" : [ 7404, 9721, 0, 0 ],
+      "sourceID" : 11364,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 7429, 7031, 0, 0 ],
+      "slicerEnd" : [ 7445, 7046, 0, 0 ],
+      "sourceID" : 4344,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 7431, 8750, 0, 0 ],
+      "slicerEnd" : [ 7444, 8762, 0, 0 ],
+      "sourceID" : 13488,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 7440, 8845, 0, 0 ],
+      "slicerEnd" : [ 7453, 8858, 0, 0 ],
+      "sourceID" : 14100,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 7456, 6076, 0, 0 ],
+      "slicerEnd" : [ 7471, 6090, 0, 0 ],
+      "sourceID" : 6180,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 7485, 3037, 0, 0 ],
+      "slicerEnd" : [ 7498, 3050, 0, 0 ],
+      "sourceID" : 13200,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 7491, 12227, 0, 0 ],
+      "slicerEnd" : [ 7505, 12240, 0, 0 ],
+      "sourceID" : 5892,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 17, 1, 1 ],
+      "slicerBegin" : [ 7565, 7613, 0, 0 ],
+      "slicerEnd" : [ 7582, 7629, 0, 0 ],
+      "sourceID" : 11904,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 7576, 3372, 0, 0 ],
+      "slicerEnd" : [ 7591, 3386, 0, 0 ],
+      "sourceID" : 5604,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 24, 21, 1, 1 ],
+      "slicerBegin" : [ 7640, 8708, 0, 0 ],
+      "slicerEnd" : [ 7663, 8728, 0, 0 ],
+      "sourceID" : 564,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 7647, 9764, 0, 0 ],
+      "slicerEnd" : [ 7661, 9777, 0, 0 ],
+      "sourceID" : 10356,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 22, 23, 1, 1 ],
+      "slicerBegin" : [ 7754, 5480, 0, 0 ],
+      "slicerEnd" : [ 7775, 5502, 0, 0 ],
+      "sourceID" : 492,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 25, 19, 1, 1 ],
+      "slicerBegin" : [ 7758, 9928, 0, 0 ],
+      "slicerEnd" : [ 7782, 9946, 0, 0 ],
+      "sourceID" : 5568,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 7781, 5500, 0, 0 ],
+      "slicerEnd" : [ 7797, 5515, 0, 0 ],
+      "sourceID" : 4560,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 7797, 10238, 0, 0 ],
+      "slicerEnd" : [ 7810, 10250, 0, 0 ],
+      "sourceID" : 13884,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 7826, 6347, 0, 0 ],
+      "slicerEnd" : [ 7842, 6362, 0, 0 ],
+      "sourceID" : 3516,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 15, 1, 1 ],
+      "slicerBegin" : [ 7832, 8178, 0, 0 ],
+      "slicerEnd" : [ 7850, 8192, 0, 0 ],
+      "sourceID" : 12048,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 13, 1, 1 ],
+      "slicerBegin" : [ 7897, 2826, 0, 0 ],
+      "slicerEnd" : [ 7909, 2838, 0, 0 ],
+      "sourceID" : 12552,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 7910, 10989, 0, 0 ],
+      "slicerEnd" : [ 7925, 11003, 0, 0 ],
+      "sourceID" : 6612,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 7920, 7648, 0, 0 ],
+      "slicerEnd" : [ 7935, 7661, 0, 0 ],
+      "sourceID" : 12264,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 13, 1, 1 ],
+      "slicerBegin" : [ 7926, 2569, 0, 0 ],
+      "slicerEnd" : [ 7938, 2581, 0, 0 ],
+      "sourceID" : 12228,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 7937, 10029, 0, 0 ],
+      "slicerEnd" : [ 7952, 10043, 0, 0 ],
+      "sourceID" : 12732,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 18, 1, 1 ],
+      "slicerBegin" : [ 7957, 2315, 0, 0 ],
+      "slicerEnd" : [ 7974, 2332, 0, 0 ],
+      "sourceID" : 1968,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 7957, 6286, 0, 0 ],
+      "slicerEnd" : [ 7970, 6299, 0, 0 ],
+      "sourceID" : 13416,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 16, 1, 1 ],
+      "slicerBegin" : [ 7968, 7528, 0, 0 ],
+      "slicerEnd" : [ 7985, 7543, 0, 0 ],
+      "sourceID" : 5496,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 7980, 5833, 0, 0 ],
+      "slicerEnd" : [ 7995, 5846, 0, 0 ],
+      "sourceID" : 14424,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 27, 25, 1, 1 ],
+      "slicerBegin" : [ 7995, 4982, 0, 0 ],
+      "slicerEnd" : [ 8021, 5006, 0, 0 ],
+      "sourceID" : 9204,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 21, 19, 1, 1 ],
+      "slicerBegin" : [ 8025, 4337, 0, 0 ],
+      "slicerEnd" : [ 8045, 4355, 0, 0 ],
+      "sourceID" : 924,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 8027, 3093, 0, 0 ],
+      "slicerEnd" : [ 8042, 3108, 0, 0 ],
+      "sourceID" : 8268,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 15, 1, 1 ],
+      "slicerBegin" : [ 8039, 8250, 0, 0 ],
+      "slicerEnd" : [ 8056, 8264, 0, 0 ],
+      "sourceID" : 10320,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 13, 1, 1 ],
+      "slicerBegin" : [ 8049, 4777, 0, 0 ],
+      "slicerEnd" : [ 8063, 4789, 0, 0 ],
+      "sourceID" : 11832,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 16, 1, 1 ],
+      "slicerBegin" : [ 8069, 2436, 0, 0 ],
+      "slicerEnd" : [ 8087, 2451, 0, 0 ],
+      "sourceID" : 4596,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 17, 1, 1 ],
+      "slicerBegin" : [ 8090, 5466, 0, 0 ],
+      "slicerEnd" : [ 8107, 5482, 0, 0 ],
+      "sourceID" : 4992,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 15, 1, 1 ],
+      "slicerBegin" : [ 8119, 8278, 0, 0 ],
+      "slicerEnd" : [ 8135, 8292, 0, 0 ],
+      "sourceID" : 10968,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 13, 1, 1 ],
+      "slicerBegin" : [ 8140, 5061, 0, 0 ],
+      "slicerEnd" : [ 8154, 5073, 0, 0 ],
+      "sourceID" : 15144,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 24, 22, 1, 1 ],
+      "slicerBegin" : [ 8149, 7368, 0, 0 ],
+      "slicerEnd" : [ 8172, 7389, 0, 0 ],
+      "sourceID" : 7368,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 8157, 2587, 0, 0 ],
+      "slicerEnd" : [ 8170, 2599, 0, 0 ],
+      "sourceID" : 10068,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 19, 1, 1 ],
+      "slicerBegin" : [ 8209, 11045, 0, 0 ],
+      "slicerEnd" : [ 8227, 11063, 0, 0 ],
+      "sourceID" : 2112,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 8219, 11375, 0, 0 ],
+      "slicerEnd" : [ 8234, 11389, 0, 0 ],
+      "sourceID" : 11076,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 17, 1, 1 ],
+      "slicerBegin" : [ 8267, 3456, 0, 0 ],
+      "slicerEnd" : [ 8284, 3472, 0, 0 ],
+      "sourceID" : 4236,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 22, 19, 1, 1 ],
+      "slicerBegin" : [ 8276, 10292, 0, 0 ],
+      "slicerEnd" : [ 8297, 10310, 0, 0 ],
+      "sourceID" : 2616,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 8284, 4099, 0, 0 ],
+      "slicerEnd" : [ 8299, 4113, 0, 0 ],
+      "sourceID" : 7728,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 16, 1, 1 ],
+      "slicerBegin" : [ 8300, 4615, 0, 0 ],
+      "slicerEnd" : [ 8313, 4630, 0, 0 ],
+      "sourceID" : 12588,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 8360, 8313, 0, 0 ],
+      "slicerEnd" : [ 8375, 8326, 0, 0 ],
+      "sourceID" : 8304,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 16, 1, 1 ],
+      "slicerBegin" : [ 8363, 2548, 0, 0 ],
+      "slicerEnd" : [ 8382, 2563, 0, 0 ],
+      "sourceID" : 6720,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 17, 1, 1 ],
+      "slicerBegin" : [ 8397, 5584, 0, 0 ],
+      "slicerEnd" : [ 8413, 5600, 0, 0 ],
+      "sourceID" : 4740,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 19, 1, 1 ],
+      "slicerBegin" : [ 8425, 11631, 0, 0 ],
+      "slicerEnd" : [ 8441, 11649, 0, 0 ],
+      "sourceID" : 5460,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 8433, 10684, 0, 0 ],
+      "slicerEnd" : [ 8448, 10697, 0, 0 ],
+      "sourceID" : 10140,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 17, 1, 1 ],
+      "slicerBegin" : [ 8511, 7461, 0, 0 ],
+      "slicerEnd" : [ 8528, 7477, 0, 0 ],
+      "sourceID" : 4812,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 8521, 6310, 0, 0 ],
+      "slicerEnd" : [ 8534, 6323, 0, 0 ],
+      "sourceID" : 10860,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 8542, 2250, 0, 0 ],
+      "slicerEnd" : [ 8555, 2263, 0, 0 ],
+      "sourceID" : 5784,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 19, 1, 1 ],
+      "slicerBegin" : [ 8554, 3222, 0, 0 ],
+      "slicerEnd" : [ 8573, 3240, 0, 0 ],
+      "sourceID" : 708,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 8568, 11714, 0, 0 ],
+      "slicerEnd" : [ 8581, 11726, 0, 0 ],
+      "sourceID" : 11256,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 8599, 10816, 0, 0 ],
+      "slicerEnd" : [ 8612, 10828, 0, 0 ],
+      "sourceID" : 13848,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 8615, 5027, 0, 0 ],
+      "slicerEnd" : [ 8630, 5040, 0, 0 ],
+      "sourceID" : 10284,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 8624, 10120, 0, 0 ],
+      "slicerEnd" : [ 8639, 10135, 0, 0 ],
+      "sourceID" : 6324,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 18, 1, 1 ],
+      "slicerBegin" : [ 8646, 6317, 0, 0 ],
+      "slicerEnd" : [ 8663, 6334, 0, 0 ],
+      "sourceID" : 2256,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 15, 1, 1 ],
+      "slicerBegin" : [ 8651, 8276, 0, 0 ],
+      "slicerEnd" : [ 8667, 8290, 0, 0 ],
+      "sourceID" : 9816,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 8691, 11623, 0, 0 ],
+      "slicerEnd" : [ 8705, 11636, 0, 0 ],
+      "sourceID" : 9132,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 8693, 3755, 0, 0 ],
+      "slicerEnd" : [ 8706, 3768, 0, 0 ],
+      "sourceID" : 11544,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 18, 1, 1 ],
+      "slicerBegin" : [ 8703, 2759, 0, 0 ],
+      "slicerEnd" : [ 8722, 2776, 0, 0 ],
+      "sourceID" : 1104,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 8746, 6379, 0, 0 ],
+      "slicerEnd" : [ 8760, 6392, 0, 0 ],
+      "sourceID" : 13776,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 15, 1, 1 ],
+      "slicerBegin" : [ 8764, 8542, 0, 0 ],
+      "slicerEnd" : [ 8780, 8556, 0, 0 ],
+      "sourceID" : 4956,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 20, 1, 1 ],
+      "slicerBegin" : [ 8845, 7886, 0, 0 ],
+      "slicerEnd" : [ 8864, 7905, 0, 0 ],
+      "sourceID" : 1140,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 8862, 6362, 0, 0 ],
+      "slicerEnd" : [ 8875, 6375, 0, 0 ],
+      "sourceID" : 14460,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 15, 1, 1 ],
+      "slicerBegin" : [ 8870, 6738, 0, 0 ],
+      "slicerEnd" : [ 8883, 6752, 0, 0 ],
+      "sourceID" : 11796,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 28, 34, 1, 1 ],
+      "slicerBegin" : [ 8880, 11447, 0, 0 ],
+      "slicerEnd" : [ 8907, 11480, 0, 0 ],
+      "sourceID" : 5100,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 23, 24, 1, 1 ],
+      "slicerBegin" : [ 8905, 7435, 0, 0 ],
+      "slicerEnd" : [ 8927, 7458, 0, 0 ],
+      "sourceID" : 528,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 8909, 3076, 0, 0 ],
+      "slicerEnd" : [ 8923, 3090, 0, 0 ],
+      "sourceID" : 7548,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 8940, 7396, 0, 0 ],
+      "slicerEnd" : [ 8955, 7410, 0, 0 ],
+      "sourceID" : 7476,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 8991, 2934, 0, 0 ],
+      "slicerEnd" : [ 9006, 2948, 0, 0 ],
+      "sourceID" : 8988,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 15, 1, 1 ],
+      "slicerBegin" : [ 9013, 7797, 0, 0 ],
+      "slicerEnd" : [ 9026, 7811, 0, 0 ],
+      "sourceID" : 12156,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 26, 29, 1, 1 ],
+      "slicerBegin" : [ 9037, 8010, 0, 0 ],
+      "slicerEnd" : [ 9062, 8038, 0, 0 ],
+      "sourceID" : 204,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 21, 19, 1, 1 ],
+      "slicerBegin" : [ 9067, 9840, 0, 0 ],
+      "slicerEnd" : [ 9087, 9858, 0, 0 ],
+      "sourceID" : 816,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 19, 1, 1 ],
+      "slicerBegin" : [ 9070, 10003, 0, 0 ],
+      "slicerEnd" : [ 9089, 10021, 0, 0 ],
+      "sourceID" : 996,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 9082, 11157, 0, 0 ],
+      "slicerEnd" : [ 9095, 11170, 0, 0 ],
+      "sourceID" : 11112,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 9097, 2909, 0, 0 ],
+      "slicerEnd" : [ 9110, 2922, 0, 0 ],
+      "sourceID" : 9564,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 33, 27, 1, 1 ],
+      "slicerBegin" : [ 9104, 2365, 0, 0 ],
+      "slicerEnd" : [ 9136, 2391, 0, 0 ],
+      "sourceID" : 312,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 16, 1, 1 ],
+      "slicerBegin" : [ 9110, 9693, 0, 0 ],
+      "slicerEnd" : [ 9124, 9708, 0, 0 ],
+      "sourceID" : 6648,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 9118, 8623, 0, 0 ],
+      "slicerEnd" : [ 9134, 8638, 0, 0 ],
+      "sourceID" : 7116,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 9124, 9409, 0, 0 ],
+      "slicerEnd" : [ 9138, 9422, 0, 0 ],
+      "sourceID" : 10716,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 13, 1, 1 ],
+      "slicerBegin" : [ 9132, 6216, 0, 0 ],
+      "slicerEnd" : [ 9149, 6228, 0, 0 ],
+      "sourceID" : 14316,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 9155, 4732, 0, 0 ],
+      "slicerEnd" : [ 9170, 4745, 0, 0 ],
+      "sourceID" : 9924,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 14, 1, 1 ],
+      "slicerBegin" : [ 9158, 9347, 0, 0 ],
+      "slicerEnd" : [ 9175, 9360, 0, 0 ],
+      "sourceID" : 13092,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 16, 1, 1 ],
+      "slicerBegin" : [ 9158, 11682, 0, 0 ],
+      "slicerEnd" : [ 9175, 11697, 0, 0 ],
+      "sourceID" : 4164,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 9268, 6509, 0, 0 ],
+      "slicerEnd" : [ 9282, 6523, 0, 0 ],
+      "sourceID" : 8160,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 9283, 6372, 0, 0 ],
+      "slicerEnd" : [ 9298, 6386, 0, 0 ],
+      "sourceID" : 12444,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 20, 1, 1 ],
+      "slicerBegin" : [ 9322, 9068, 0, 0 ],
+      "slicerEnd" : [ 9341, 9087, 0, 0 ],
+      "sourceID" : 1032,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 15, 1, 1 ],
+      "slicerBegin" : [ 9330, 4476, 0, 0 ],
+      "slicerEnd" : [ 9346, 4490, 0, 0 ],
+      "sourceID" : 6252,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 17, 1, 1 ],
+      "slicerBegin" : [ 9335, 8488, 0, 0 ],
+      "slicerEnd" : [ 9352, 8504, 0, 0 ],
+      "sourceID" : 3192,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 9346, 6138, 0, 0 ],
+      "slicerEnd" : [ 9361, 6153, 0, 0 ],
+      "sourceID" : 5928,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 9359, 7848, 0, 0 ],
+      "slicerEnd" : [ 9373, 7862, 0, 0 ],
+      "sourceID" : 13380,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 17, 1, 1 ],
+      "slicerBegin" : [ 9363, 7744, 0, 0 ],
+      "slicerEnd" : [ 9381, 7760, 0, 0 ],
+      "sourceID" : 2652,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 17, 1, 1 ],
+      "slicerBegin" : [ 9370, 7078, 0, 0 ],
+      "slicerEnd" : [ 9387, 7094, 0, 0 ],
+      "sourceID" : 2544,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 9401, 4344, 0, 0 ],
+      "slicerEnd" : [ 9416, 4359, 0, 0 ],
+      "sourceID" : 13704,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 21, 1, 1 ],
+      "slicerBegin" : [ 9405, 7369, 0, 0 ],
+      "slicerEnd" : [ 9424, 7389, 0, 0 ],
+      "sourceID" : 7584,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 13, 1, 1 ],
+      "slicerBegin" : [ 9409, 6392, 0, 0 ],
+      "slicerEnd" : [ 9421, 6404, 0, 0 ],
+      "sourceID" : 15180,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 9453, 12095, 0, 0 ],
+      "slicerEnd" : [ 9469, 12110, 0, 0 ],
+      "sourceID" : 4380,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 16, 1, 1 ],
+      "slicerBegin" : [ 9466, 11208, 0, 0 ],
+      "slicerEnd" : [ 9483, 11223, 0, 0 ],
+      "sourceID" : 7404,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 21, 19, 1, 1 ],
+      "slicerBegin" : [ 9481, 4802, 0, 0 ],
+      "slicerEnd" : [ 9501, 4820, 0, 0 ],
+      "sourceID" : 636,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 9487, 9903, 0, 0 ],
+      "slicerEnd" : [ 9500, 9916, 0, 0 ],
+      "sourceID" : 14244,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 9552, 5442, 0, 0 ],
+      "slicerEnd" : [ 9566, 5455, 0, 0 ],
+      "sourceID" : 12876,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 16, 1, 1 ],
+      "slicerBegin" : [ 9599, 4017, 0, 0 ],
+      "slicerEnd" : [ 9616, 4032, 0, 0 ],
+      "sourceID" : 6900,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 9608, 9422, 0, 0 ],
+      "slicerEnd" : [ 9622, 9436, 0, 0 ],
+      "sourceID" : 10680,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 9651, 5539, 0, 0 ],
+      "slicerEnd" : [ 9666, 5552, 0, 0 ],
+      "sourceID" : 10500,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 9657, 7933, 0, 0 ],
+      "slicerEnd" : [ 9671, 7946, 0, 0 ],
+      "sourceID" : 14892,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 15, 1, 1 ],
+      "slicerBegin" : [ 9709, 6334, 0, 0 ],
+      "slicerEnd" : [ 9721, 6348, 0, 0 ],
+      "sourceID" : 14640,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 21, 26, 1, 1 ],
+      "slicerBegin" : [ 9719, 5517, 0, 0 ],
+      "slicerEnd" : [ 9739, 5542, 0, 0 ],
+      "sourceID" : 2904,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 9721, 9607, 0, 0 ],
+      "slicerEnd" : [ 9736, 9622, 0, 0 ],
+      "sourceID" : 6576,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 9743, 4643, 0, 0 ],
+      "slicerEnd" : [ 9756, 4655, 0, 0 ],
+      "sourceID" : 14712,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 15, 1, 1 ],
+      "slicerBegin" : [ 9772, 4194, 0, 0 ],
+      "slicerEnd" : [ 9785, 4208, 0, 0 ],
+      "sourceID" : 14784,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 9793, 5085, 0, 0 ],
+      "slicerEnd" : [ 9807, 5098, 0, 0 ],
+      "sourceID" : 13596,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 9813, 5908, 0, 0 ],
+      "slicerEnd" : [ 9828, 5922, 0, 0 ],
+      "sourceID" : 6504,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 15, 1, 1 ],
+      "slicerBegin" : [ 9846, 9648, 0, 0 ],
+      "slicerEnd" : [ 9862, 9662, 0, 0 ],
+      "sourceID" : 7620,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 9849, 3124, 0, 0 ],
+      "slicerEnd" : [ 9863, 3137, 0, 0 ],
+      "sourceID" : 9096,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 9861, 8094, 0, 0 ],
+      "slicerEnd" : [ 9876, 8108, 0, 0 ],
+      "sourceID" : 8628,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 9868, 6196, 0, 0 ],
+      "slicerEnd" : [ 9882, 6209, 0, 0 ],
+      "sourceID" : 8916,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 9869, 7027, 0, 0 ],
+      "slicerEnd" : [ 9882, 7040, 0, 0 ],
+      "sourceID" : 13236,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 9872, 2839, 0, 0 ],
+      "slicerEnd" : [ 9885, 2852, 0, 0 ],
+      "sourceID" : 12912,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 9891, 2827, 0, 0 ],
+      "slicerEnd" : [ 9904, 2840, 0, 0 ],
+      "sourceID" : 10248,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 9900, 11497, 0, 0 ],
+      "slicerEnd" : [ 9916, 11512, 0, 0 ],
+      "sourceID" : 7044,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 15, 1, 1 ],
+      "slicerBegin" : [ 9906, 11447, 0, 0 ],
+      "slicerEnd" : [ 9918, 11461, 0, 0 ],
+      "sourceID" : 12840,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 9950, 4788, 0, 0 ],
+      "slicerEnd" : [ 9964, 4801, 0, 0 ],
+      "sourceID" : 13668,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 17, 1, 1 ],
+      "slicerBegin" : [ 9965, 7592, 0, 0 ],
+      "slicerEnd" : [ 9981, 7608, 0, 0 ],
+      "sourceID" : 5172,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 23, 18, 1, 1 ],
+      "slicerBegin" : [ 9991, 8758, 0, 0 ],
+      "slicerEnd" : [ 10013, 8775, 0, 0 ],
+      "sourceID" : 1896,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 10009, 10876, 0, 0 ],
+      "slicerEnd" : [ 10023, 10889, 0, 0 ],
+      "sourceID" : 10608,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 10038, 6051, 0, 0 ],
+      "slicerEnd" : [ 10053, 6065, 0, 0 ],
+      "sourceID" : 9168,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 10061, 5415, 0, 0 ],
+      "slicerEnd" : [ 10075, 5429, 0, 0 ],
+      "sourceID" : 9744,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 13, 1, 1 ],
+      "slicerBegin" : [ 10089, 9197, 0, 0 ],
+      "slicerEnd" : [ 10103, 9209, 0, 0 ],
+      "sourceID" : 14928,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 13, 1, 1 ],
+      "slicerBegin" : [ 10105, 5990, 0, 0 ],
+      "slicerEnd" : [ 10117, 6002, 0, 0 ],
+      "sourceID" : 14748,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 10160, 4126, 0, 0 ],
+      "slicerEnd" : [ 10175, 4140, 0, 0 ],
+      "sourceID" : 5856,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 21, 19, 1, 1 ],
+      "slicerBegin" : [ 10173, 3466, 0, 0 ],
+      "slicerEnd" : [ 10193, 3484, 0, 0 ],
+      "sourceID" : 960,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 10236, 6234, 0, 0 ],
+      "slicerEnd" : [ 10252, 6249, 0, 0 ],
+      "sourceID" : 6144,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 18, 1, 1 ],
+      "slicerBegin" : [ 10249, 6504, 0, 0 ],
+      "slicerEnd" : [ 10266, 6521, 0, 0 ],
+      "sourceID" : 5136,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 10294, 2272, 0, 0 ],
+      "slicerEnd" : [ 10307, 2285, 0, 0 ],
+      "sourceID" : 8016,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 10324, 9330, 0, 0 ],
+      "slicerEnd" : [ 10340, 9345, 0, 0 ],
+      "sourceID" : 5712,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 21, 18, 1, 1 ],
+      "slicerBegin" : [ 10337, 4917, 0, 0 ],
+      "slicerEnd" : [ 10357, 4934, 0, 0 ],
+      "sourceID" : 7296,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 17, 1, 1 ],
+      "slicerBegin" : [ 10358, 11274, 0, 0 ],
+      "slicerEnd" : [ 10375, 11290, 0, 0 ],
+      "sourceID" : 3228,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 22, 23, 1, 1 ],
+      "slicerBegin" : [ 10427, 4270, 0, 0 ],
+      "slicerEnd" : [ 10448, 4292, 0, 0 ],
+      "sourceID" : 672,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 10441, 10226, 0, 0 ],
+      "slicerEnd" : [ 10456, 10241, 0, 0 ],
+      "sourceID" : 3804,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 10467, 4226, 0, 0 ],
+      "slicerEnd" : [ 10483, 4241, 0, 0 ],
+      "sourceID" : 3012,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 10483, 8982, 0, 0 ],
+      "slicerEnd" : [ 10498, 8996, 0, 0 ],
+      "sourceID" : 8520,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 10519, 8820, 0, 0 ],
+      "slicerEnd" : [ 10532, 8833, 0, 0 ],
+      "sourceID" : 9528,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 13, 1, 1 ],
+      "slicerBegin" : [ 10533, 9713, 0, 0 ],
+      "slicerEnd" : [ 10545, 9725, 0, 0 ],
+      "sourceID" : 14604,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 10551, 7513, 0, 0 ],
+      "slicerEnd" : [ 10566, 7527, 0, 0 ],
+      "sourceID" : 6468,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 10552, 10378, 0, 0 ],
+      "slicerEnd" : [ 10566, 10392, 0, 0 ],
+      "sourceID" : 7656,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 30, 26, 1, 1 ],
+      "slicerBegin" : [ 10566, 7172, 0, 0 ],
+      "slicerEnd" : [ 10595, 7197, 0, 0 ],
+      "sourceID" : 888,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 10605, 7155, 0, 0 ],
+      "slicerEnd" : [ 10619, 7169, 0, 0 ],
+      "sourceID" : 6792,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 16, 1, 1 ],
+      "slicerBegin" : [ 10638, 12149, 0, 0 ],
+      "slicerEnd" : [ 10653, 12164, 0, 0 ],
+      "sourceID" : 4668,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 21, 18, 1, 1 ],
+      "slicerBegin" : [ 10648, 10700, 0, 0 ],
+      "slicerEnd" : [ 10668, 10717, 0, 0 ],
+      "sourceID" : 1212,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 13, 1, 1 ],
+      "slicerBegin" : [ 10650, 11562, 0, 0 ],
+      "slicerEnd" : [ 10664, 11574, 0, 0 ],
+      "sourceID" : 10824,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 23, 23, 1, 1 ],
+      "slicerBegin" : [ 10677, 5732, 0, 0 ],
+      "slicerEnd" : [ 10699, 5754, 0, 0 ],
+      "sourceID" : 240,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 21, 17, 1, 1 ],
+      "slicerBegin" : [ 10688, 5243, 0, 0 ],
+      "slicerEnd" : [ 10708, 5259, 0, 0 ],
+      "sourceID" : 2868,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 10767, 2676, 0, 0 ],
+      "slicerEnd" : [ 10781, 2690, 0, 0 ],
+      "sourceID" : 9312,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 10787, 4939, 0, 0 ],
+      "slicerEnd" : [ 10801, 4953, 0, 0 ],
+      "sourceID" : 10032,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 13, 14, 1, 1 ],
+      "slicerBegin" : [ 10798, 10391, 0, 0 ],
+      "slicerEnd" : [ 10810, 10404, 0, 0 ],
+      "sourceID" : 12192,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 10840, 11600, 0, 0 ],
+      "slicerEnd" : [ 10853, 11613, 0, 0 ],
+      "sourceID" : 11220,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 10870, 3938, 0, 0 ],
+      "slicerEnd" : [ 10884, 3951, 0, 0 ],
+      "sourceID" : 7800,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 10881, 5861, 0, 0 ],
+      "slicerEnd" : [ 10897, 5876, 0, 0 ],
+      "sourceID" : 4524,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 32, 29, 1, 1 ],
+      "slicerBegin" : [ 10888, 6694, 0, 0 ],
+      "slicerEnd" : [ 10919, 6722, 0, 0 ],
+      "sourceID" : 1320,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 21, 20, 1, 1 ],
+      "slicerBegin" : [ 10922, 3108, 0, 0 ],
+      "slicerEnd" : [ 10942, 3127, 0, 0 ],
+      "sourceID" : 384,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 17, 1, 1 ],
+      "slicerBegin" : [ 10998, 6942, 0, 0 ],
+      "slicerEnd" : [ 11016, 6958, 0, 0 ],
+      "sourceID" : 5640,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 17, 1, 1 ],
+      "slicerBegin" : [ 11019, 2231, 0, 0 ],
+      "slicerEnd" : [ 11038, 2247, 0, 0 ],
+      "sourceID" : 2004,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 17, 1, 1 ],
+      "slicerBegin" : [ 11041, 9397, 0, 0 ],
+      "slicerEnd" : [ 11054, 9413, 0, 0 ],
+      "sourceID" : 12660,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 11098, 3379, 0, 0 ],
+      "slicerEnd" : [ 11113, 3393, 0, 0 ],
+      "sourceID" : 8736,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 44, 34, 1, 1 ],
+      "slicerBegin" : [ 11158, 2567, 0, 0 ],
+      "slicerEnd" : [ 11201, 2600, 0, 0 ],
+      "sourceID" : 780,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 11174, 4099, 0, 0 ],
+      "slicerEnd" : [ 11188, 4113, 0, 0 ],
+      "sourceID" : 10788,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 11181, 7091, 0, 0 ],
+      "slicerEnd" : [ 11196, 7104, 0, 0 ],
+      "sourceID" : 8376,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 16, 1, 1 ],
+      "slicerBegin" : [ 11198, 2279, 0, 0 ],
+      "slicerEnd" : [ 11215, 2294, 0, 0 ],
+      "sourceID" : 2184,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 17, 1, 1 ],
+      "slicerBegin" : [ 11199, 7211, 0, 0 ],
+      "slicerEnd" : [ 11216, 7227, 0, 0 ],
+      "sourceID" : 2220,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 11272, 7313, 0, 0 ],
+      "slicerEnd" : [ 11287, 7327, 0, 0 ],
+      "sourceID" : 6288,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 18, 1, 1 ],
+      "slicerBegin" : [ 11286, 6716, 0, 0 ],
+      "slicerEnd" : [ 11304, 6733, 0, 0 ],
+      "sourceID" : 1176,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 11305, 12160, 0, 0 ],
+      "slicerEnd" : [ 11318, 12173, 0, 0 ],
+      "sourceID" : 6072,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 25, 27, 1, 1 ],
+      "slicerBegin" : [ 11307, 11902, 0, 0 ],
+      "slicerEnd" : [ 11331, 11928, 0, 0 ],
+      "sourceID" : 1608,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 17, 1, 1 ],
+      "slicerBegin" : [ 11366, 2726, 0, 0 ],
+      "slicerEnd" : [ 11380, 2742, 0, 0 ],
+      "sourceID" : 9780,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 11370, 10617, 0, 0 ],
+      "slicerEnd" : [ 11385, 10631, 0, 0 ],
+      "sourceID" : 7692,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 11371, 9826, 0, 0 ],
+      "slicerEnd" : [ 11386, 9839, 0, 0 ],
+      "sourceID" : 13524,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 11384, 4935, 0, 0 ],
+      "slicerEnd" : [ 11397, 4948, 0, 0 ],
+      "sourceID" : 11040,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 11398, 7469, 0, 0 ],
+      "slicerEnd" : [ 11413, 7483, 0, 0 ],
+      "sourceID" : 11868,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 17, 1, 1 ],
+      "slicerBegin" : [ 11399, 6120, 0, 0 ],
+      "slicerEnd" : [ 11416, 6136, 0, 0 ],
+      "sourceID" : 3660,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 19, 18, 1, 1 ],
+      "slicerBegin" : [ 11439, 10726, 0, 0 ],
+      "slicerEnd" : [ 11457, 10743, 0, 0 ],
+      "sourceID" : 1752,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 11573, 4999, 0, 0 ],
+      "slicerEnd" : [ 11586, 5012, 0, 0 ],
+      "sourceID" : 9060,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 27, 29, 1, 1 ],
+      "slicerBegin" : [ 11617, 6353, 0, 0 ],
+      "slicerEnd" : [ 11643, 6381, 0, 0 ],
+      "sourceID" : 132,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 11617, 8082, 0, 0 ],
+      "slicerEnd" : [ 11630, 8094, 0, 0 ],
+      "sourceID" : 14856,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 14, 1, 1 ],
+      "slicerBegin" : [ 11636, 5105, 0, 0 ],
+      "slicerEnd" : [ 11651, 5118, 0, 0 ],
+      "sourceID" : 9492,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 11658, 8688, 0, 0 ],
+      "slicerEnd" : [ 11672, 8701, 0, 0 ],
+      "sourceID" : 7872,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 11688, 7295, 0, 0 ],
+      "slicerEnd" : [ 11702, 7308, 0, 0 ],
+      "sourceID" : 10536,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 13, 1, 1 ],
+      "slicerBegin" : [ 11723, 2244, 0, 0 ],
+      "slicerEnd" : [ 11736, 2256, 0, 0 ],
+      "sourceID" : 8052,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 14, 1, 1 ],
+      "slicerBegin" : [ 11824, 3169, 0, 0 ],
+      "slicerEnd" : [ 11837, 3182, 0, 0 ],
+      "sourceID" : 9960,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 11830, 11576, 0, 0 ],
+      "slicerEnd" : [ 11844, 11590, 0, 0 ],
+      "sourceID" : 8808,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 11856, 6632, 0, 0 ],
+      "slicerEnd" : [ 11872, 6647, 0, 0 ],
+      "sourceID" : 3444,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 14, 15, 1, 1 ],
+      "slicerBegin" : [ 11875, 3508, 0, 0 ],
+      "slicerEnd" : [ 11888, 3522, 0, 0 ],
+      "sourceID" : 9708,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 18, 1, 1 ],
+      "slicerBegin" : [ 11882, 12024, 0, 0 ],
+      "slicerEnd" : [ 11899, 12041, 0, 0 ],
+      "sourceID" : 1716,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 11913, 2841, 0, 0 ],
+      "slicerEnd" : [ 11928, 2855, 0, 0 ],
+      "sourceID" : 5424,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 17, 1, 1 ],
+      "slicerBegin" : [ 11928, 5589, 0, 0 ],
+      "slicerEnd" : [ 11944, 5605, 0, 0 ],
+      "sourceID" : 3120,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 45, 40, 1, 1 ],
+      "slicerBegin" : [ 11929, 4908, 0, 0 ],
+      "slicerEnd" : [ 11973, 4947, 0, 0 ],
+      "sourceID" : 168,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 16, 1, 1 ],
+      "slicerBegin" : [ 11930, 11641, 0, 0 ],
+      "slicerEnd" : [ 11946, 11656, 0, 0 ],
+      "sourceID" : 4020,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 16, 1, 1 ],
+      "slicerBegin" : [ 11977, 8247, 0, 0 ],
+      "slicerEnd" : [ 11994, 8262, 0, 0 ],
+      "sourceID" : 7836,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 18, 1, 1 ],
+      "slicerBegin" : [ 11981, 12072, 0, 0 ],
+      "slicerEnd" : [ 12000, 12089, 0, 0 ],
+      "sourceID" : 852,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 11991, 10109, 0, 0 ],
+      "slicerEnd" : [ 12006, 10123, 0, 0 ],
+      "sourceID" : 5388,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 18, 18, 1, 1 ],
+      "slicerBegin" : [ 12073, 6534, 0, 0 ],
+      "slicerEnd" : [ 12090, 6551, 0, 0 ],
+      "sourceID" : 1824,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 12089, 11088, 0, 0 ],
+      "slicerEnd" : [ 12103, 11102, 0, 0 ],
+      "sourceID" : 6036,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 31, 23, 1, 1 ],
+      "slicerBegin" : [ 12174, 6211, 0, 0 ],
+      "slicerEnd" : [ 12204, 6233, 0, 0 ],
+      "sourceID" : 420,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 16, 15, 1, 1 ],
+      "slicerBegin" : [ 12255, 9708, 0, 0 ],
+      "slicerEnd" : [ 12270, 9722, 0, 0 ],
+      "sourceID" : 5244,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 46, 48, 1, 1 ],
+      "slicerBegin" : [ 12263, 6060, 0, 0 ],
+      "slicerEnd" : [ 12308, 6107, 0, 0 ],
+      "sourceID" : 456,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 15, 1, 1 ],
+      "slicerBegin" : [ 12291, 10348, 0, 0 ],
+      "slicerEnd" : [ 12307, 10362, 0, 0 ],
+      "sourceID" : 6828,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 15, 1, 1 ],
+      "slicerBegin" : [ 12293, 8266, 0, 0 ],
+      "slicerEnd" : [ 12307, 8280, 0, 0 ],
+      "sourceID" : 4920,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 20, 16, 1, 1 ],
+      "slicerBegin" : [ 12338, 10668, 0, 0 ],
+      "slicerEnd" : [ 12357, 10683, 0, 0 ],
+      "sourceID" : 2076,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 15, 14, 1, 1 ],
+      "slicerBegin" : [ 12340, 11455, 0, 0 ],
+      "slicerEnd" : [ 12354, 11468, 0, 0 ],
+      "sourceID" : 7908,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 17, 19, 1, 1 ],
+      "slicerBegin" : [ 12396, 11321, 0, 0 ],
+      "slicerEnd" : [ 12412, 11339, 0, 0 ],
+      "sourceID" : 3048,
+      "stride" : [ 1, 1, 1, 1 ]
+   },
+   {
+      "length" : [ 21, 19, 1, 1 ],
+      "slicerBegin" : [ 12440, 9715, 0, 0 ],
+      "slicerEnd" : [ 12460, 9733, 0, 0 ],
+      "sourceID" : 600,
+      "stride" : [ 1, 1, 1, 1 ]
+   }
+]
