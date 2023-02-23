@@ -10,7 +10,8 @@ CXX=mpicxx
 
 SRC = build/array_creator.out \
 	build/main.out \
-	build/json_sorter.out \
+	build/json_sorter_2d.out \
+	build/json_sorter_3d.out
 
 TEST = test_json.out \
 	test_array_slicer.out
