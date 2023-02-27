@@ -13,20 +13,19 @@ SRC = build/array_creator.out \
 	build/json_sorter_2d.out \
 	build/json_sorter_3d.out
 
-TEST = test_json.out \
-	test_array_slicer.out
+SCRATCH = test_array_slicer.out
 
 OBJECT_FILES = build/FITSImageRW.o \
 			build/FitsImageAccess.o
 
-all: $(OBJECT_FILES) $(SRC) $(TEST)
+all: $(OBJECT_FILES) $(SRC) $(SCRATCH)
 
 # src
 build/%.out: src/%.cc dir build/FITSImageRW.o build/FitsImageAccess.o
 	$(CXX) $(CXXFLAGS) $(OPTIMISATION) $(LIB) -o $@ $< build/FitsImageAccess.o build/FITSImageRW.o $(OPT)
 
-# test
-%.out: test/%.cc dir build/FITSImageRW.o build/FitsImageAccess.o
+# scratch
+%.out: scratch/%.cc dir build/FITSImageRW.o build/FitsImageAccess.o
 	$(CXX) $(CXXFLAGS) $(LIB) $(OPTIMISATION) -o build/$@ $< build/FitsImageAccess.o build/FITSImageRW.o $(OPT)
 
 build/FITSImageRW.o: include/FITSImageRW.cc

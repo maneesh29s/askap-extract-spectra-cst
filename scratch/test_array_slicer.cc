@@ -15,7 +15,7 @@
 static void writeDataBinary(const std::vector<size_t> &naxis, const std::vector<float> &arr)
 {
     std::ofstream writer;
-    writer.open("test/test_array_data.dat");
+    writer.open("scratch/test_array_data.dat");
 
     size_t naxes = naxis.size();
     writer.write((char *)&naxes, sizeof(size_t));
@@ -60,10 +60,10 @@ static void writeDataCasa(const std::vector<size_t> &naxis, const std::vector<fl
     askap::accessors::CasaImageAccess<casacore::Float> accessor;
 
     // create casa fits file
-    accessor.create("test/test_casa_array", arr.shape(), casacore::CoordinateUtil::defaultCoords4D());
+    accessor.create("scratch/test_casa_array", arr.shape(), casacore::CoordinateUtil::defaultCoords4D());
 
     // write the array
-    accessor.write("test/test_casa_array", arr);
+    accessor.write("scratch/test_casa_array", arr);
 }
 
 static void writeDataFITS(const std::vector<size_t> &naxis, const std::vector<float> &inputArr)
@@ -93,10 +93,10 @@ static void writeDataFITS(const std::vector<size_t> &naxis, const std::vector<fl
     askap::accessors::FitsImageAccess accessor;
 
     // create casa fits file
-    accessor.create("test/test_fits_array", arr.shape(), casacore::CoordinateUtil::defaultCoords4D());
+    accessor.create("scratch/test_fits_array", arr.shape(), casacore::CoordinateUtil::defaultCoords4D());
 
     // write the array
-    accessor.write("test/test_fits_array", arr);
+    accessor.write("scratch/test_fits_array", arr);
 }
 
 static void readDataBinary()
@@ -105,9 +105,9 @@ static void readDataBinary()
     Json::Value root;        // for modifying and storing new values
 
     std::ifstream dataFile;
-    dataFile.open("test/test_array_data.dat");
+    dataFile.open("scratch/test_array_data.dat");
     std::ifstream jsonFile;
-    jsonFile.open("test/test_log.json");
+    jsonFile.open("scratch/test_log.json");
 
     // check if there is any error is getting data from the json jsonFile
     if (!jsonReader.parse(jsonFile, root, false))
@@ -211,7 +211,7 @@ static void CASAExtractSourcesWithSingleRead()
     Json::Value root;        // for modifying and storing new values
 
     std::ifstream jsonFile;
-    jsonFile.open("test/test_log.json");
+    jsonFile.open("scratch/test_log.json");
     // check if there is any error is getting data from the json jsonFile
     if (!jsonReader.parse(jsonFile, root, false))
     {
@@ -222,7 +222,7 @@ static void CASAExtractSourcesWithSingleRead()
     // reading whole data
     casacore::Array<casacore::Float> arr;
     askap::accessors::CasaImageAccess<casacore::Float> accessor;
-    arr = accessor.read("test/test_casa_array");
+    arr = accessor.read("scratch/test_casa_array");
 
     const int naxes = arr.ndim();
     if (naxes != 4)
@@ -310,7 +310,7 @@ static void CASAExtractSourcesWithSlicedReads()
     Json::Value root;        // for modifying and storing new values
 
     std::ifstream jsonFile;
-    jsonFile.open("test/test_log.json");
+    jsonFile.open("scratch/test_log.json");
 
     // check if there is any error is getting data from the json jsonFile
     if (!jsonReader.parse(jsonFile, root, false))
@@ -321,7 +321,7 @@ static void CASAExtractSourcesWithSlicedReads()
 
     askap::accessors::CasaImageAccess<casacore::Float> accessor;
 
-    casacore::PagedImage<casacore::Float> img("test/test_casa_array");
+    casacore::PagedImage<casacore::Float> img("scratch/test_casa_array");
     const int naxes = img.ndim();
     if (naxes != 4)
     {
@@ -354,7 +354,7 @@ static void CASAExtractSourcesWithSlicedReads()
         casacore::IPosition blc(slicerBegin);
         casacore::IPosition trc(slicerEnd);
 
-        casacore::Array<casacore::Float> output = accessor.read("test/test_casa_array", blc, trc);
+        casacore::Array<casacore::Float> output = accessor.read("scratch/test_casa_array", blc, trc);
 
         std::cout << "Sliced array " << i << " dimensions :" << std::endl;
         std::cout << "numelements : " << output.size() << std::endl;
@@ -383,7 +383,7 @@ static void FITSExtractSourcesWithSingleRead()
     Json::Value root;        // for modifying and storing new values
 
     std::ifstream jsonFile;
-    jsonFile.open("test/test_log.json");
+    jsonFile.open("scratch/test_log.json");
     // check if there is any error is getting data from the json jsonFile
     if (!jsonReader.parse(jsonFile, root, false))
     {
@@ -394,7 +394,7 @@ static void FITSExtractSourcesWithSingleRead()
     // reading whole data
     casacore::Array<casacore::Float> arr;
     askap::accessors::FitsImageAccess accessor;
-    arr = accessor.read("test/test_fits_array");
+    arr = accessor.read("scratch/test_fits_array");
 
     const int naxes = arr.ndim();
     if (naxes != 4)
@@ -482,7 +482,7 @@ static void FITSExtractSourcesWithSlicedReads()
     Json::Value root;        // for modifying and storing new values
 
     std::ifstream jsonFile;
-    jsonFile.open("test/test_log.json");
+    jsonFile.open("scratch/test_log.json");
 
     // check if there is any error is getting data from the json jsonFile
     if (!jsonReader.parse(jsonFile, root, false))
@@ -493,7 +493,7 @@ static void FITSExtractSourcesWithSlicedReads()
 
     askap::accessors::FitsImageAccess accessor;
 
-    casacore::FITSImage img("test/test_fits_array.fits");
+    casacore::FITSImage img("scratch/test_fits_array.fits");
     const int naxes = img.ndim();
     if (naxes != 4)
     {
@@ -526,7 +526,7 @@ static void FITSExtractSourcesWithSlicedReads()
         casacore::IPosition blc(slicerBegin);
         casacore::IPosition trc(slicerEnd);
 
-        casacore::Array<casacore::Float> output = accessor.read("test/test_fits_array", blc, trc);
+        casacore::Array<casacore::Float> output = accessor.read("scratch/test_fits_array", blc, trc);
 
         std::cout << "Sliced array " << i << " dimensions :" << std::endl;
         std::cout << "numelements : " << output.size() << std::endl;
