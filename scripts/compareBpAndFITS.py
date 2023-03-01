@@ -9,14 +9,14 @@ import math
 
 # Arguments passed
 fitsImageNames = os.listdir(
-	"test_data/fits-to-fits_single_read_output_sources")
+	"test_data_2d/fits-to-fits_single_read_output_sources")
 
 it = 0
-with adios2.open("test_data/fits-to-bp_single_read_output_sources.bp", "r") as bpFile:
+with adios2.open("test_data_2d/fits-to-bp_single_read_output_sources.bp", "r") as bpFile:
 	for imageName in fitsImageNames:
 		bpData = np.array(bpFile.read(imageName.split('.')[0]))
 
-		fitsImagePath = "test_data/fits-to-fits_single_read_output_sources/"+imageName
+		fitsImagePath = "test_data_2d/fits-to-fits_single_read_output_sources/"+imageName
 		### Using fitsio library
 		fitsData = np.array(fitsio.read(fitsImagePath))
 

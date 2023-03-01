@@ -1,15 +1,16 @@
-CXXFLAGS=-std=c++14 -Iinclude/ `pkg-config --cflags --libs cfitsio` `pkg-config --cflags --libs ompi`
+CXXFLAGS=-std=c++14 -Iinclude/ 
 
 OPTIMISATION=-O3
 # OPTIMISATION=-fsanitize=address -g
 
-LIB=-ljsoncpp -lcasa_casa -lcasa_lattices -lcasa_images -lcasa_tables -lcasa_coordinates -lcasa_scimath \
-	-lCommon -lcasa_coordinates -lcasa_fits -lcfitsio `adios2-config --cxx-flags --cxx-libs`
+LIB=-ljsoncpp -lcasa_casa -lcasa_lattices -lcasa_images -lcasa_tables -lcasa_scimath \
+	-lCommon -lcasa_coordinates -lcasa_fits `adios2-config --cxx-flags --cxx-libs` \
+	`pkg-config --libs cfitsio` `pkg-config --cflags --libs ompi`
 
 CXX=mpicxx
 
 SRC = build/array_creator.out \
-	build/main.out \
+	build/bench_cubelet_extractor_2d.out \
 	build/json_sorter_2d.out \
 	build/json_sorter_3d.out
 

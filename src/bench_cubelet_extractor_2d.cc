@@ -27,18 +27,19 @@ int main(int argc, char const *argv[]) {
   std::cout << "Running " << inputImageType << " to " << outputImageType
             << std::endl;
 
-  std::string imageFilePath = "test_data/" + inputImageType + "_dummy_image";
-  std::string outputDirPathForSingleRead = "test_data/" + inputImageType +
+  std::string imageFilePath = "test_data_2d/" + inputImageType + "_dummy_image";
+  std::string outputDirPathForSingleRead = "test_data_2d/" + inputImageType +
                                            "-to-" + outputImageType +
                                            "_single_read_output_sources";
-  std::string outputDirPathForSlicedRead = "test_data/" + inputImageType +
+  std::string outputDirPathForSlicedRead = "test_data_2d/" + inputImageType +
                                            "-to-" + outputImageType +
                                            "_multi_read_output_sources";
 
   int status;
-  if (outputImageType != "bp")
+  if (outputImageType != "bp") {
     status = mkdir(outputDirPathForSingleRead.c_str(), 0700);
     status = mkdir(outputDirPathForSlicedRead.c_str(), 0700);
+  }
 
   Timer timer;
 
