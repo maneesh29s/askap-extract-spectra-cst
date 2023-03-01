@@ -122,27 +122,7 @@ std::vector<float> generateRandomData(const std::vector<size_t> &naxis,
   return arr;
 }
 
-void writeDataBinary(const std::vector<size_t> &naxis,
-                     const std::vector<float> &arr,
-                     const std::string &filename) {
-  std::ofstream writer;
-  writer.open(filename);
-
-  size_t naxes = naxis.size();
-  writer.write((char *)&naxes, sizeof(size_t));
-
-  for (size_t i = 0; i < naxes; i++) {
-    writer.write((char *)&naxis[i], sizeof(size_t));
-  }
-
-  for (size_t i = 0; i < arr.size(); i++) {
-    writer.write((char *)&arr[i], sizeof(float));
-  }
-
-  writer.close();
-}
-
-void writeData(const std::vector<size_t> &naxis,
+void createTestImage(const std::vector<size_t> &naxis,
                const std::vector<float> &inputArr, const std::string &filename,
                askap::accessors::IImageAccess<casacore::Float> &accessor) {
   size_t naxes = naxis.size();
@@ -173,77 +153,7 @@ void writeData(const std::vector<size_t> &naxis,
   accessor.write(filename, arr);
 }
 
-void readDataBinary(const std::string &binaryDataFilePath,
-                    const std::string &jsonFilePath) {
-  Json::Reader jsonReader; // for reading the data
-  Json::Value root;        // for modifying and storing new values
-
-  std::ifstream dataFile;
-  dataFile.open(binaryDataFilePath);
-  std::ifstream jsonFile;
-  jsonFile.open(jsonFilePath);
-
-  if (!jsonReader.parse(jsonFile, root, false)) {
-    std::cerr << jsonReader.getFormattedErrorMessages();
-    exit(1);
-  }
-
-  size_t naxes;
-  dataFile.read((char *)&naxes, sizeof(size_t));
-
-  // for current application, naxes must be 4
-  if (naxes != 4) {
-    std::cerr << "This application requires a 4D array. Please recreate array "
-                 "using array_creator.";
-    exit(1);
-  }
-
-  std::vector<size_t> naxis(naxes);
-
-  for (size_t i = 0; i < naxes; i++) {
-    dataFile.read((char *)&naxis[i], sizeof(size_t));
-  }
-
-  // reading whole data
-  casacore::IPosition arrSize(naxes, naxis[0], naxis[1], naxis[2], naxis[3]);
-  casacore::Array<casacore::Float> arr(arrSize);
-
-  float value;
-  for (size_t i = 0; i < arr.size(); i++) {
-    casacore::IPosition currentPos =
-        casacore::toIPositionInArray(i, arr.shape());
-    dataFile.read((char *)&value, sizeof(float));
-    arr(currentPos) = value;
-  }
-
-  for (Json::Value::ArrayIndex i = 0; i != root.size(); i++) {
-    int sourceID = root[i]["sourceID"].asInt();
-
-    casacore::Vector<casacore::Int64> slicerBegin(naxes);
-    casacore::Vector<casacore::Int64> slicerEnd(naxes);
-    casacore::Vector<casacore::Int64> stride(naxes);
-    casacore::Vector<casacore::Int64> length(naxes);
-
-    for (Json::Value::ArrayIndex j = 0; j < naxes; j++) {
-      slicerBegin(j) = root[i]["slicerBegin"][j].asInt64();
-      slicerEnd(j) = root[i]["slicerEnd"][j].asInt64();
-      stride(j) = root[i]["stride"][j].asInt64();
-      length(j) = root[i]["length"][j].asInt64();
-    }
-
-    casacore::IPosition blc(slicerBegin);
-    casacore::IPosition trc(slicerEnd);
-
-    casacore::Slicer slicer =
-        casacore::Slicer(blc, trc, casacore::Slicer::endIsLast);
-    casacore::Array<casacore::Float> output = arr(slicer);
-  }
-
-  dataFile.close();
-  jsonFile.close();
-}
-
-void extractSourcesWithSingleRead(Parameters &parameters) {
+void cubeletExtractionWithSingleRead(Parameters &parameters) {
   adios2::ADIOS adios;
   adios2::IO io;
   adios2::Engine writer;
@@ -325,7 +235,7 @@ void extractSourcesWithSingleRead(Parameters &parameters) {
   }
 }
 
-void extractSourcesWithSlicedReads(Parameters &parameters) {
+void cubeletExtractionWithSlicedReads(Parameters &parameters) {
   // constant
   const int NAXES = 4;
 

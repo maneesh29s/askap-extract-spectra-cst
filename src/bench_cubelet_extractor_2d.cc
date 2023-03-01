@@ -47,7 +47,7 @@ int main(int argc, char const *argv[]) {
                         outputImageType, outputDirPathForSingleRead);
 
   timer.start_timer();
-  extractSourcesWithSingleRead(singleRead);
+  cubeletExtractionWithSingleRead(singleRead);
   timer.stop_timer();
 
   std::cout << "Time elapsed : " << inputImageType << " to " << outputImageType
@@ -58,7 +58,7 @@ int main(int argc, char const *argv[]) {
                         outputImageType, outputDirPathForSlicedRead);
 
   timer.start_timer();
-  extractSourcesWithSlicedReads(slicedRead);
+  cubeletExtractionWithSlicedReads(slicedRead);
   timer.stop_timer();
 
   std::cout << "Time elapsed : " << inputImageType << " to " << outputImageType

@@ -42,7 +42,7 @@ int main(int argc, char const *argv[]) {
   image = "fits";
   imageFilePath = outDirName + "/" + image + "_dummy_image";
   askap::accessors::FitsImageAccess fitsAcceessor;
-  writeData(naxis, arr, imageFilePath, fitsAcceessor);
+  createTestImage(naxis, arr, imageFilePath, fitsAcceessor);
   std::cout << "Array writen to " << imageFilePath << ".fits" << std::endl;
 
   // image = "casa";
