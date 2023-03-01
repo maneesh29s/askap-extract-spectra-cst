@@ -9,6 +9,7 @@
 #include "CasaImageAccess.h"
 #include "FitsImageAccess.h"
 #include "helper.hpp"
+#include "cubeletExtractors.hpp"
 
 int main(int argc, char const *argv[]) {
   if (argc != 4) {
