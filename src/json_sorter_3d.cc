@@ -5,45 +5,14 @@
 #include <string>
 
 #include <json/json.h>
-
-class ImageSource
-{
-public:
-    std::string sourceID;
-    std::vector<int64_t> slicerBegin;
-    std::vector<int64_t> slicerEnd;
-    std::vector<int64_t> stride;
-    std::vector<int64_t> length;
-    std::string stokes;
-
-    ImageSource(){};
-
-    ImageSource(std::string sid, std::vector<int64_t> sb, std::vector<int64_t> se, std::vector<int64_t> st, std::vector<int64_t> len, std::string sto) : sourceID(sid), slicerBegin(sb), slicerEnd(se), stride(st), length(len), stokes(sto){};
-
-    bool operator<(const ImageSource &str) const
-    {
-        for (size_t i = 0; i < slicerBegin.size(); i++)
-        {
-            if (slicerBegin[i] < str.slicerBegin[i])
-            {
-                return true;
-            }
-            if (slicerBegin[i] == str.slicerBegin[i])
-            {
-                continue;
-            }
-            return false;
-        }
-        return false;
-    }
-};
+#include "helper.hpp"
 
 // testing of jsoncpp library to read and write to json
 int main(int argc, char const *argv[])
 {
     if (argc != 2)
     {
-        std::cerr << "Usage: ./build/json_sourter.out <input_json_file>";
+        std::cerr << "Usage: ./build/json_sorter.out <input_json_file>";
         exit(1);
     }
 
@@ -70,7 +39,7 @@ int main(int argc, char const *argv[])
         exit(1);
     }
 
-    std::vector<ImageSource> sourceList(root.size());
+    std::vector<SpectralImageSource> sourceList(root.size());
 
     for (Json::Value::ArrayIndex i = 0; i != root.size(); i++)
     {
@@ -91,7 +60,7 @@ int main(int argc, char const *argv[])
             length[j] = root[i]["length"][j].asInt64();
         }
 
-        sourceList[i] = ImageSource(sourceID, slicerBegin, slicerEnd, stride, length, stokes);
+        sourceList[i] = SpectralImageSource(sourceID, slicerBegin, slicerEnd, stride, length, stokes);
     }
 
     std::sort(sourceList.begin(), sourceList.end());

@@ -55,6 +55,40 @@ public:
   }
 };
 
+
+class SpectralImageSource
+{
+public:
+    std::string sourceID;
+    std::vector<int64_t> slicerBegin;
+    std::vector<int64_t> slicerEnd;
+    std::vector<int64_t> stride;
+    std::vector<int64_t> length;
+    std::string stokes;
+
+    SpectralImageSource(){};
+
+    SpectralImageSource(std::string sid, std::vector<int64_t> sb, std::vector<int64_t> se, std::vector<int64_t> st, std::vector<int64_t> len, std::string sto) : sourceID(sid), slicerBegin(sb), slicerEnd(se), stride(st), length(len), stokes(sto){};
+
+    bool operator<(const SpectralImageSource &str) const
+    {
+        for (size_t i = 0; i < slicerBegin.size(); i++)
+        {
+            if (slicerBegin[i] < str.slicerBegin[i])
+            {
+                return true;
+            }
+            if (slicerBegin[i] == str.slicerBegin[i])
+            {
+                continue;
+            }
+            return false;
+        }
+        return false;
+    }
+};
+
+
 void writeToBp(int sourceID, casacore::Array<casacore::Float> output,
                adios2::IO io, adios2::Engine writer) {
   const adios2::Dims shape = {static_cast<std::size_t>(output.shape()(0)),

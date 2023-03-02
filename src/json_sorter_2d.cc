@@ -6,7 +6,7 @@
 
 #include <json/json.h>
 
-class ImageSource
+class CubeletImageSource
 {
 public:
     int64_t sourceID;
@@ -15,11 +15,11 @@ public:
     std::vector<int64_t> stride;
     std::vector<int64_t> length;
 
-    ImageSource(){};
+    CubeletImageSource(){};
 
-    ImageSource(int64_t sid, std::vector<int64_t> sb, std::vector<int64_t> se, std::vector<int64_t> st, std::vector<int64_t> len) : sourceID(sid), slicerBegin(sb), slicerEnd(se), stride(st), length(len){};
+    CubeletImageSource(int64_t sid, std::vector<int64_t> sb, std::vector<int64_t> se, std::vector<int64_t> st, std::vector<int64_t> len) : sourceID(sid), slicerBegin(sb), slicerEnd(se), stride(st), length(len){};
 
-    bool operator<(const ImageSource &str) const
+    bool operator<(const CubeletImageSource &str) const
     {
         for (size_t i = 0; i < slicerBegin.size(); i++)
         {
@@ -69,7 +69,7 @@ int main(int argc, char const *argv[])
         exit(1);
     }
 
-    std::vector<ImageSource> sourceList(root.size());
+    std::vector<CubeletImageSource> sourceList(root.size());
 
     for (Json::Value::ArrayIndex i = 0; i != root.size(); i++)
     {
@@ -88,7 +88,7 @@ int main(int argc, char const *argv[])
             length[j] = root[i]["length"][j].asInt64();
         }
 
-        sourceList[i] = ImageSource(sourceID, slicerBegin, slicerEnd, stride, length);
+        sourceList[i] = CubeletImageSource(sourceID, slicerBegin, slicerEnd, stride, length);
     }
 
     std::sort(sourceList.begin(), sourceList.end());
