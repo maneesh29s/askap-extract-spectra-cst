@@ -33,13 +33,19 @@ fi
 
 inputFile="${fullfile%.*}"
 
-sed "/^INFO.*Extracting spectrum from image\.restored\.[iquv]\.NGC5044_3B_band2\.SB40905\.contcube\.conv\.fits.*$/!d" ${inputFile}.log > ${inputFile}-truncated-spectrum.log
+# update as per need
+truncatedLogFile=${inputFile}-truncated-spectrum-I.log
+outputFile=${inputFile}-processed-spectrum-I.json
 
-outputFile=${inputFile}-processed-spectrum.json
+# considering all the stokes
+# sed "/^INFO.*Extracting spectrum from image\.restored\.[iquv]\.NGC5044_3B_band2\.SB40905\.contcube\.conv\.fits.*$/!d" ${inputFile}.log > ${truncatedLogFile}
+
+# only considering one of the stokes to simplify things
+sed "/^INFO.*Extracting spectrum from image\.restored\.i\.NGC5044_3B_band2\.SB40905\.contcube\.conv\.fits.*$/!d" ${inputFile}.log > ${truncatedLogFile}
 
 echo "[" > ${outputFile}
 
-cat ${inputFile}-truncated-spectrum.log | awk '       
+cat ${truncatedLogFile} | awk '       
   {                                                 
     sourceID = $21;                                 
     slicerBegin = $24 $25 $26 $27;                 
