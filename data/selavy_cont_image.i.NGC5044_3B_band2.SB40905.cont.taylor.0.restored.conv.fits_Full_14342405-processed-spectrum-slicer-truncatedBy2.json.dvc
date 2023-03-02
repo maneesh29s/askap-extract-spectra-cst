@@ -1,0 +1,4 @@
+outs:
+- md5: 602cc261665d7beda8cffb880ee39306
+  size: 15487391
+  path: selavy_cont_image.i.NGC5044_3B_band2.SB40905.cont.taylor.0.restored.conv.fits_Full_14342405-processed-spectrum-slicer-truncatedBy2.json

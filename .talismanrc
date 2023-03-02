@@ -15,6 +15,8 @@ fileignoreconfig:
   checksum: c14cc642e46d318e640f911dac4f96eab14d8ae72d79401a4ca94e07475949bc
 - filename: data/selavy_cont_image.i.NGC5044_3B_band2.SB40905.cont.taylor.0.restored.conv.fits_Full_14342405-processed-sorted.json.dvc
   checksum: 666754552b2a600c59d58ded7893913c22eb2cdabd59c13f9da35ec90ef155a1
+- filename: data/selavy_cont_image.i.NGC5044_3B_band2.SB40905.cont.taylor.0.restored.conv.fits_Full_14342405-processed-spectrum-slicer-truncatedBy2.json.dvc
+  checksum: 6062ff1512501e47795b5c27c7806c63544f5b7e1196094fce3f626d37fd121c
 - filename: data/selavy_cont_image.i.NGC5044_3B_band2.SB40905.cont.taylor.0.restored.conv.fits_Full_14342405-processed.json.dvc
   checksum: 0f4b050c15639fe56dbd1d283957da3c39792098c8b658f41d7ddb6f759a0de0
 - filename: data/selavy_cont_image.i.NGC5044_3B_band2.SB40905.cont.taylor.0.restored.conv.fits_Full_14342405-truncated-spectrum.log.dvc

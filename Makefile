@@ -12,7 +12,8 @@ CXX=mpicxx
 SRC = build/array_creator.out \
 	build/bench_cubelet_extractor_2d.out \
 	build/json_sorter_2d.out \
-	build/json_sorter_3d.out
+	build/json_sorter_3d.out \
+	build/json_slicer_truncator_3d.out
 
 SCRATCH = test_array_slicer.out
 
