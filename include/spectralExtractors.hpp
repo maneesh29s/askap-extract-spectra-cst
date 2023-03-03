@@ -179,6 +179,7 @@ void spectrumExtractionWithSlicedReads(Parameters &parameters) {
 
     if (parameters.outputImageType == "bp") {
       writeStokesToBp(sourceID, itsArray, io, writer);
+      writer.PerformPuts();
     } else {
       std::string outFileName =
           outputDirPath + "Image_" + sourceID;

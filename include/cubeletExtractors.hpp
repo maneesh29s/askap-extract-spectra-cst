@@ -80,6 +80,7 @@ void cubeletExtractionWithSingleRead(Parameters &parameters) {
 
     if (parameters.outputImageType == "bp") {
       writeToBp(std::to_string(sourceID), output, io, writer);
+      writer.PerformPuts();
     } else {
       std::string outFileName =
           outputDirPath + "Image_" + std::to_string(sourceID);
@@ -155,6 +156,7 @@ void cubeletExtractionWithSlicedReads(Parameters &parameters) {
 
     if (parameters.outputImageType == "bp") {
       writeToBp(std::to_string(sourceID), output, io, writer);
+      writer.PerformPuts();
     } else {
       std::string outFileName =
           outputDirPath + "Image_" + std::to_string(sourceID);
