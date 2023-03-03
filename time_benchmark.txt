@@ -170,15 +170,19 @@ SourceSpectralExtractor : Time elapsed : fits to bp : for slice by slice image r
 On Ryzen:
 SourceSpectralExtractor, 6k x 6k x 1 x 144 image, slicerTruncatedBy2 json file
 Running fits to fits
-SourceSpectralExtractor : Time elapsed : fits to fits : for slice by slice image read 823674 ms
+SourceSpectralExtractor : Time elapsed : fits to fits : for slice by slice image read 827987 ms
 Running fits to bp
 SourceSpectralExtractor : Time elapsed : fits to bp : for slice by slice image read 809475 ms
-
-Cubelet Extractor
-Running fits to fits
-Time elapsed : fits to fits : for whole image read at once 10366 ms
-Time elapsed : fits to fits : for slice by slice image read 35708 ms
 Running fits to bp
-Time elapsed : fits to bp : for whole image read at once 1402 ms
-Time elapsed : fits to bp : for slice by slice image read 26944 ms
+SourceSpectralExtractor : Time elapsed : fits to bp : for slice by slice image read 836532 ms
+
+Cubelet Extractor, 14000 x 14000 image
+Running fits to fits                                                                                    
+Time elapsed : fits to fits : for whole image read at once 9964 ms                                      
+Time elapsed : fits to fits : for slice by slice image read 36100 ms
+Running fits to bp
+Time elapsed : fits to bp : for whole image read at once 1456 ms  
+Time elapsed : fits to bp : for slice by slice image read 27538 ms
+
+
 
