@@ -79,7 +79,7 @@ void cubeletExtractionWithSingleRead(Parameters &parameters) {
     casacore::Array<casacore::Float> output = arr(slicer);
 
     if (parameters.outputImageType == "bp") {
-      writeToBp(sourceID, output, io, writer);
+      writeToBp(std::to_string(sourceID), output, io, writer);
     } else {
       std::string outFileName =
           outputDirPath + "Image_" + std::to_string(sourceID);
@@ -154,7 +154,7 @@ void cubeletExtractionWithSlicedReads(Parameters &parameters) {
         inputAccessor->read(imageFilePath, blc, trc);
 
     if (parameters.outputImageType == "bp") {
-      writeToBp(sourceID, output, io, writer);
+      writeToBp(std::to_string(sourceID), output, io, writer);
     } else {
       std::string outFileName =
           outputDirPath + "Image_" + std::to_string(sourceID);

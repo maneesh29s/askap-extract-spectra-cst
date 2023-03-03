@@ -153,3 +153,14 @@ Time elapsed : fits to bp : for slice by slice image read 26411 ms
 Running casa to bp
 Time elapsed : casa to bp : for whole image read at once 1122 ms
 Time elapsed : casa to bp : for slice by slice image read 19122 ms
+
+----------------------------------------------------------------------------
+
+On m1:
+SourceSpectralExtractor, 6k x 6k x 1 x 144 image, slicerTruncatedBy2 json file
+
+Running fits to fits (unsure results)
+SourceSpectralExtractor : Time elapsed : fits to fits : for slice by slice image read 3990215 ms
+
+Running fits to bp
+SourceSpectralExtractor : Time elapsed : fits to bp : for slice by slice image read 1085608 ms

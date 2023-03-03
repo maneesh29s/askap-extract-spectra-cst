@@ -6,17 +6,29 @@ import adios2
 import numpy as np
 import os
 import math
+import sys
+
+if(len(sys.argv) != 3):
+	print("Usage: python3 compareBpAndFITS.py <inputFitsDir> <inputBpImage>")
+	exit(1)
+
+# inputFitsDir = "test_data_3d/fits-to-fits_multi_read_output_sources"
+inputFitsDir = sys.argv[1]
+
+# inputBpImage = "test_data_3d/fits-to-bp_multi_read_output_sources.bp"
+inputBpImage = sys.argv[2]
 
 # Arguments passed
-fitsImageNames = os.listdir(
-	"test_data_2d/fits-to-fits_single_read_output_sources")
+fitsImageNames = os.listdir(inputFitsDir)
 
 it = 0
-with adios2.open("test_data_2d/fits-to-bp_single_read_output_sources.bp", "r") as bpFile:
+with adios2.open(inputBpImage, "r") as bpFile:
 	for imageName in fitsImageNames:
+		it += 1
+
 		bpData = np.array(bpFile.read(imageName.split('.')[0]))
 
-		fitsImagePath = "test_data_2d/fits-to-fits_single_read_output_sources/"+imageName
+		fitsImagePath = os.path.join( inputFitsDir, imageName)
 		### Using fitsio library
 		fitsData = np.array(fitsio.read(fitsImagePath))
 
@@ -27,18 +39,21 @@ with adios2.open("test_data_2d/fits-to-bp_single_read_output_sources.bp", "r") a
 		# RESHAPING BP array, because fitsio API follows C order, thus it reverses the FITS image shape
 		bpData = np.resize(bpData, fitsData.shape)
 				
-		## DEBUG
+		# ## DEBUG
 		# print(imageName)
 		# print(imageName.split('.')[0])
 		# print(fitsImagePath)
 		# print("Bpdata Shape : \n" , bpData.shape)
 		# print("FITSData shape : \n" , fitsData.shape)
-		# print("Bpdata : \n\n" , bpData[0][0][0:2])
-		# print("FITSData : \n" , fitsData[0][0][0:2])
+		# print("Bpdata : \n\n" , bpData)
+		# print("FITSData : \n" , fitsData)
 
 		assert (fitsData.shape == bpData.shape)
 
 		if not np.array_equal(bpData, fitsData):
 		    print(imageName, "does not match")
 
+		# ## DEBUG
 		# break
+		# if(it == 3):
+		# 	break
