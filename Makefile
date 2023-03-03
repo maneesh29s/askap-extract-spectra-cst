@@ -1,11 +1,11 @@
-CXXFLAGS=-std=c++14 -Iinclude/ 
+CXXFLAGS=-std=c++14 -Iinclude/ `pkg-config --cflags cfitsio` `pkg-config --cflags ompi` `adios2-config --cxx-flags`
 
 OPTIMISATION=-O3
 # OPTIMISATION=-fsanitize=address -g
 
 LIB=-ljsoncpp -lcasa_casa -lcasa_lattices -lcasa_images -lcasa_tables -lcasa_scimath \
-	-lCommon -lcasa_coordinates -lcasa_fits `adios2-config --cxx-flags --cxx-libs` \
-	`pkg-config --libs cfitsio` `pkg-config --cflags --libs ompi`
+        -lCommon -lcasa_coordinates -lcasa_fits `adios2-config --cxx-libs` \
+        `pkg-config --libs cfitsio` `pkg-config --libs ompi`
 
 CXX=mpicxx
 
