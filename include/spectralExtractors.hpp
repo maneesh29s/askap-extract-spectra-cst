@@ -158,7 +158,7 @@ void spectrumExtractionWithSlicedReads(Parameters &parameters) {
 
     // HARDCODING WARNING
     // initialising output array
-    // length(2) = spatial / freq axis, length(3) = stokes / polar axis
+    // length(2) = stokes / polar axis, length(3) = spatial / freq axis 
     casacore::IPosition shape(4, 1, 1, length(2), length(3));
     casacore::Array<casacore::Float> itsArray =
         casacore::Array<casacore::Float>(shape, 0.0f);
@@ -168,10 +168,8 @@ void spectrumExtractionWithSlicedReads(Parameters &parameters) {
     // 4 times to replicate real scenario
     for (auto i = 0; i < 4; i++) {
       casacore::Array<casacore::Float> subarray(
-          inputAccessor->read(imageFilePath, blc, trc));
+          inputAccessor->read(imageFilePath+"_"+std::to_string(i+1), blc, trc));
       casacore::IPosition outBLC(itsArray.ndim(), 0), outTRC(itsArray.shape() - 1);
-      // assigning stokes axis
-      // outBLC(3) = outTRC(3) = length(3);
 
       casacore::Array<casacore::Float> sumarray = partialSums(subarray, casacore::IPosition(2, 0, 1));
       itsArray(outBLC, outTRC) = sumarray.reform(itsArray(outBLC, outTRC).shape());
