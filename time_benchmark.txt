@@ -157,32 +157,31 @@ Time elapsed : casa to bp : for slice by slice image read 19122 ms
 ----------------------------------------------------------------------------
 
 On m1:
-SourceSpectralExtractor, 6k x 6k x 1 x 144 image, slicerTruncatedBy2 json file
+Cubelet Extractor,  14000 x 14000 image, 15180 sources
+Time elapsed : fits to fits : for whole image read at once 11243 ms
+Time elapsed : fits to bp : for whole image read at once 661 ms
+Time elapsed : fits to fits : for slice by slice image read 26266 ms
+Time elapsed : fits to bp : for slice by slice image read 16344 ms
 
-Running fits to fits (unsure results)
-SourceSpectralExtractor : Time elapsed : fits to fits : for slice by slice image read 3990215 ms
+On m1:
+SourceSpectralExtractor, 6k x 6k x 1 x 144 image, slicerTruncatedBy2 json file, 1000 sources
+SourceSpectralExtractor : Time elapsed : fits to bp : for slice by slice image read 219618 ms
+SourceSpectralExtractor : Time elapsed : fits to fits : for slice by slice image read 222347 ms
 
-Running fits to bp
-SourceSpectralExtractor : Time elapsed : fits to bp : for slice by slice image read 1085608 ms
-
-----------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
 
 On Ryzen:
-SourceSpectralExtractor, 6k x 6k x 1 x 144 image, slicerTruncatedBy2 json file
-Running fits to fits
-SourceSpectralExtractor : Time elapsed : fits to fits : for slice by slice image read 827987 ms
-Running fits to bp
-SourceSpectralExtractor : Time elapsed : fits to bp : for slice by slice image read 809475 ms
-Running fits to bp
-SourceSpectralExtractor : Time elapsed : fits to bp : for slice by slice image read 836532 ms
-
-Cubelet Extractor, 14000 x 14000 image
-Running fits to fits                                                                                    
+Cubelet Extractor, 14000 x 14000 image 15180 sources                                                                    
 Time elapsed : fits to fits : for whole image read at once 9964 ms                                      
-Time elapsed : fits to fits : for slice by slice image read 36100 ms
-Running fits to bp
 Time elapsed : fits to bp : for whole image read at once 1456 ms  
+Time elapsed : fits to fits : for slice by slice image read 36100 ms
 Time elapsed : fits to bp : for slice by slice image read 27538 ms
 
+SourceSpectralExtractor, 6k x 6k x 1 x 144 image, slicerTruncatedBy2 json file
+SourceSpectralExtractor : Time elapsed : fits to fits : for slice by slice image read 827987 ms
+SourceSpectralExtractor : Time elapsed : fits to bp : for slice by slice image read 809475 ms
+SourceSpectralExtractor : Time elapsed : fits to bp : for slice by slice image read 836532 ms
+
+-------------------
 
 

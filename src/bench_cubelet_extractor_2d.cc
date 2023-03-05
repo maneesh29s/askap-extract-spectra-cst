@@ -62,7 +62,7 @@ int main(int argc, char const *argv[]) {
   cubeletExtractionWithSlicedReads(slicedRead);
   timer.stop_timer();
 
-  std::cout << "Time elapsed : " << inputImageType << " to " << outputImageType
+  std::cout << "CubeletExtractor: Time elapsed : " << inputImageType << " to " << outputImageType
             << " : for slice by slice image read " << timer.time_elapsed()
             << std::endl;
 
