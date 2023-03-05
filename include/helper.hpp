@@ -112,7 +112,7 @@ void writeToBp(std::string sourceID, casacore::Array<casacore::Float> output,
       temp[r * output.shape()(0) + c] = output(currentPos);
     }
   }
-  writer.Put(varGlobalArray, temp.data());
+  writer.Put(varGlobalArray, temp.data(), adios2::Mode::Sync);
 }
 
 void writeStokesToBp(std::string sourceID,
@@ -138,7 +138,7 @@ void writeStokesToBp(std::string sourceID,
     temp[c] = output(currentPos);
   }
 
-  writer.Put(varGlobalArray, temp.data());
+  writer.Put(varGlobalArray, temp.data(), adios2::Mode::Sync);
 }
 
 boost::shared_ptr<askap::accessors::IImageAccess<casacore::Float>>
