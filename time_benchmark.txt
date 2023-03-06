@@ -182,6 +182,17 @@ SourceSpectralExtractor : Time elapsed : fits to fits : for slice by slice image
 SourceSpectralExtractor : Time elapsed : fits to bp : for slice by slice image read 809475 ms
 SourceSpectralExtractor : Time elapsed : fits to bp : for slice by slice image read 836532 ms
 
--------------------
+SourceSpectralExtractor, 6k x 6k x 1 x 144 image, slicerTruncatedBy2 json file, 1000 sources, with or without commenting AIPS_LITTLE_ENDIAN macro
+SourceSpectralExtractor : Time elapsed : fits to bp : for slice by slice image read 34676 ms
+SourceSpectralExtractor : Time elapsed : fits to fits : for slice by slice image read 34769 ms
 
+---------------------------------------------------------------
 
+On m1:
+SourceSpectralExtractor, 6k x 6k x 1 x 144 image, slicerTruncatedBy2-sorted json file, 1000 sources, SortedGrouped (reading chunks of data at a time) reads 
+Time elapsed : fits to bp : for whole image read at once 28325 ms
+Time elapsed : fits to fits : for whole image read at once 27229 ms
+
+SourceSpectralExtractor, 6k x 6k x 1 x 144 image, slicerTruncatedBy2-sorted json file, 1000 sources, Sliced (one source at time) reads 
+SourceSpectralExtractor : Time elapsed : fits to fits : for slice by slice image read 202285 ms
+SourceSpectralExtractor : Time elapsed : fits to bp : for slice by slice image read 203313 ms

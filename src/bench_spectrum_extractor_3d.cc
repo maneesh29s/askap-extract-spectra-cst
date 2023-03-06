@@ -29,31 +29,31 @@ int main(int argc, char const *argv[]) {
             << std::endl;
 
   std::string imageFilePath = "test_data_3d/" + inputImageType + "_dummy_image";
-  std::string outputDirPathForSingleRead = "test_data_3d/" + inputImageType +
+  std::string outputDirPathForsortedGroupedRead = "test_data_3d/" + inputImageType +
                                            "-to-" + outputImageType +
-                                           "_single_read_output_sources";
+                                           "_sorted_grouped_read_output_sources";
   std::string outputDirPathForSlicedRead = "test_data_3d/" + inputImageType +
                                            "-to-" + outputImageType +
                                            "_multi_read_output_sources";
 
   int status;
   if (outputImageType != "bp") {
-    status = mkdir(outputDirPathForSingleRead.c_str(), 0700);
+    status = mkdir(outputDirPathForsortedGroupedRead.c_str(), 0700);
     status = mkdir(outputDirPathForSlicedRead.c_str(), 0700);
   }
 
   Timer timer;
 
-  // Parameters singleRead(inputImageType, imageFilePath, jsonFilePath,
-  //                       outputImageType, outputDirPathForSingleRead);
+  Parameters sortedGroupedRead(inputImageType, imageFilePath, jsonFilePath,
+                        outputImageType, outputDirPathForsortedGroupedRead);
 
-  // timer.start_timer();
-  // spectrumExtractionWithSingleRead(singleRead);
-  // timer.stop_timer();
+  timer.start_timer();
+  spectrumExtractionWithSortedGroupedReads(sortedGroupedRead);
+  timer.stop_timer();
 
-  // std::cout << "Time elapsed : " << inputImageType << " to " << outputImageType
-  //           << " : for whole image read at once " << timer.time_elapsed()
-  //           << std::endl;
+  std::cout << "SourceSpectralExtractor : SortedGroupedRead : Time elapsed : " << inputImageType << " to " << outputImageType
+            << " : for whole image read at once " << timer.time_elapsed()
+            << std::endl;
 
   Parameters slicedRead(inputImageType, imageFilePath, jsonFilePath,
                         outputImageType, outputDirPathForSlicedRead);
@@ -62,7 +62,7 @@ int main(int argc, char const *argv[]) {
   spectrumExtractionWithSlicedReads(slicedRead);
   timer.stop_timer();
 
-  std::cout << "SourceSpectralExtractor : Time elapsed : " << inputImageType << " to " << outputImageType
+  std::cout << "SourceSpectralExtractor : SlicedRead : Time elapsed : " << inputImageType << " to " << outputImageType
             << " : for slice by slice image read " << timer.time_elapsed()
             << std::endl;
 
