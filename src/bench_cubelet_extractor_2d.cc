@@ -44,6 +44,7 @@ int main(int argc, char const *argv[]) {
 
   Timer timer;
 
+#ifdef SINGLE_READ
   Parameters singleRead(inputImageType, imageFilePath, jsonFilePath,
                         outputImageType, outputDirPathForSingleRead);
 
@@ -51,10 +52,12 @@ int main(int argc, char const *argv[]) {
   cubeletExtractionWithSingleRead(singleRead);
   timer.stop_timer();
 
-  std::cout << "Time elapsed : " << inputImageType << " to " << outputImageType
-            << " : for whole image read at once " << timer.time_elapsed()
+  std::cout << "CubeletExtractor:SINGLE_READ:" << inputImageType << " to " << outputImageType
+            << ":Time elapsed - " << timer.time_elapsed()
             << std::endl;
+#endif
 
+#ifdef SLICED_READ
   Parameters slicedRead(inputImageType, imageFilePath, jsonFilePath,
                         outputImageType, outputDirPathForSlicedRead);
 
@@ -62,9 +65,9 @@ int main(int argc, char const *argv[]) {
   cubeletExtractionWithSlicedReads(slicedRead);
   timer.stop_timer();
 
-  std::cout << "CubeletExtractor: Time elapsed : " << inputImageType << " to " << outputImageType
-            << " : for slice by slice image read " << timer.time_elapsed()
+  std::cout << "CubeletExtractor:SLICED_READ:" << inputImageType << " to " << outputImageType
+            << ":Time elapsed - " << timer.time_elapsed()
             << std::endl;
-
+#endif
   return 0;
 }
