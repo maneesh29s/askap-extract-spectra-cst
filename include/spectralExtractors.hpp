@@ -149,9 +149,9 @@ void spectrumExtractionWithSortedGroupedReads(Parameters &parameters) {
   }
 
   // HARDCODING WARNING
-  // reading data, from x=600 to x=1100`
-  casacore::Vector<casacore::Int64> groupBegin{600, 0, 0, 0};
-  casacore::Vector<casacore::Int64> groupEnd{1100, 5999, 0, 143};
+  // reading data, from y=490 to y=990
+  casacore::Vector<casacore::Int64> groupBegin{0, 490, 0, 0};
+  casacore::Vector<casacore::Int64> groupEnd{5999, 990, 0, 143};
 
   casacore::IPosition blc(groupBegin);
   casacore::IPosition trc(groupEnd);
@@ -188,9 +188,9 @@ void spectrumExtractionWithSortedGroupedReads(Parameters &parameters) {
     }
 
     // HARDCODING
-    // Shifting first element of slicers to adjust for indexing
-    slicerBegin(0) = slicerBegin(0) - groupBegin(0);
-    slicerEnd(0) = slicerEnd(0) - groupBegin(0);
+    // Shifting "y" of slicers to adjust for indexing
+    slicerBegin(1) = slicerBegin(1) - groupBegin(1);
+    slicerEnd(1) = slicerEnd(1) - groupBegin(1);
 
     casacore::IPosition blc(slicerBegin);
     casacore::IPosition trc(slicerEnd);
