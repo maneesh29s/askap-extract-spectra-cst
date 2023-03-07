@@ -1,0 +1,19 @@
+Cubelet JSON File being processed: data/selavy_cont_image_JSON_files/selavy_cont_image-cubelet-sorted.json
+Running fits to fits
+CubeletExtractor:SINGLE_READ:fits to fits:Time elapsed - 9939 ms
+Running fits to bp
+CubeletExtractor:SINGLE_READ:fits to bp:Time elapsed - 1403 ms
+Running fits to fits
+CubeletExtractor:SLICED_READ:fits to fits:Time elapsed - 35288 ms
+Running fits to bp
+CubeletExtractor:SLICED_READ:fits to bp:Time elapsed - 27193 ms
+
+Spectral JSON File being processed: data/selavy_cont_image_JSON_files/selavy_cont_image-spectrum-I-slicer-scaledToHalf-sorted.json
+Running fits to fits
+SourceSpectralExtractor:SORTED_GROUPED_READ:fits to fits:Time elapsed - 5180 ms
+Running fits to bp
+SourceSpectralExtractor:SORTED_GROUPED_READ:fits to bp:Time elapsed - 4784 ms
+Running fits to fits
+SourceSpectralExtractor:SLICED_READ:fits to fits:Time elapsed - 32221 ms
+Running fits to bp
+SourceSpectralExtractor:SLICED_READ:fits to bp:Time elapsed - 31888 ms

@@ -8,7 +8,7 @@ cubeletJsonFileSorted=data/selavy_cont_image_JSON_files/selavy_cont_image-cubele
 
 spectralJsonFileSorted=data/selavy_cont_image_JSON_files/selavy_cont_image-spectrum-I-slicer-scaledToHalf-sorted.json
 
-outputFile="benchmarks-`TZ=Asia/Kolkata date +%Y-%m-%dT%H:%M`"
+outputFile="benchmarks-`TZ=Asia/Kolkata date +%Y-%m-%dT%H:%M`.txt"
 
 # Cubelet Extractor (2D)
 echo "Cubelet JSON File being processed: ${cubeletJsonFileSorted}" >> ${outputFile}
