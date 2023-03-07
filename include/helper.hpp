@@ -73,7 +73,7 @@ public:
         stokes(sto){};
 
   bool operator<(const SpectralImageSource &str) const {
-    for (size_t i = 0; i < slicerBegin.size(); i++) {
+    for (int i = 1; i >= 0; i--) {
       if (slicerBegin[i] < str.slicerBegin[i]) {
         return true;
       }

@@ -12,12 +12,12 @@ int main(int argc, char const *argv[])
 {
     if (argc != 2)
     {
-        std::cerr << "Usage: ./build/json_slicer_truncator_3d.out <input_json_file>";
+        std::cerr << "Usage: ./build/json_slicer_scaler_3d.out <input_json_file>";
         exit(1);
     }
 
     std::string inputFilePath = argv[1];
-    std::string outputFilePath = inputFilePath.substr(0, inputFilePath.size() - 5) + "-slicer-truncatedBy2.json";
+    std::string outputFilePath = inputFilePath.substr(0, inputFilePath.size() - 5) + "-slicer-scaledByHalf.json";
 
     Json::Value root;          // for modifying and storing new values
     Json::Reader reader;       // for reading the data

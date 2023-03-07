@@ -189,10 +189,22 @@ SourceSpectralExtractor : Time elapsed : fits to fits : for slice by slice image
 ---------------------------------------------------------------
 
 On m1:
-SourceSpectralExtractor, 6k x 6k x 1 x 144 image, slicerTruncatedBy2-sorted json file, 1000 sources, SortedGrouped (reading chunks of data at a time) reads 
+SourceSpectralExtractor, 6k x 6k x 1 x 144 image, slicer-scaledToHalf-sorted json file, 1000 sources, SortedGrouped (reading chunks of data at a time) reads 
 Time elapsed : fits to bp : for whole image read at once 28325 ms
 Time elapsed : fits to fits : for whole image read at once 27229 ms
 
-SourceSpectralExtractor, 6k x 6k x 1 x 144 image, slicerTruncatedBy2-sorted json file, 1000 sources, Sliced (one source at time) reads 
+SourceSpectralExtractor, 6k x 6k x 1 x 144 image, slicer-scaledToHalf-sorted json file, 1000 sources, Sliced (one source at time) reads 
 SourceSpectralExtractor : Time elapsed : fits to fits : for slice by slice image read 202285 ms
 SourceSpectralExtractor : Time elapsed : fits to bp : for slice by slice image read 203313 ms
+
+
+---------------------------------------------------------------------
+
+On ryzen:
+SourceSpectralExtractor, 6k x 6k x 1 x 144 image, slicer-scaledToHalf-sorted json file, 1000 sources, SortedGrouped (reading chunks of data at a time) reads 
+
+SourceSpectralExtractor : SortedGroupedRead : Time elapsed : fits to bp : for whole image read at once 30645 ms
+SourceSpectralExtractor : SlicedRead : Time elapsed : fits to bp : for slice by slice image read 59050 ms
+
+SourceSpectralExtractor : SortedGroupedRead : Time elapsed : fits to fits : for whole image read at once 33333 ms
+SourceSpectralExtractor : SlicedRead : Time elapsed : fits to fits : for slice by slice image read 54417 ms
